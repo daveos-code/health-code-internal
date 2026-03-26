@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>אתגר קוד הבריאות — דשבורד משתתפים</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, 'Helvetica Neue', sans-serif;
+      background-color: #f4f6f8;
+      color: #1a1a2e;
+      padding: 32px 24px;
+      direction: rtl;
+    }
+
+    header {
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* Summary card */
+    .summary-bar {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 18px 24px;
+      margin-bottom: 28px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      flex-wrap: wrap;
+    }
+
+    .summary-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 100px;
+    }
+
+    .summary-stat .value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #2d6a4f;
+    }
+
+    .summary-stat .label {
+      font-size: 0.8rem;
+      color: #666;
+      text-align: center;
+      margin-top: 2px;
+    }
+
+    .divider {
+      width: 1px;
+      height: 50px;
+      background: #e2e8f0;
+    }
+
+    .summary-main {
+      flex: 1;
+    }
+
+    .summary-main .big-label {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #1a1a2e;
+    }
+
+    .summary-main .big-sub {
+      font-size: 0.88rem;
+      color: #666;
+      margin-top: 3px;
+    }
+
+    /* Progress bar */
+    .progress-wrap {
+      flex: 2;
+      min-width: 180px;
+    }
+
+    .progress-bar-bg {
+      background: #e2e8f0;
+      border-radius: 100px;
+      height: 12px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      background: linear-gradient(to left, #52b788, #2d6a4f);
+      height: 100%;
+      border-radius: 100px;
+      transition: width 0.5s ease;
+    }
+
+    .progress-label {
+      font-size: 0.8rem;
+      color: #555;
+      margin-top: 6px;
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      border-radius: 12px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      font-size: 0.92rem;
+    }
+
+    thead tr {
+      background: #1a1a2e;
+      color: #fff;
+    }
+
+    thead th {
+      padding: 14px 16px;
+      font-weight: 600;
+      text-align: right;
+      white-space: nowrap;
+      font-size: 0.88rem;
+      letter-spacing: 0.02em;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid #f0f2f5;
+      transition: background 0.15s;
+    }
+
+    tbody tr:last-child {
+      border-bottom: none;
+    }
+
+    tbody tr:hover {
+      filter: brightness(0.97);
+    }
+
+    td {
+      padding: 13px 16px;
+      vertical-align: middle;
+    }
+
+    /* Row color states */
+    .row-approved {
+      background-color: #f0faf4;
+    }
+
+    .row-in-progress {
+      background-color: #fffbeb;
+    }
+
+    .row-generated {
+      background-color: #fefefe;
+    }
+
+    .row-demo {
+      background-color: #f8f9fa;
+    }
+
+    /* Name cell */
+    .participant-name {
+      font-weight: 600;
+      color: #1a1a2e;
+    }
+
+    .participant-alias {
+      font-size: 0.78rem;
+      color: #888;
+      margin-top: 2px;
+    }
+
+    /* Status icons */
+    .icon-yes {
+      font-size: 1.1rem;
+      color: #2d6a4f;
+    }
+
+    .icon-no {
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    .icon-partial {
+      font-size: 1.1rem;
+      color: #d97706;
+    }
+
+    /* Badge */
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 100px;
+      font-weight: 500;
+    }
+
+    .badge-approved {
+      background: #d1fae5;
+      color: #065f46;
+    }
+
+    .badge-inprogress {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    .row-editing {
+      background-color: #fff7ed;
+    }
+
+    .badge-editing {
+      background: #fed7aa;
+      color: #9a3412;
+    }
+
+    .badge-pending {
+      background: #f1f5f9;
+      color: #64748b;
+    }
+
+    .badge-demo {
+      background: #e2e8f0;
+      color: #475569;
+    }
+
+
+    /* Copy button */
+    .copy-btn {
+      background: #1a1a2e;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      white-space: nowrap;
+      font-family: inherit;
+    }
+    .copy-btn:hover { background: #2d6a4f; }
+    .copy-btn.copied { background: #2d6a4f; }
+
+    /* Notes */
+    .notes {
+      font-size: 0.8rem;
+      color: #555;
+    }
+
+    /* Link */
+    .doc-link {
+      display: inline-block;
+      font-size: 0.78rem;
+      color: #2d6a4f;
+      text-decoration: none;
+      background: #d1fae5;
+      padding: 2px 8px;
+      border-radius: 100px;
+      white-space: nowrap;
+    }
+    .doc-link:hover { background: #a7f3d0; }
+
+    /* Footer note */
+    .footer-note {
+      margin-top: 24px;
+      padding: 16px 20px;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-right: 4px solid #94a3b8;
+      border-radius: 8px;
+      font-size: 0.83rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .footer-note strong {
+      color: #1a1a2e;
+    }
+
+    .updated-at {
+      margin-top: 16px;
+      font-size: 0.78rem;
+      color: #aaa;
+      text-align: left;
+    }
+
+    /* Legend */
+    .legend {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+      font-size: 0.82rem;
+      color: #555;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>אתגר קוד הבריאות — דשבורד משתתפים</h1>
+    <p class="subtitle">עדכון אחרון: 21 במרץ 2026</p>
+  </header>
+
+  <!-- Summary Bar -->
+  <div class="summary-bar">
+    <div class="summary-stat">
+      <span class="value">20</span>
+      <span class="label">אושרו על ידי דייב</span>
+    </div>
+    <div class="divider"></div>
+    <div class="summary-stat">
+      <span class="value">21</span>
+      <span class="label">משתתפים פעילים</span>
+    </div>
+    <div class="divider"></div>
+    <div class="summary-stat">
+      <span class="value">22</span>
+      <span class="label">סה"כ תיקיות</span>
+    </div>
+    <div class="divider"></div>
+    <div class="progress-wrap">
+      <div class="progress-bar-bg">
+        <div class="progress-bar-fill" style="width: 95%"></div>
+      </div>
+      <div class="progress-label">20 מתוך 21 מסמכים אושרו (95%)</div>
+    </div>
+  </div>
+
+  <!-- Legend -->
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#f0faf4; border:1px solid #b7e4c7;"></div>
+      <span>אושר על ידי דייב</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#fffbeb; border:1px solid #fde68a;"></div>
+      <span>מסמך מוכן — ממתין לאישור</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#fefefe; border:1px solid #e2e8f0;"></div>
+      <span>בתהליך</span>
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background:#f8f9fa; border:1px solid #e2e8f0;"></div>
+      <span>דוגמא בלבד</span>
+    </div>
+  </div>
+
+  <!-- Table -->
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>שם משתתף</th>
+          <th>שאלון התקבל</th>
+          <th>מסמך הוכן</th>
+          <th>HTML מוכן</th>
+          <th>אושר ע"י דייב</th>
+          <th>לינק</th>
+          <th>שלח</th>
+          <th>הערות</th>
+        </tr>
+      </thead>
+      <tbody>
+
+        <!-- 1. אתי לגני — Approved -->
+        <tr class="row-approved">
+          <td>1</td>
+          <td>
+            <div class="participant-name">אתי לגני</div>
+          </td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><a class="doc-link" href="https://health-code-april.netlify.app/eti" target="_blank">🔗 פתח</a></td>
+          <td><button class="copy-btn" data-name="אתי" onclick="copyMsg('אתי', 'https://health-code-april.netlify.app/eti/?v=2')">📋 העתק</button></td>
+          <td class="notes">פידבק ניתן ויושם</td>
+        </tr>
+
+        <!-- 2. עמיצור מנחם — Approved -->
+        <tr class="row-approved">
+          <td>2</td>
+          <td>
+            <div class="participant-name">עמיצור מנחם</div>
+            <div class="participant-alias">ידוע בשם: עמי</div>
+          </td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><a class="doc-link" href="https://health-code-april.netlify.app/amitzur" target="_blank">🔗 פתח</a></td>
+          <td><button class="copy-btn" data-name="עמי" onclick="copyMsg('עמי', 'https://health-code-april.netlify.app/amitzur/?v=2')">📋 העתק</button></td>
+          <td class="notes">פידבק ניתן ויושם</td>
+        </tr>
+
+        <!-- 3. משה מלחי — Approved -->
+        <tr class="row-approved">
+          <td>3</td>
+          <td>
+            <div class="participant-name">משה מלחי</div>
+          </td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><a class="doc-link" href="https://health-code-april.netlify.app/moshe" target="_blank">🔗 פתח</a></td>
+          <td><button class="copy-btn" data-name="משה" onclick="copyMsg('משה', 'https://health-code-april.netlify.app/moshe/?v=2')">📋 העתק</button></td>
+          <td class="notes">אושר היום</td>
+        </tr>
+
+        <!-- 4. מיכלי אור בן שטרית — אושר -->
+        <tr class="row-approved">
+          <td>4</td>
+          <td>
+            <div class="participant-name">מיכלי אור בן שטרית</div>
+          </td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><a class="doc-link" href="https://health-code-april.netlify.app/michali" target="_blank">🔗 פתח</a></td>
+          <td><button class="copy-btn" data-name="מיכלי" onclick="copyMsg('מיכלי', 'https://health-code-april.netlify.app/michali/?v=2')">📋 העתק</button></td>
+          <td class="notes">אושר על ידי דייב</td>
+        </tr>
+
+        <!-- 5. קרן — Approved -->
+        <tr class="row-approved">
+          <td>5</td>
+          <td>
+            <div class="participant-name">קרן</div>
+          </td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><a class="doc-link" href="https://health-code-april.netlify.app/keren" target="_blank">🔗 פתח</a></td>
+          <td><button class="copy-btn" data-name="קרן" onclick="copyMsg('קרן', 'https://health-code-april.netlify.app/keren/?v=2')">📋 העתק</button></td>
+          <td class="notes">✅ נקי — חוסרים: ברזל, D, B12. אבנים בכיס מרה. צמחונית.</td>
+        </tr>
+
+        <!-- 6. יובל קידר — Approved -->
+        <tr class="row-approved">
+          <td>6</td>
+          <td>
+            <div class="participant-name">יובל קידר</div>
+          </td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><a class="doc-link" href="https://health-code-april.netlify.app/yuval" target="_blank">🔗 פתח</a></td>
+          <td><button class="copy-btn" data-name="יובל" onclick="copyMsg('יובל', 'https://health-code-april.netlify.app/yuval/?v=2')">📋 העתק</button></td>
+          <td class="notes">בלוטת תריס, נשירת שיער, כולסטרול. וגובי.</td>
+        </tr>
+
+        <!-- 7. אביבה בן ברון — Approved -->
+        <tr class="row-approved">
+          <td>7</td>
+          <td>
+            <div class="participant-name">אביבה בן ברון</div>
+          </td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><a class="doc-link" href="https://health-code-april.netlify.app/aviva" target="_blank">🔗 פתח</a></td>
+          <td><button class="copy-btn" data-name="אביבה" onclick="copyMsg('אביבה', 'https://health-code-april.netlify.app/aviva/?v=2')">📋 העתק</button></td>
+          <td class="notes">הישימוטו, קימה בלילה, אכילה מחוץ לבית.</td>
+        </tr>
+
+        <!-- 8. אורטל שמעוני ארד — Approved -->
+        <tr class="row-approved">
+          <td>8</td>
+          <td>
+            <div class="participant-name">אורטל שמעוני ארד</div>
+          </td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><a class="doc-link" href="https://health-code-april.netlify.app/ortal" target="_blank">🔗 פתח</a></td>
+          <td><button class="copy-btn" data-name="אורטל" onclick="copyMsg('אורטל', 'https://health-code-april.netlify.app/ortal/?v=2')">📋 העתק</button></td>
+          <td class="notes">צמחונית, סויה, גלולות פמינט, מחסור ברזל.</td>
+        </tr>
+
+        <!-- 9. סבטלנה אוסטרובסקי — Approved -->
+        <tr class="row-approved">
+          <td>9</td>
+          <td>
+            <div class="participant-name">סבטלנה אוסטרובסקי</div>
+          </td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><a class="doc-link" href="https://health-code-april.netlify.app/svetlana" target="_blank">🔗 פתח</a></td>
+          <td><button class="copy-btn" data-name="סבטלנה" onclick="copyMsg('סבטלנה', 'https://health-code-april.netlify.app/svetlana/?v=2')">📋 העתק</button></td>
+          <td class="notes">שמן אורגנו, ברזל, תרופות.</td>
+        </tr>
+
+        <!-- 10. רביבו חיים — Approved -->
+        <tr class="row-approved">
+          <td>10</td>
+          <td>
+            <div class="participant-name">רביבו חיים</div>
+          </td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><a class="doc-link" href="https://health-code-april.netlify.app/haim" target="_blank">🔗 פתח</a></td>
+          <td><button class="copy-btn" data-name="חיים" onclick="copyMsg('חיים', 'https://health-code-april.netlify.app/haim/?v=2')">📋 העתק</button></td>
+          <td class="notes">גזים, לחץ דם, כולסטרול, אבנים בכליות.</td>
+        </tr>
+
+        <!-- 11. אילה נחום — אושר -->
+        <tr class="row-approved">
+          <td>11</td>
+          <td>
+            <div class="participant-name">אילה נחום</div>
+          </td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><a class="doc-link" href="https://health-code-april.netlify.app/ila" target="_blank">🔗 פתח</a></td>
+          <td><button class="copy-btn" data-name="אילה" onclick="copyMsg('אילה', 'https://health-code-april.netlify.app/ila/?v=2')">📋 העתק</button></td>
+          <td class="notes">אושר על ידי דייב</td>
+        </tr>
+
+        <!-- 12. מייסי בקרמן — Approved -->
+        <tr class="row-approved">
+          <td>12</td>
+          <td>
+            <div class="participant-name">מייסי בקרמן</div>
+          </td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><a class="doc-link" href="https://health-code-april.netlify.app/maisy" target="_blank">🔗 פתח</a></td>
+          <td><button class="copy-btn" data-name="מייסי" onclick="copyMsg('מייסי', 'https://health-code-april.netlify.app/maisy/?v=2')">📋 העתק</button></td>
+          <td class="notes">⚠️ תרופות ל"ד + ניתוח בלוטת תריס — שלב 2 חסום</td>
+        </tr>
+
+        <!-- 13. הדר כץ — Approved -->
+        <tr class="row-approved">
+          <td>13</td>
+          <td>
+            <div class="participant-name">הדר כץ</div>
+          </td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><a class="doc-link" href="https://health-code-april.netlify.app/hadar" target="_blank">🔗 פתח</a></td>
+          <td><button class="copy-btn" data-name="הדר" onclick="copyMsg('הדר', 'https://health-code-april.netlify.app/hadar/?v=2')">📋 העתק</button></td>
+          <td class="notes">⚠️ הליקובקטר פעיל + ל"ד נמוך — שלב 2 אסור, אפס קפה</td>
+        </tr>
+
+        <!-- 14. טלי כהן פיאמנטה — Approved -->
+        <tr class="row-approved">
+          <td>14</td>
+          <td>
+            <div class="participant-name">טלי כהן פיאמנטה</div>
+            <div class="participant-alias">טבעונית</div>
+          </td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><a class="doc-link" href="https://health-code-april.netlify.app/tali" target="_blank">🔗 פתח</a></td>
+          <td><button class="copy-btn" data-name="טלי" onclick="copyMsg('טלי', 'https://health-code-april.netlify.app/tali/?v=2')">📋 העתק</button></td>
+          <td class="notes">כבד שומני קל + גיל מעבר</td>
+        </tr>
+
+        <!-- 15. נויה — Approved -->
+        <tr class="row-approved">
+          <td>15</td>
+          <td>
+            <div class="participant-name">נויה</div>
+          </td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><a class="doc-link" href="https://health-code-april.netlify.app/noya" target="_blank">🔗 פתח</a></td>
+          <td><button class="copy-btn" data-name="נויה" onclick="copyMsg('נויה', 'https://health-code-april.netlify.app/noya/?v=2')">📋 העתק</button></td>
+          <td class="notes">ל"ד נמוך — שלב 2 מותנה ברופא. עישון.</td>
+        </tr>
+
+        <!-- 16. מלכה פורמן — Approved -->
+        <tr class="row-approved">
+          <td>16</td>
+          <td>
+            <div class="participant-name">מלכה פורמן</div>
+            <div class="participant-alias">צמחונית</div>
+          </td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><a class="doc-link" href="https://health-code-april.netlify.app/malka" target="_blank">🔗 פתח</a></td>
+          <td><button class="copy-btn" data-name="מלכה" onclick="copyMsg('מלכה', 'https://health-code-april.netlify.app/malka/?v=2')">📋 העתק</button></td>
+          <td class="notes">⚠️ MS + ZEPOSIA + CLONEX + SERENADA — שלב 2 אסור</td>
+        </tr>
+
+        <!-- 17. דפנה שחר — Approved -->
+        <tr class="row-approved">
+          <td>17</td>
+          <td>
+            <div class="participant-name">דפנה שחר</div>
+          </td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><a class="doc-link" href="https://health-code-april.netlify.app/dafna" target="_blank">🔗 פתח</a></td>
+          <td><button class="copy-btn" data-name="דפנה" onclick="copyMsg('דפנה', 'https://health-code-april.netlify.app/dafna/?v=2')">📋 העתק</button></td>
+          <td class="notes">✅ נקי — שלב 2 מותר. גיל 48 / טרום גיל מעבר.</td>
+        </tr>
+
+        <!-- 18. מעין דגן — Approved -->
+        <tr class="row-approved">
+          <td>18</td>
+          <td>
+            <div class="participant-name">מעין דגן</div>
+            <div class="participant-alias">BMI 19.4 | 50F | חוסר ברזל כרוני</div>
+          </td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><a class="doc-link" href="https://health-code-april.netlify.app/maayan" target="_blank">🔗 פתח</a></td>
+          <td><button class="copy-btn" data-name="מעין" onclick="copyMsg('מעין', 'https://health-code-april.netlify.app/maayan/?v=2')">📋 העתק</button></td>
+          <td class="notes">⚠️ חוסר ברזל כרוני מילדות — ברזל ביסגליצינאט חובה. שלב 2 מותר בזהירות.</td>
+        </tr>
+
+        <!-- 19. חגית בן אברהם — Approved -->
+        <tr class="row-approved">
+          <td>19</td>
+          <td>
+            <div class="participant-name">חגית בן אברהם</div>
+            <div class="participant-alias">BMI 33 | 54F | דופלקס ל"ד</div>
+          </td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><a class="doc-link" href="https://health-code-april.netlify.app/hagit" target="_blank">🔗 פתח</a></td>
+          <td><button class="copy-btn" data-name="חגית" onclick="copyMsg('חגית', 'https://health-code-april.netlify.app/hagit/?v=2')">📋 העתק</button></td>
+          <td class="notes">⚠️ דופלקס (אמלודיפין+ולסרטן) — שלב 2 מחייב אישור רופא. ל"ד עלול לרדת.</td>
+        </tr>
+
+        <!-- 20. מיכל מאור — Approved -->
+        <tr class="row-approved">
+          <td>20</td>
+          <td>
+            <div class="participant-name">מיכל מאור</div>
+            <div class="participant-alias">BMI 25 | 65F | האשימוטו + יוטירוקס</div>
+          </td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><a class="doc-link" href="https://health-code-april.netlify.app/michal" target="_blank">🔗 פתח</a></td>
+          <td><button class="copy-btn" data-name="מיכל" onclick="copyMsg('מיכל', 'https://health-code-april.netlify.app/michal/?v=2')">📋 העתק</button></td>
+          <td class="notes">⚠️ האשימוטו + יוטירוקס — שלב 2 תלוי איזון הבלוטה. גיל המעבר.</td>
+        </tr>
+
+        <!-- 21. דור ציון ברוך — Approved -->
+        <tr class="row-approved">
+          <td>21</td>
+          <td>
+            <div class="participant-name">דור ציון ברוך</div>
+            <div class="participant-alias">BMI 29 | 32M | אסטמה + Singulair</div>
+          </td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="icon-yes">✅</span></td>
+          <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><a class="doc-link" href="https://health-code-april.netlify.app/dor" target="_blank">🔗 פתח</a></td>
+          <td><button class="copy-btn" data-name="דור" onclick="copyMsg('דור', 'https://health-code-april.netlify.app/dor/?v=2')">📋 העתק</button></td>
+          <td class="notes">⚠️ Singulair — שלב 2 מחייב אישור רופא. אבא חדש. חוסרי D+B12.</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Footer Note -->
+  <div class="footer-note">
+    <strong>לאישור מסמך:</strong> לאחר שדייב עובר על המסמך ומאשר אותו, יש לעדכן את הסטטוס ידנית בקובץ <code>dashboard.html</code> — לשנות את המחלקה של השורה מ־<code>row-generated</code> ל־<code>row-approved</code>, ואת הבאדג' ל־<code>badge-approved</code> עם הטקסט "✅ אושר".
+  </div>
+
+  <div class="updated-at">עודכן לאחרונה: 22.03.2026 · אתגר קוד הבריאות v1</div>
+
+
+<script>
+function copyMsg(name, link) {
+  const msg = `היי NAME מה שלומך? זה דייב מקוד הבריאות 👋\nאז לפני שמתחילים, לקח לי טיפה זמן אבל כתבתי לך מסמך דגשים אישיים על סמך השאלון שמילאת.\nשיתפתי שם מה הכי בולט אצלך מבחינתי, מה יכול להכשיל אותך בתחילת הדרך, ועל מה כדאי לשים לב כדי שנפתח את האתגר בצורה הכי נכונה שיש ועם כמה שפחות ניחושים.\nאזכיר ואומר שזו רק ההתחלה כמובן, זה רק הנקודות הראשוניות. בנוסף לזה ביום רביעי לפני תחילת האתגר (ב 08.04) אשתף איתך את סרטון ההכנה שלי שיעשה לך הרבה יותר סדר אל דאגה.\nוכמובן שתוך כדי התהליך אנחנו נתחיל ונראה אם צריך עוד דיוקים.\nאם מתאים לך, כמובן שאמליץ להתחיל וליישם חלק מהדברים, זה רק יוכל לעזור לך להרגיש יותר טוב.\nרק חשוב לי לציין *שהליווי יתחיל מיום רביעי ה 08.04 - כשאשתף איתך את האפליקציה*.\nבחרתי לשלוח לך את המסמך כדי שאם בא לך ליישם חלק מההמלצות ולהתכונן כבר מעכשיו אז בשמחה זה רק יעזור :)\nהמשך שבוע שקט לכולנו ומחכה לשמוע ממך שעברת על המסמך!\nLINK`.replace('NAME', name).replace('LINK', link);
+  navigator.clipboard.writeText(msg).then(function() {
+    const btns = document.querySelectorAll('.copy-btn');
+    btns.forEach(b => { if (b.getAttribute('data-name') === name) {
+      b.textContent = '✓ הועתק!';
+      b.classList.add('copied');
+      setTimeout(() => { b.textContent = '📋 העתק'; b.classList.remove('copied'); }, 2000);
+    } });
+  });
+}
+</script>
+
+</body>
+</html>
