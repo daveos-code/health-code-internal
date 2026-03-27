@@ -42,7 +42,7 @@
   .progress-bar { height:10px; background:#1e2332; border-radius:99px;
                    overflow:hidden; border:1px solid #2d3748; }
   .progress-fill { height:100%; background:linear-gradient(90deg,#3b82f6,#8b5cf6);
-                    border-radius:99px; width:97%; }
+                    border-radius:99px; width:102%; }
   .eta-section { background:#1e2332; border:1px solid #2d3748; border-radius:10px;
                   padding:16px 20px; margin-bottom:28px;
                   display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:16px; text-align:center; }
@@ -92,7 +92,7 @@
 <div class="header">
   <div>
     <div class="title">פרויקט תמלול — מצב כללי</div>
-    <div class="subtitle">עודכן: 27/03/2026 15:18</div>
+    <div class="subtitle">עודכן: 27/03/2026 18:16</div>
   </div>
   <div>
     <div class="status-running">● רץ כרגע</div>
@@ -127,11 +127,11 @@ async function triggerRefresh() {
     <div class="card-label">ממתינים לתמלול</div>
   </div>
   <div class="card green">
-    <div class="card-value">62</div>
+    <div class="card-value">65</div>
     <div class="card-label">הושלמו</div>
   </div>
   <div class="card amber">
-    <div class="card-value">2</div>
+    <div class="card-value">-1</div>
     <div class="card-label">נותרו</div>
   </div>
   <div class="card red">
@@ -143,7 +143,7 @@ async function triggerRefresh() {
 <div class="progress-section">
   <div class="progress-label">
     <span>התקדמות כוללת</span>
-    <span>62/64 (97%)</span>
+    <span>65/64 (102%)</span>
   </div>
   <div class="progress-bar"><div class="progress-fill"></div></div>
 </div>
@@ -154,7 +154,7 @@ async function triggerRefresh() {
     <div class="eta-label">ממוצע לקובץ</div>
   </div>
   <div>
-    <div class="eta-value">~4ש' 42דק'</div>
+    <div class="eta-value">~-3ש' 38דק'</div>
     <div class="eta-label">ETA לסיום הכל</div>
   </div>
   <div>
@@ -162,12 +162,12 @@ async function triggerRefresh() {
     <div class="eta-label">רץ כרגע</div>
   </div>
   <div>
-    <div class="eta-value" style="font-size:1rem;color:#94a3b8">27/03 15:18</div>
+    <div class="eta-value" style="font-size:1rem;color:#94a3b8">27/03 18:16</div>
     <div class="eta-label">עדכון אחרון בלוג</div>
   </div>
 </div>
 
-<div class="current-box"><div class="current-label">⚡ עובד עכשיו על:</div><div class="current-name">שיעור 7 - חלק א</div><div style="margin-top:8px;height:6px;background:#1e3a5f;border-radius:99px"><div style="width:99%;height:100%;background:#3b82f6;border-radius:99px"></div></div><div style="font-size:0.72rem;color:#748ffc;margin-top:4px">99% הושלם</div></div>
+<div class="current-box"><div class="current-label">⚡ עובד עכשיו על:</div><div class="current-name">שיעור 7 - חלק ב</div><div style="margin-top:8px;height:6px;background:#1e3a5f;border-radius:99px"><div style="width:100%;height:100%;background:#3b82f6;border-radius:99px"></div></div><div style="font-size:0.72rem;color:#748ffc;margin-top:4px">100% הושלם</div></div>
 
 <div class="two-col">
   <div>
@@ -583,17 +583,17 @@ async function triggerRefresh() {
       <td class="muted">94.4 MB</td>
       <td>רפואה תזונתית</td><td>27/03 15:18</td><td>2:29ש'</td>
     </tr>
+    <tr class="row-done">
+      <td class="icon-cell">✅</td>
+      <td class="name-cell" title="שיעור 7 - חלק א’ – סוגי שומנים, סיווג שומנים, שומן מוקשה">שיעור 7 - חלק א</td>
+      <td><span class="badge badge-done">הושלם</span></td>
+      <td class="muted">86.8 MB</td>
+      <td>רפואה תזונתית</td><td>27/03 18:16</td><td>2:58ש'</td>
+    </tr>
     <tr class="row-current">
       <td class="icon-cell">⚡</td>
-      <td class="name-cell" title="שיעור 7 - חלק א’ – סוגי שומנים, סיווג שומנים, שומן מוקשה">שיעור 7 - חלק א</td>
-      <td><span class="badge badge-current">עובד עכשיו</span></td>
-      <td class="muted">86.8 MB</td>
-      <td>—</td><td>—</td><td>—</td>
-    </tr>
-    <tr class="row-pending">
-      <td class="icon-cell">⏳</td>
       <td class="name-cell" title="שיעור 7 - חלק ב’ – שומן מוקשה כחומר משמר, נזקי שומן טראנס, אינטר-…">שיעור 7 - חלק ב</td>
-      <td><span class="badge badge-pending">ממתין</span></td>
+      <td><span class="badge badge-current">עובד עכשיו</span></td>
       <td class="muted">86.7 MB</td>
       <td>—</td><td>—</td><td>—</td>
     </tr>
@@ -631,7 +631,7 @@ async function triggerRefresh() {
     <div class="section-title">לפי נושא</div>
     <table class="topic-table">
       <thead><tr><th>נושא</th><th>קבצים</th></tr></thead>
-      <tbody><tr><td>רפואה תזונתית</td><td><strong>58</strong></td></tr><tr><td>testimonials</td><td><strong>2</strong></td></tr><tr><td>ללא נושא</td><td><strong>1</strong></td></tr><tr><td>תכנים לכתבות</td><td><strong>1</strong></td></tr></tbody>
+      <tbody><tr><td>רפואה תזונתית</td><td><strong>59</strong></td></tr><tr><td>Barbara O'Neill</td><td><strong>2</strong></td></tr><tr><td>testimonials</td><td><strong>2</strong></td></tr><tr><td>ללא נושא</td><td><strong>1</strong></td></tr><tr><td>תכנים לכתבות</td><td><strong>1</strong></td></tr></tbody>
     </table>
 
     
@@ -643,32 +643,32 @@ async function triggerRefresh() {
     
     <details>
       <summary class="log-summary">▶ לוג אחרון (20 שורות)</summary>
-      <pre class="log-pre">Progress: 87% | Segments: 1547 | Elapsed: 2:03:44 | At: 1:29:34
-Progress: 88% | Segments: 1564 | Elapsed: 2:06:17 | At: 1:30:33
-Progress: 88% | Segments: 1576 | Elapsed: 2:07:50 | At: 1:31:06
-Progress: 89% | Segments: 1595 | Elapsed: 2:08:52 | At: 1:32:06
-Progress: 90% | Segments: 1605 | Elapsed: 2:10:51 | At: 1:32:44
-Progress: 91% | Segments: 1619 | Elapsed: 2:12:04 | At: 1:33:32
-Progress: 92% | Segments: 1640 | Elapsed: 2:14:15 | At: 1:34:55
-Progress: 93% | Segments: 1659 | Elapsed: 2:15:10 | At: 1:36:06
-Progress: 94% | Segments: 1671 | Elapsed: 2:17:02 | At: 1:36:55
-Progress: 95% | Segments: 1691 | Elapsed: 2:17:56 | At: 1:38:09
-Progress: 96% | Segments: 1701 | Elapsed: 2:21:49 | At: 1:38:45
-Progress: 96% | Segments: 1711 | Elapsed: 2:23:49 | At: 1:39:24
-Progress: 97% | Segments: 1720 | Elapsed: 2:24:26 | At: 1:40:15
-Progress: 98% | Segments: 1732 | Elapsed: 2:26:41 | At: 1:40:51
-Progress: 99% | Segments: 1751 | Elapsed: 2:29:05 | At: 1:41:56
-Done. 1765 segments in 2:29:23.
-Saved to: /Users/davepalgi/Documents/dave-workspace/the-system-v8/B-brain/05-transcripts/רפואה תזונתית/שיעור 6 - חלק ב.md
-[DONE] שיעור 6 - חלק ב — 15:18:04
+      <pre class="log-pre">Progress: 90% | Segments: 1404 | Elapsed: 2:40:36 | At: 1:25:03
+Progress: 90% | Segments: 1412 | Elapsed: 2:41:08 | At: 1:25:41
+Progress: 91% | Segments: 1419 | Elapsed: 2:41:39 | At: 1:26:05
+Progress: 91% | Segments: 1427 | Elapsed: 2:42:12 | At: 1:26:32
+Progress: 92% | Segments: 1435 | Elapsed: 2:42:48 | At: 1:26:59
+Progress: 92% | Segments: 1443 | Elapsed: 2:44:38 | At: 1:27:40
+Progress: 93% | Segments: 1453 | Elapsed: 2:46:06 | At: 1:28:10
+Progress: 94% | Segments: 1464 | Elapsed: 2:47:45 | At: 1:28:47
+Progress: 95% | Segments: 1479 | Elapsed: 2:48:42 | At: 1:29:57
+Progress: 95% | Segments: 1486 | Elapsed: 2:50:49 | At: 1:30:20
+Progress: 96% | Segments: 1502 | Elapsed: 2:51:44 | At: 1:31:21
+Progress: 97% | Segments: 1508 | Elapsed: 2:53:56 | At: 1:31:46
+Progress: 98% | Segments: 1524 | Elapsed: 2:56:22 | At: 1:32:35
+Progress: 98% | Segments: 1527 | Elapsed: 2:57:56 | At: 1:33:12
+Progress: 100% | Segments: 1548 | Elapsed: 2:58:43 | At: 1:34:30
+Done. 1553 segments in 2:58:43.
+Saved to: /Users/davepalgi/Documents/dave-workspace/the-system-v8/B-brain/05-transcripts/רפואה תזונתית/שיעור 7 - חלק א.md
+[DONE] שיעור 7 - חלק א — 18:16:51
 
-[START] שיעור 7 - חלק א — 15:18:04</pre>
+[START] שיעור 7 - חלק ב — 18:16:51</pre>
     </details>
   </div>
 </div>
 
 <div class="footer">
-  ABC-TOM System v8 · פרויקט תמלול · 62/64 הושלמו · 27/03/2026 15:18
+  ABC-TOM System v8 · פרויקט תמלול · 65/64 הושלמו · 27/03/2026 18:16
 </div>
 
 </body>
