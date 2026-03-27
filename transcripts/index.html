@@ -42,7 +42,7 @@
   .progress-bar { height:10px; background:#1e2332; border-radius:99px;
                    overflow:hidden; border:1px solid #2d3748; }
   .progress-fill { height:100%; background:linear-gradient(90deg,#3b82f6,#8b5cf6);
-                    border-radius:99px; width:116%; }
+                    border-radius:99px; width:54%; }
   .eta-section { background:#1e2332; border:1px solid #2d3748; border-radius:10px;
                   padding:16px 20px; margin-bottom:28px;
                   display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:16px; text-align:center; }
@@ -92,7 +92,7 @@
 <div class="header">
   <div>
     <div class="title">פרויקט תמלול — מצב כללי</div>
-    <div class="subtitle">עודכן: 28/03/2026 00:41</div>
+    <div class="subtitle">עודכן: 28/03/2026 02:10</div>
   </div>
   <div>
     <div class="status-running">● רץ כרגע</div>
@@ -123,15 +123,15 @@ async function triggerRefresh() {
 
 <div class="cards">
   <div class="card">
-    <div class="card-value">64</div>
+    <div class="card-value">139</div>
     <div class="card-label">ממתינים לתמלול</div>
   </div>
   <div class="card green">
-    <div class="card-value">74</div>
+    <div class="card-value">75</div>
     <div class="card-label">הושלמו</div>
   </div>
   <div class="card amber">
-    <div class="card-value">-10</div>
+    <div class="card-value">64</div>
     <div class="card-label">נותרו</div>
   </div>
   <div class="card red">
@@ -143,18 +143,18 @@ async function triggerRefresh() {
 <div class="progress-section">
   <div class="progress-label">
     <span>התקדמות כוללת</span>
-    <span>74/64 (116%)</span>
+    <span>75/139 (54%)</span>
   </div>
   <div class="progress-bar"><div class="progress-fill"></div></div>
 </div>
 
 <div class="eta-section">
   <div>
-    <div class="eta-value">2:21ש'</div>
+    <div class="eta-value">2:20ש'</div>
     <div class="eta-label">ממוצע לקובץ</div>
   </div>
   <div>
-    <div class="eta-value">~-24ש' 29דק'</div>
+    <div class="eta-value">~149ש' 33דק'</div>
     <div class="eta-label">ETA לסיום הכל</div>
   </div>
   <div>
@@ -162,16 +162,16 @@ async function triggerRefresh() {
     <div class="eta-label">רץ כרגע</div>
   </div>
   <div>
-    <div class="eta-value" style="font-size:1rem;color:#94a3b8">28/03 00:41</div>
+    <div class="eta-value" style="font-size:1rem;color:#94a3b8">28/03 02:10</div>
     <div class="eta-label">עדכון אחרון בלוג</div>
   </div>
 </div>
 
-<div class="current-box"><div class="current-label">⚡ עובד עכשיו על:</div><div class="current-name">שיעור 9 - חלק א</div><div style="margin-top:8px;height:6px;background:#1e3a5f;border-radius:99px"><div style="width:99%;height:100%;background:#3b82f6;border-radius:99px"></div></div><div style="font-size:0.72rem;color:#748ffc;margin-top:4px">99% הושלם</div></div>
+<div class="current-box"><div class="current-label">⚡ עובד עכשיו על:</div><div class="current-name">שיעור 9 - חלק ב</div><div style="margin-top:8px;height:6px;background:#1e3a5f;border-radius:99px"><div style="width:99%;height:100%;background:#3b82f6;border-radius:99px"></div></div><div style="font-size:0.72rem;color:#748ffc;margin-top:4px">99% הושלם</div></div>
 
 <div class="two-col">
   <div>
-    <div class="section-title">כל הקבצים (64)</div>
+    <div class="section-title">כל הקבצים (139)</div>
     <table>
       <thead>
         <tr><th></th><th>שם</th><th>סטטוס</th><th>גודל</th><th>נושא</th><th>תאריך</th><th>זמן</th></tr>
@@ -611,17 +611,17 @@ async function triggerRefresh() {
       <td class="muted">93.3 MB</td>
       <td>רפואה תזונתית</td><td>28/03 00:41</td><td>2:06ש'</td>
     </tr>
+    <tr class="row-done">
+      <td class="icon-cell">✅</td>
+      <td class="name-cell" title="שיעור 9 - חלק א’ – שמן קוקוס, MCT, שמן דקלים, שמן מזוכך, שמן זית,…">שיעור 9 - חלק א</td>
+      <td><span class="badge badge-done">הושלם</span></td>
+      <td class="muted">79.4 MB</td>
+      <td>רפואה תזונתית</td><td>28/03 02:10</td><td>1:29ש'</td>
+    </tr>
     <tr class="row-current">
       <td class="icon-cell">⚡</td>
-      <td class="name-cell" title="שיעור 9 - חלק א’ – שמן קוקוס, MCT, שמן דקלים, שמן מזוכך, שמן זית,…">שיעור 9 - חלק א</td>
-      <td><span class="badge badge-current">עובד עכשיו</span></td>
-      <td class="muted">79.4 MB</td>
-      <td>—</td><td>—</td><td>—</td>
-    </tr>
-    <tr class="row-pending">
-      <td class="icon-cell">⏳</td>
       <td class="name-cell" title="שיעור 9 - חלק ב - חזרה למבחן">שיעור 9 - חלק ב</td>
-      <td><span class="badge badge-pending">ממתין</span></td>
+      <td><span class="badge badge-current">עובד עכשיו</span></td>
       <td class="muted">89.3 MB</td>
       <td>—</td><td>—</td><td>—</td>
     </tr></tbody>
@@ -631,7 +631,7 @@ async function triggerRefresh() {
     <div class="section-title">לפי נושא</div>
     <table class="topic-table">
       <thead><tr><th>נושא</th><th>קבצים</th></tr></thead>
-      <tbody><tr><td>רפואה תזונתית</td><td><strong>62</strong></td></tr><tr><td>Barbara O'Neill</td><td><strong>2</strong></td></tr><tr><td>testimonials</td><td><strong>2</strong></td></tr><tr><td>David Sinclair</td><td><strong>2</strong></td></tr><tr><td>Benjamin Bikman</td><td><strong>2</strong></td></tr><tr><td>Rhonda Patrick</td><td><strong>2</strong></td></tr><tr><td>ללא נושא</td><td><strong>1</strong></td></tr><tr><td>תכנים לכתבות</td><td><strong>1</strong></td></tr></tbody>
+      <tbody><tr><td>רפואה תזונתית</td><td><strong>63</strong></td></tr><tr><td>Barbara O'Neill</td><td><strong>2</strong></td></tr><tr><td>testimonials</td><td><strong>2</strong></td></tr><tr><td>David Sinclair</td><td><strong>2</strong></td></tr><tr><td>Benjamin Bikman</td><td><strong>2</strong></td></tr><tr><td>Rhonda Patrick</td><td><strong>2</strong></td></tr><tr><td>ללא נושא</td><td><strong>1</strong></td></tr><tr><td>תכנים לכתבות</td><td><strong>1</strong></td></tr></tbody>
     </table>
 
     
@@ -643,32 +643,32 @@ async function triggerRefresh() {
     
     <details>
       <summary class="log-summary">▶ לוג אחרון (20 שורות)</summary>
-      <pre class="log-pre">Progress: 91% | Segments: 1556 | Elapsed: 1:58:14 | At: 1:32:52
-Progress: 92% | Segments: 1580 | Elapsed: 1:59:11 | At: 1:34:15
-Progress: 93% | Segments: 1588 | Elapsed: 1:59:44 | At: 1:34:43
-Progress: 94% | Segments: 1597 | Elapsed: 2:00:17 | At: 1:35:19
-Progress: 94% | Segments: 1606 | Elapsed: 2:00:48 | At: 1:35:58
-Progress: 95% | Segments: 1614 | Elapsed: 2:01:19 | At: 1:36:34
-Progress: 95% | Segments: 1622 | Elapsed: 2:01:51 | At: 1:37:06
-Progress: 96% | Segments: 1631 | Elapsed: 2:02:24 | At: 1:37:36
-Progress: 96% | Segments: 1639 | Elapsed: 2:02:56 | At: 1:38:07
-Progress: 97% | Segments: 1649 | Elapsed: 2:03:31 | At: 1:38:38
-Progress: 97% | Segments: 1658 | Elapsed: 2:04:04 | At: 1:39:04
-Progress: 98% | Segments: 1669 | Elapsed: 2:04:40 | At: 1:39:40
-Progress: 98% | Segments: 1676 | Elapsed: 2:05:16 | At: 1:40:05
-Progress: 99% | Segments: 1684 | Elapsed: 2:05:48 | At: 1:40:34
-Progress: 99% | Segments: 1693 | Elapsed: 2:06:19 | At: 1:41:08
-Done. 1707 segments in 2:06:40.
-Saved to: /Users/davepalgi/Documents/dave-workspace/the-system-v8/B-brain/05-transcripts/רפואה תזונתית/שיעור 8 - חלק ב.md
-[DONE] שיעור 8 - חלק ב — 00:41:20
+      <pre class="log-pre">Progress: 82% | Segments: 1145 | Elapsed: 1:15:37 | At: 1:11:29
+Progress: 84% | Segments: 1165 | Elapsed: 1:16:30 | At: 1:12:41
+Progress: 85% | Segments: 1183 | Elapsed: 1:17:24 | At: 1:13:43
+Progress: 86% | Segments: 1200 | Elapsed: 1:18:16 | At: 1:14:45
+Progress: 88% | Segments: 1223 | Elapsed: 1:20:37 | At: 1:15:57
+Progress: 89% | Segments: 1243 | Elapsed: 1:21:23 | At: 1:16:58
+Progress: 90% | Segments: 1260 | Elapsed: 1:22:20 | At: 1:18:06
+Progress: 91% | Segments: 1277 | Elapsed: 1:23:14 | At: 1:18:56
+Progress: 92% | Segments: 1293 | Elapsed: 1:24:09 | At: 1:19:57
+Progress: 93% | Segments: 1311 | Elapsed: 1:25:02 | At: 1:21:00
+Progress: 95% | Segments: 1332 | Elapsed: 1:25:54 | At: 1:22:06
+Progress: 96% | Segments: 1347 | Elapsed: 1:26:46 | At: 1:23:06
+Progress: 97% | Segments: 1362 | Elapsed: 1:27:40 | At: 1:24:07
+Progress: 98% | Segments: 1383 | Elapsed: 1:28:33 | At: 1:25:09
+Progress: 99% | Segments: 1401 | Elapsed: 1:29:24 | At: 1:26:11
+Done. 1408 segments in 1:29:25.
+Saved to: /Users/davepalgi/Documents/dave-workspace/the-system-v8/B-brain/05-transcripts/רפואה תזונתית/שיעור 9 - חלק א.md
+[DONE] שיעור 9 - חלק א — 02:10:47
 
-[START] שיעור 9 - חלק א — 00:41:20</pre>
+[START] שיעור 9 - חלק ב — 02:10:47</pre>
     </details>
   </div>
 </div>
 
 <div class="footer">
-  ABC-TOM System v8 · פרויקט תמלול · 74/64 הושלמו · 28/03/2026 00:41
+  ABC-TOM System v8 · פרויקט תמלול · 75/139 הושלמו · 28/03/2026 02:10
 </div>
 
 </body>
