@@ -42,7 +42,7 @@
   .progress-bar { height:10px; background:#1e2332; border-radius:99px;
                    overflow:hidden; border:1px solid #2d3748; }
   .progress-fill { height:100%; background:linear-gradient(90deg,#3b82f6,#8b5cf6);
-                    border-radius:99px; width:109%; }
+                    border-radius:99px; width:114%; }
   .eta-section { background:#1e2332; border:1px solid #2d3748; border-radius:10px;
                   padding:16px 20px; margin-bottom:28px;
                   display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:16px; text-align:center; }
@@ -92,7 +92,7 @@
 <div class="header">
   <div>
     <div class="title">פרויקט תמלול — מצב כללי</div>
-    <div class="subtitle">עודכן: 27/03/2026 20:51</div>
+    <div class="subtitle">עודכן: 27/03/2026 22:34</div>
   </div>
   <div>
     <div class="status-running">● רץ כרגע</div>
@@ -127,11 +127,11 @@ async function triggerRefresh() {
     <div class="card-label">ממתינים לתמלול</div>
   </div>
   <div class="card green">
-    <div class="card-value">70</div>
+    <div class="card-value">73</div>
     <div class="card-label">הושלמו</div>
   </div>
   <div class="card amber">
-    <div class="card-value">-6</div>
+    <div class="card-value">-9</div>
     <div class="card-label">נותרו</div>
   </div>
   <div class="card red">
@@ -143,7 +143,7 @@ async function triggerRefresh() {
 <div class="progress-section">
   <div class="progress-label">
     <span>התקדמות כוללת</span>
-    <span>70/64 (109%)</span>
+    <span>73/64 (114%)</span>
   </div>
   <div class="progress-bar"><div class="progress-fill"></div></div>
 </div>
@@ -154,7 +154,7 @@ async function triggerRefresh() {
     <div class="eta-label">ממוצע לקובץ</div>
   </div>
   <div>
-    <div class="eta-value">~-15ש' 48דק'</div>
+    <div class="eta-value">~-22ש' 48דק'</div>
     <div class="eta-label">ETA לסיום הכל</div>
   </div>
   <div>
@@ -162,12 +162,12 @@ async function triggerRefresh() {
     <div class="eta-label">רץ כרגע</div>
   </div>
   <div>
-    <div class="eta-value" style="font-size:1rem;color:#94a3b8">27/03 20:51</div>
+    <div class="eta-value" style="font-size:1rem;color:#94a3b8">27/03 22:34</div>
     <div class="eta-label">עדכון אחרון בלוג</div>
   </div>
 </div>
 
-<div class="current-box"><div class="current-label">⚡ עובד עכשיו על:</div><div class="current-name">שיעור 8 - חלק א</div><div style="margin-top:8px;height:6px;background:#1e3a5f;border-radius:99px"><div style="width:100%;height:100%;background:#3b82f6;border-radius:99px"></div></div><div style="font-size:0.72rem;color:#748ffc;margin-top:4px">100% הושלם</div></div>
+<div class="current-box"><div class="current-label">⚡ עובד עכשיו על:</div><div class="current-name">שיעור 8 - חלק ב</div><div style="margin-top:8px;height:6px;background:#1e3a5f;border-radius:99px"><div style="width:99%;height:100%;background:#3b82f6;border-radius:99px"></div></div><div style="font-size:0.72rem;color:#748ffc;margin-top:4px">99% הושלם</div></div>
 
 <div class="two-col">
   <div>
@@ -597,17 +597,17 @@ async function triggerRefresh() {
       <td class="muted">86.7 MB</td>
       <td>רפואה תזונתית</td><td>27/03 20:51</td><td>2:34ש'</td>
     </tr>
+    <tr class="row-done">
+      <td class="icon-cell">✅</td>
+      <td class="name-cell" title="שיעור 8 - חלק א - טיגון שומן טרנס ואומגה 6">שיעור 8 - חלק א</td>
+      <td><span class="badge badge-done">הושלם</span></td>
+      <td class="muted">80.5 MB</td>
+      <td>רפואה תזונתית</td><td>27/03 22:34</td><td>1:43ש'</td>
+    </tr>
     <tr class="row-current">
       <td class="icon-cell">⚡</td>
-      <td class="name-cell" title="שיעור 8 - חלק א - טיגון שומן טרנס ואומגה 6">שיעור 8 - חלק א</td>
-      <td><span class="badge badge-current">עובד עכשיו</span></td>
-      <td class="muted">80.5 MB</td>
-      <td>—</td><td>—</td><td>—</td>
-    </tr>
-    <tr class="row-pending">
-      <td class="icon-cell">⏳</td>
       <td class="name-cell" title="שיעור 8 - חלק ב’ – אומגה 3, מקורות לאומגה 3, שמן כבישה קרה לעומת …">שיעור 8 - חלק ב</td>
-      <td><span class="badge badge-pending">ממתין</span></td>
+      <td><span class="badge badge-current">עובד עכשיו</span></td>
       <td class="muted">93.3 MB</td>
       <td>—</td><td>—</td><td>—</td>
     </tr>
@@ -631,7 +631,7 @@ async function triggerRefresh() {
     <div class="section-title">לפי נושא</div>
     <table class="topic-table">
       <thead><tr><th>נושא</th><th>קבצים</th></tr></thead>
-      <tbody><tr><td>רפואה תזונתית</td><td><strong>60</strong></td></tr><tr><td>Barbara O'Neill</td><td><strong>2</strong></td></tr><tr><td>testimonials</td><td><strong>2</strong></td></tr><tr><td>David Sinclair</td><td><strong>2</strong></td></tr><tr><td>Rhonda Patrick</td><td><strong>2</strong></td></tr><tr><td>ללא נושא</td><td><strong>1</strong></td></tr><tr><td>תכנים לכתבות</td><td><strong>1</strong></td></tr></tbody>
+      <tbody><tr><td>רפואה תזונתית</td><td><strong>61</strong></td></tr><tr><td>Barbara O'Neill</td><td><strong>2</strong></td></tr><tr><td>testimonials</td><td><strong>2</strong></td></tr><tr><td>David Sinclair</td><td><strong>2</strong></td></tr><tr><td>Benjamin Bikman</td><td><strong>2</strong></td></tr><tr><td>Rhonda Patrick</td><td><strong>2</strong></td></tr><tr><td>ללא נושא</td><td><strong>1</strong></td></tr><tr><td>תכנים לכתבות</td><td><strong>1</strong></td></tr></tbody>
     </table>
 
     
@@ -643,32 +643,32 @@ async function triggerRefresh() {
     
     <details>
       <summary class="log-summary">▶ לוג אחרון (20 שורות)</summary>
-      <pre class="log-pre">Progress: 92% | Segments: 1446 | Elapsed: 2:21:33 | At: 1:26:55
-Progress: 92% | Segments: 1452 | Elapsed: 2:22:50 | At: 1:27:24
-Progress: 93% | Segments: 1458 | Elapsed: 2:24:12 | At: 1:27:53
-Progress: 93% | Segments: 1464 | Elapsed: 2:25:32 | At: 1:28:14
-Progress: 94% | Segments: 1483 | Elapsed: 2:26:25 | At: 1:29:05
-Progress: 94% | Segments: 1490 | Elapsed: 2:26:55 | At: 1:29:27
-Progress: 95% | Segments: 1497 | Elapsed: 2:27:29 | At: 1:30:14
-Progress: 96% | Segments: 1503 | Elapsed: 2:28:04 | At: 1:30:40
-Progress: 96% | Segments: 1508 | Elapsed: 2:28:39 | At: 1:31:08
-Progress: 97% | Segments: 1515 | Elapsed: 2:29:15 | At: 1:31:34
-Progress: 97% | Segments: 1523 | Elapsed: 2:30:05 | At: 1:32:01
-Progress: 98% | Segments: 1530 | Elapsed: 2:30:52 | At: 1:32:30
-Progress: 98% | Segments: 1541 | Elapsed: 2:31:23 | At: 1:33:01
-Progress: 99% | Segments: 1549 | Elapsed: 2:33:30 | At: 1:33:36
-Progress: 100% | Segments: 1563 | Elapsed: 2:34:10 | At: 1:34:25
-Done. 1565 segments in 2:34:10.
-Saved to: /Users/davepalgi/Documents/dave-workspace/the-system-v8/B-brain/05-transcripts/רפואה תזונתית/שיעור 7 - חלק ב.md
-[DONE] שיעור 7 - חלק ב — 20:51:05
+      <pre class="log-pre">Progress: 88% | Segments: 1310 | Elapsed: 1:34:04 | At: 1:17:42
+Progress: 89% | Segments: 1319 | Elapsed: 1:35:05 | At: 1:18:16
+Progress: 90% | Segments: 1333 | Elapsed: 1:36:01 | At: 1:19:30
+Progress: 92% | Segments: 1347 | Elapsed: 1:36:55 | At: 1:20:30
+Progress: 92% | Segments: 1357 | Elapsed: 1:37:29 | At: 1:21:12
+Progress: 93% | Segments: 1368 | Elapsed: 1:38:22 | At: 1:21:49
+Progress: 94% | Segments: 1379 | Elapsed: 1:38:54 | At: 1:22:17
+Progress: 94% | Segments: 1389 | Elapsed: 1:39:25 | At: 1:22:50
+Progress: 95% | Segments: 1398 | Elapsed: 1:39:58 | At: 1:23:28
+Progress: 96% | Segments: 1408 | Elapsed: 1:40:31 | At: 1:23:57
+Progress: 96% | Segments: 1420 | Elapsed: 1:41:02 | At: 1:24:27
+Progress: 97% | Segments: 1427 | Elapsed: 1:41:37 | At: 1:25:01
+Progress: 97% | Segments: 1438 | Elapsed: 1:42:08 | At: 1:25:34
+Progress: 98% | Segments: 1449 | Elapsed: 1:42:40 | At: 1:26:09
+Progress: 99% | Segments: 1462 | Elapsed: 1:43:11 | At: 1:26:47
+Done. 1472 segments in 1:43:31.
+Saved to: /Users/davepalgi/Documents/dave-workspace/the-system-v8/B-brain/05-transcripts/רפואה תזונתית/שיעור 8 - חלק א.md
+[DONE] שיעור 8 - חלק א — 22:34:38
 
-[START] שיעור 8 - חלק א — 20:51:05</pre>
+[START] שיעור 8 - חלק ב — 22:34:38</pre>
     </details>
   </div>
 </div>
 
 <div class="footer">
-  ABC-TOM System v8 · פרויקט תמלול · 70/64 הושלמו · 27/03/2026 20:51
+  ABC-TOM System v8 · פרויקט תמלול · 73/64 הושלמו · 27/03/2026 22:34
 </div>
 
 </body>
