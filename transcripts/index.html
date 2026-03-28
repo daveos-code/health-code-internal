@@ -42,7 +42,7 @@
   .progress-bar { height:10px; background:#1e2332; border-radius:99px;
                    overflow:hidden; border:1px solid #2d3748; }
   .progress-fill { height:100%; background:linear-gradient(90deg,#3b82f6,#8b5cf6);
-                    border-radius:99px; width:87%; }
+                    border-radius:99px; width:83%; }
   .eta-section { background:#1e2332; border:1px solid #2d3748; border-radius:10px;
                   padding:16px 20px; margin-bottom:28px;
                   display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:16px; text-align:center; }
@@ -94,10 +94,10 @@
 <div class="header">
   <div>
     <div class="title">פרויקט תמלול — מצב כללי</div>
-    <div class="subtitle">עודכן: 28/03/2026 21:06</div>
+    <div class="subtitle">עודכן: 28/03/2026 21:08</div>
   </div>
   <div>
-    <div class="status-warn">● לא פעיל — 12 קבצים ממתינים</div>
+    <div class="status-warn">● לא פעיל — 16 קבצים ממתינים</div>
     <div class="refresh-note">💳 <span style="color:#4ade80">GitHub Pages ✓</span></div>
     <button class="refresh-btn" id="refresh-btn" onclick="triggerRefresh()">🔄 רענן עכשיו</button>
   </div>
@@ -125,7 +125,7 @@ async function triggerRefresh() {
 
 <div class="cards">
   <div class="card">
-    <div class="card-value">89</div>
+    <div class="card-value">93</div>
     <div class="card-label">ממתינים לתמלול</div>
   </div>
   <div class="card green">
@@ -133,7 +133,7 @@ async function triggerRefresh() {
     <div class="card-label">הושלמו</div>
   </div>
   <div class="card amber">
-    <div class="card-value">12</div>
+    <div class="card-value">16</div>
     <div class="card-label">נותרו</div>
   </div>
   <div class="card ">
@@ -145,7 +145,7 @@ async function triggerRefresh() {
 <div class="progress-section">
   <div class="progress-label">
     <span>התקדמות כוללת</span>
-    <span>77/89 (87%)</span>
+    <span>77/93 (83%)</span>
   </div>
   <div class="progress-bar"><div class="progress-fill"></div></div>
 </div>
@@ -156,7 +156,7 @@ async function triggerRefresh() {
     <div class="eta-label">ממוצע לקובץ</div>
   </div>
   <div>
-    <div class="eta-value">~27ש' 58דק'</div>
+    <div class="eta-value">~37ש' 17דק'</div>
     <div class="eta-label">ETA לסיום הכל</div>
   </div>
   <div>
@@ -164,16 +164,16 @@ async function triggerRefresh() {
     <div class="eta-label">רץ כרגע</div>
   </div>
   <div>
-    <div class="eta-value" style="font-size:1rem;color:#94a3b8">28/03 21:06</div>
+    <div class="eta-value" style="font-size:1rem;color:#94a3b8">28/03 21:08</div>
     <div class="eta-label">עדכון אחרון בלוג</div>
   </div>
 </div>
 
-<div class="current-box warn"><div class="current-label">⚠️ לא פעיל</div><div class="current-name" style="color:#fca5a5">12 קבצים ממתינים לתמלול</div></div>
+<div class="current-box warn"><div class="current-label">⚠️ לא פעיל</div><div class="current-name" style="color:#fca5a5">16 קבצים ממתינים לתמלול</div></div>
 
 <div class="two-col">
   <div>
-    <div class="section-title">כל הקבצים (89)</div>
+    <div class="section-title">כל הקבצים (93)</div>
     <table>
       <thead>
         <tr><th></th><th>שם</th><th>סטטוס</th><th>גודל</th><th>נושא</th><th>תאריך</th><th>זמן</th></tr>
@@ -188,9 +188,37 @@ async function triggerRefresh() {
     </tr>
     <tr class="row-pending">
       <td class="icon-cell">⏳</td>
+      <td class="name-cell" title="3.5 B.I.T.S להיות דובר מרתק ומוכר סודות אינספשן לשינוי אמונות!-00…">3.5 B.I.T.S להיות דובר מרתק ומ</td>
+      <td><span class="badge badge-pending">ממתין</span></td>
+      <td class="muted">2165.6 MB</td>
+      <td>—</td><td>—</td><td>—</td>
+    </tr>
+    <tr class="row-pending">
+      <td class="icon-cell">⏳</td>
+      <td class="name-cell" title="Russel Sell Online - Day 1 - 1.3 Level 10 OFFER">Russel Sell Online - Day 1 - 1</td>
+      <td><span class="badge badge-pending">ממתין</span></td>
+      <td class="muted">180.8 MB</td>
+      <td>—</td><td>—</td><td>—</td>
+    </tr>
+    <tr class="row-pending">
+      <td class="icon-cell">⏳</td>
+      <td class="name-cell" title="Russel Sell Online - Day 1 - 1.4 Subconscious STORY Selling">Russel Sell Online - Day 1 - 1</td>
+      <td><span class="badge badge-pending">ממתין</span></td>
+      <td class="muted">1630.9 MB</td>
+      <td>—</td><td>—</td><td>—</td>
+    </tr>
+    <tr class="row-pending">
+      <td class="icon-cell">⏳</td>
       <td class="name-cell" title="Russel Sell Online - Day 1 - 1.5 The Perfect Webinar Presention">Russel Sell Online - Day 1 - 1</td>
       <td><span class="badge badge-pending">ממתין</span></td>
       <td class="muted">1224.4 MB</td>
+      <td>—</td><td>—</td><td>—</td>
+    </tr>
+    <tr class="row-pending">
+      <td class="icon-cell">⏳</td>
+      <td class="name-cell" title="Russel Sell Online - Show Up Secrets - Russel Webinar 7 show-up-s…">Russel Sell Online - Show Up S</td>
+      <td><span class="badge badge-pending">ממתין</span></td>
+      <td class="muted">240.6 MB</td>
       <td>—</td><td>—</td><td>—</td>
     </tr>
     <tr class="row-pending">
@@ -724,32 +752,32 @@ async function triggerRefresh() {
     
     <details>
       <summary class="log-summary">▶ לוג אחרון (20 שורות)</summary>
-      <pre class="log-pre">==============================
-סיום: Sat Mar 28 21:05:46 IDT 2026
-סה"כ: 1 | תומללו: 0 | דולגו: 0 | נכשלו: 0
+      <pre class="log-pre">סה"כ: 1 | תומללו: 0 | דולגו: 0 | נכשלו: 0
 ==============================
 ==============================
-תחילת ריצה: Sat Mar 28 21:06:09 IDT 2026
+תחילת ריצה: Sat Mar 28 21:07:13 IDT 2026
 ==============================
 
 ==============================
-סיום: Sat Mar 28 21:06:09 IDT 2026
+סיום: Sat Mar 28 21:07:13 IDT 2026
 סה"כ: 1 | תומללו: 0 | דולגו: 0 | נכשלו: 0
 ==============================
 ==============================
-תחילת ריצה: Sat Mar 28 21:06:21 IDT 2026
+תחילת ריצה: Sat Mar 28 21:07:43 IDT 2026
 ==============================
 
-==============================
-סיום: Sat Mar 28 21:06:21 IDT 2026
-סה"כ: 1 | תומללו: 0 | דולגו: 0 | נכשלו: 0
-==============================</pre>
+[START]  שיעור 5  - חלק ב - � — 21:07:43
+Model: ivrit-ai/whisper-large-v3-turbo-ct2
+Input:  שיעור 5  - חלק ב - מע העצבים -  נשימות - ודרכים לאיזון המערכות.mp3
+Output: /Users/davepalgi/Documents/dave-workspace/the-system-v8/B-brain/05-transcripts/רפואה תזונתית/ שיעור 5  - חלק ב - �.md
+Loading model (first run will download ~1.5-3 GB)...
+Model loaded in 0:00:15. Starting transcription...</pre>
     </details>
   </div>
 </div>
 
 <div class="footer">
-  ABC-TOM System v8 · פרויקט תמלול · 77/89 הושלמו · 28/03/2026 21:06
+  ABC-TOM System v8 · פרויקט תמלול · 77/93 הושלמו · 28/03/2026 21:08
 </div>
 
 </body>
