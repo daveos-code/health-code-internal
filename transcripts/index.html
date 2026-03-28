@@ -42,7 +42,7 @@
   .progress-bar { height:10px; background:#1e2332; border-radius:99px;
                    overflow:hidden; border:1px solid #2d3748; }
   .progress-fill { height:100%; background:linear-gradient(90deg,#3b82f6,#8b5cf6);
-                    border-radius:99px; width:96%; }
+                    border-radius:99px; width:100%; }
   .eta-section { background:#1e2332; border:1px solid #2d3748; border-radius:10px;
                   padding:16px 20px; margin-bottom:28px;
                   display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:16px; text-align:center; }
@@ -94,10 +94,10 @@
 <div class="header">
   <div>
     <div class="title">פרויקט תמלול — מצב כללי</div>
-    <div class="subtitle">עודכן: 28/03/2026 19:57</div>
+    <div class="subtitle">עודכן: 28/03/2026 20:00</div>
   </div>
   <div>
-    <div class="status-warn">● לא פעיל — 3 קבצים ממתינים</div>
+    <div class="status-idle">● הכל הושלם</div>
     <div class="refresh-note">💳 <span style="color:#4ade80">GitHub Pages ✓</span></div>
     <button class="refresh-btn" id="refresh-btn" onclick="triggerRefresh()">🔄 רענן עכשיו</button>
   </div>
@@ -125,7 +125,7 @@ async function triggerRefresh() {
 
 <div class="cards">
   <div class="card">
-    <div class="card-value">79</div>
+    <div class="card-value">76</div>
     <div class="card-label">ממתינים לתמלול</div>
   </div>
   <div class="card green">
@@ -133,7 +133,7 @@ async function triggerRefresh() {
     <div class="card-label">הושלמו</div>
   </div>
   <div class="card amber">
-    <div class="card-value">3</div>
+    <div class="card-value">0</div>
     <div class="card-label">נותרו</div>
   </div>
   <div class="card red">
@@ -145,7 +145,7 @@ async function triggerRefresh() {
 <div class="progress-section">
   <div class="progress-label">
     <span>התקדמות כוללת</span>
-    <span>76/79 (96%)</span>
+    <span>76/76 (100%)</span>
   </div>
   <div class="progress-bar"><div class="progress-fill"></div></div>
 </div>
@@ -156,7 +156,7 @@ async function triggerRefresh() {
     <div class="eta-label">ממוצע לקובץ</div>
   </div>
   <div>
-    <div class="eta-value">~6ש' 59דק'</div>
+    <div class="eta-value">~0ש' 0דק'</div>
     <div class="eta-label">ETA לסיום הכל</div>
   </div>
   <div>
@@ -169,22 +169,22 @@ async function triggerRefresh() {
   </div>
 </div>
 
-<div class="current-box warn"><div class="current-label">⚠️ לא פעיל</div><div class="current-name" style="color:#fca5a5">3 קבצים ממתינים לתמלול</div></div>
+<div class="current-box" style="border-color:#14532d;background:#052e16"><div class="current-label">✅ הכל הושלם</div><div class="current-name" style="color:#4ade80">אין קבצים בתור</div></div>
 
 <div class="two-col">
   <div>
-    <div class="section-title">כל הקבצים (79)</div>
+    <div class="section-title">כל הקבצים (76)</div>
     <table>
       <thead>
         <tr><th></th><th>שם</th><th>סטטוס</th><th>גודל</th><th>נושא</th><th>תאריך</th><th>זמן</th></tr>
       </thead>
       <tbody>
-    <tr class="row-pending">
-      <td class="icon-cell">⏳</td>
-      <td class="name-cell" title=" שיעור 5  - חלק ב - מע העצבים -  נשימות - ודרכים לאיזון המערכות"> שיעור 5  - חלק ב - מע העצבים -  נשימות </td>
-      <td><span class="badge badge-pending">ממתין</span></td>
+    <tr class="row-done">
+      <td class="icon-cell">✅</td>
+      <td class="name-cell" title=" שיעור 5  - חלק ב - מע העצבים -  נשימות - ודרכים לאיזון המערכות">שיעור 5  - חלק ב - מע העצבים</td>
+      <td><span class="badge badge-done">הושלם</span></td>
       <td class="muted">95.0 MB</td>
-      <td>—</td><td>—</td><td>—</td>
+      <td>רפואה תזונתית</td><td>22/03 14:15</td><td>3:31ש'</td>
     </tr>
     <tr class="row-done">
       <td class="icon-cell">✅</td>
@@ -200,12 +200,12 @@ async function triggerRefresh() {
       <td class="muted">91.3 MB</td>
       <td>רפואה תזונתית</td><td>22/03 01:26</td><td>1:48ש'</td>
     </tr>
-    <tr class="row-pending">
-      <td class="icon-cell">⏳</td>
-      <td class="name-cell" title="שיעור 11 - צרבת המשך ודרכי טיפול ו כולסטרול">שיעור 11 - צרבת המשך ודרכי טיפול ו כולסטרול</td>
-      <td><span class="badge badge-pending">ממתין</span></td>
+    <tr class="row-done">
+      <td class="icon-cell">✅</td>
+      <td class="name-cell" title="שיעור 11 - צרבת המשך ודרכי טיפול ו כולסטרול">שיעור 11 - צרבת המשך ודרכי טיפ</td>
+      <td><span class="badge badge-done">הושלם</span></td>
       <td class="muted">95.7 MB</td>
-      <td>—</td><td>—</td><td>—</td>
+      <td>רפואה תזונתית</td><td>22/03 19:36</td><td>3:45ש'</td>
     </tr>
     <tr class="row-done">
       <td class="icon-cell">✅</td>
@@ -494,12 +494,12 @@ async function triggerRefresh() {
       <td class="muted">95.2 MB</td>
       <td>רפואה תזונתית</td><td>26/03 07:25</td><td>1:47ש'</td>
     </tr>
-    <tr class="row-pending">
-      <td class="icon-cell">⏳</td>
-      <td class="name-cell" title="שיעור 31 - בדיקות דם - קריאטינין, ברזל נמוך, בילירובין, הורמוני ת…">שיעור 31 - בדיקות דם</td>
-      <td><span class="badge badge-pending">ממתין</span></td>
+    <tr class="row-done">
+      <td class="icon-cell">✅</td>
+      <td class="name-cell" title="שיעור 31 - בדיקות דם - קריאטינין, ברזל נמוך, בילירובין, הורמוני ת…">שיעור 31 - בדיקות דם - קריאטינ</td>
+      <td><span class="badge badge-done">הושלם</span></td>
       <td class="muted">83.8 MB</td>
-      <td>—</td><td>—</td><td>—</td>
+      <td>רפואה תזונתית</td><td>26/03 09:26</td><td>2:00ש'</td>
     </tr>
     <tr class="row-done">
       <td class="icon-cell">✅</td>
@@ -670,7 +670,7 @@ Saved to: /Users/davepalgi/Documents/dave-workspace/the-system-v8/B-brain/05-tra
 </div>
 
 <div class="footer">
-  ABC-TOM System v8 · פרויקט תמלול · 76/79 הושלמו · 28/03/2026 19:57
+  ABC-TOM System v8 · פרויקט תמלול · 76/76 הושלמו · 28/03/2026 20:00
 </div>
 
 </body>
