@@ -94,7 +94,7 @@
 <div class="header">
   <div>
     <div class="title">פרויקט תמלול — מצב כללי</div>
-    <div class="subtitle">עודכן: 30/03/2026 03:16</div>
+    <div class="subtitle">עודכן: 30/03/2026 03:17</div>
   </div>
   <div>
     <div class="status-running">● מתמלל...</div>
@@ -164,12 +164,12 @@ async function triggerRefresh() {
     <div class="eta-label">רץ כרגע</div>
   </div>
   <div>
-    <div class="eta-value" style="font-size:1rem;color:#94a3b8">30/03 03:16</div>
+    <div class="eta-value" style="font-size:1rem;color:#94a3b8">30/03 03:17</div>
     <div class="eta-label">עדכון אחרון בלוג</div>
   </div>
 </div>
 
-<div class="current-box"><div class="current-label">⚡ מתמלל עכשיו:</div><div class="current-name">שיחת הכנה לפני ש�</div><div style="margin-top:8px;height:6px;background:#1e3a5f;border-radius:99px"><div style="width:98%;height:100%;background:#3b82f6;border-radius:99px"></div></div><div style="font-size:0.72rem;color:#748ffc;margin-top:4px">98% הושלם</div></div>
+<div class="current-box"><div class="current-label">⚡ מתמלל עכשיו:</div><div class="current-name">שיחת הכנה לפני ש�</div><div style="margin-top:8px;height:6px;background:#1e3a5f;border-radius:99px"><div style="width:100%;height:100%;background:#3b82f6;border-radius:99px"></div></div><div style="font-size:0.72rem;color:#748ffc;margin-top:4px">100% הושלם</div></div>
 
 <div class="two-col">
   <div>
@@ -323,26 +323,26 @@ async function triggerRefresh() {
     
     <details>
       <summary class="log-summary">▶ לוג אחרון (20 שורות)</summary>
-      <pre class="log-pre">Progress: 63% | Segments: 511 | Elapsed: 0:34:11 | At: 0:34:55
-Progress: 65% | Segments: 527 | Elapsed: 0:35:01 | At: 0:36:08
-Progress: 67% | Segments: 547 | Elapsed: 0:35:46 | At: 0:37:16
-Progress: 69% | Segments: 565 | Elapsed: 0:36:39 | At: 0:38:26
-Progress: 71% | Segments: 586 | Elapsed: 0:37:34 | At: 0:39:24
-Progress: 72% | Segments: 595 | Elapsed: 0:38:48 | At: 0:39:59
-Progress: 74% | Segments: 614 | Elapsed: 0:39:29 | At: 0:41:06
-Progress: 76% | Segments: 631 | Elapsed: 0:40:23 | At: 0:42:12
-Progress: 78% | Segments: 650 | Elapsed: 0:41:14 | At: 0:43:21
-Progress: 80% | Segments: 667 | Elapsed: 0:42:05 | At: 0:44:30
-Progress: 82% | Segments: 684 | Elapsed: 0:42:55 | At: 0:45:35
-Progress: 83% | Segments: 698 | Elapsed: 0:43:47 | At: 0:46:30
-Progress: 85% | Segments: 711 | Elapsed: 0:44:38 | At: 0:47:33
-Progress: 87% | Segments: 723 | Elapsed: 0:45:26 | At: 0:48:30
-Progress: 89% | Segments: 736 | Elapsed: 0:46:17 | At: 0:49:31
-Progress: 91% | Segments: 751 | Elapsed: 0:48:44 | At: 0:50:33
-Progress: 92% | Segments: 763 | Elapsed: 0:51:05 | At: 0:51:25
-Progress: 94% | Segments: 781 | Elapsed: 0:51:51 | At: 0:52:34
+      <pre class="log-pre">Progress: 94% | Segments: 781 | Elapsed: 0:51:51 | At: 0:52:34
 Progress: 96% | Segments: 795 | Elapsed: 0:52:48 | At: 0:53:31
-Progress: 98% | Segments: 813 | Elapsed: 0:53:43 | At: 0:54:44</pre>
+Progress: 98% | Segments: 813 | Elapsed: 0:53:43 | At: 0:54:44
+Progress: 100% | Segments: 834 | Elapsed: 0:54:23 | At: 0:55:49
+Done. 834 segments in 0:54:23.
+Traceback (most recent call last):
+  File "/Users/davepalgi/Documents/dave-workspace/the-system-v8/T-tools/01-skills/hebrew-transcription/transcribe.py", line 137, in &lt;module&gt;
+    main()
+  File "/Users/davepalgi/Documents/dave-workspace/the-system-v8/T-tools/01-skills/hebrew-transcription/transcribe.py", line 133, in main
+    transcribe(args.audio, args.output, args.model, args.accurate)
+  File "/Users/davepalgi/Documents/dave-workspace/the-system-v8/T-tools/01-skills/hebrew-transcription/transcribe.py", line 121, in transcribe
+    output_path.write_text("\n".join(lines), encoding="utf-8")
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py", line 1078, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 92] Illegal byte sequence: '/Users/davepalgi/Documents/dave-workspace/the-system-v8/B-brain/05-transcripts/אתגר קוד הבריאות/שיחות הכנה וסיכום/שיחת הכנה לפני ש\udcd7.md'
+[FAIL] שיחת הכנה לפני ש� (exit code: 1)</pre>
     </details>
   </div>
 </div>
@@ -355,7 +355,7 @@ Progress: 98% | Segments: 813 | Elapsed: 0:53:43 | At: 0:54:44</pre>
 </table>
 
 <div class="footer">
-  ABC-TOM System v8 · פרויקט תמלול · 81/97 הושלמו · 30/03/2026 03:16
+  ABC-TOM System v8 · פרויקט תמלול · 81/97 הושלמו · 30/03/2026 03:17
 </div>
 
 </body>
