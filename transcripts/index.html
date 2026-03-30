@@ -323,26 +323,26 @@ async function triggerRefresh() {
     
     <details>
       <summary class="log-summary">▶ לוג אחרון (20 שורות)</summary>
-      <pre class="log-pre">Progress: 77% | Segments: 790 | Elapsed: 0:58:23 | At: 0:51:48
-Progress: 78% | Segments: 805 | Elapsed: 0:59:13 | At: 0:52:45
-Progress: 80% | Segments: 821 | Elapsed: 1:00:06 | At: 0:53:47
-Progress: 80% | Segments: 828 | Elapsed: 1:01:31 | At: 0:54:17
-Progress: 82% | Segments: 846 | Elapsed: 1:02:19 | At: 0:55:15
-Progress: 83% | Segments: 854 | Elapsed: 1:02:51 | At: 0:55:47
-Progress: 84% | Segments: 865 | Elapsed: 1:04:01 | At: 0:56:43
-Progress: 86% | Segments: 880 | Elapsed: 1:04:58 | At: 0:57:47
-Progress: 86% | Segments: 884 | Elapsed: 1:05:28 | At: 0:58:08
-Progress: 88% | Segments: 902 | Elapsed: 1:06:20 | At: 0:59:07
-Progress: 89% | Segments: 914 | Elapsed: 1:07:15 | At: 1:00:06
-Progress: 91% | Segments: 926 | Elapsed: 1:08:02 | At: 1:01:05
-Progress: 92% | Segments: 941 | Elapsed: 1:10:00 | At: 1:02:01
-Progress: 93% | Segments: 956 | Elapsed: 1:10:47 | At: 1:02:57
-Progress: 95% | Segments: 974 | Elapsed: 1:11:37 | At: 1:03:55
-Progress: 96% | Segments: 981 | Elapsed: 1:12:08 | At: 1:04:28
-Progress: 96% | Segments: 989 | Elapsed: 1:12:38 | At: 1:04:53
+      <pre class="log-pre">Progress: 96% | Segments: 989 | Elapsed: 1:12:38 | At: 1:04:53
 Progress: 97% | Segments: 999 | Elapsed: 1:14:03 | At: 1:05:24
 Progress: 99% | Segments: 1019 | Elapsed: 1:15:02 | At: 1:06:32
-Progress: 99% | Segments: 1029 | Elapsed: 1:15:38 | At: 1:06:58</pre>
+Progress: 99% | Segments: 1029 | Elapsed: 1:15:38 | At: 1:06:58
+Done. 1042 segments in 1:15:52.
+Traceback (most recent call last):
+  File "/Users/davepalgi/Documents/dave-workspace/the-system-v8/T-tools/01-skills/hebrew-transcription/transcribe.py", line 137, in &lt;module&gt;
+    main()
+  File "/Users/davepalgi/Documents/dave-workspace/the-system-v8/T-tools/01-skills/hebrew-transcription/transcribe.py", line 133, in main
+    transcribe(args.audio, args.output, args.model, args.accurate)
+  File "/Users/davepalgi/Documents/dave-workspace/the-system-v8/T-tools/01-skills/hebrew-transcription/transcribe.py", line 121, in transcribe
+    output_path.write_text("\n".join(lines), encoding="utf-8")
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py", line 1078, in write_text
+    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 92] Illegal byte sequence: '/Users/davepalgi/Documents/dave-workspace/the-system-v8/B-brain/05-transcripts/אתגר קוד הבריאות/שיחות הכנה וסיכום/שיחת הכנה לפני ש\udcd7.md'
+[FAIL] שיחת הכנה לפני ש� (exit code: 1)</pre>
     </details>
   </div>
 </div>
