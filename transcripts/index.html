@@ -323,14 +323,7 @@ async function triggerRefresh() {
     
     <details>
       <summary class="log-summary">▶ לוג אחרון (20 שורות)</summary>
-      <pre class="log-pre">Progress: 94% | Segments: 781 | Elapsed: 0:51:51 | At: 0:52:34
-Progress: 96% | Segments: 795 | Elapsed: 0:52:48 | At: 0:53:31
-Progress: 98% | Segments: 813 | Elapsed: 0:53:43 | At: 0:54:44
-Progress: 100% | Segments: 834 | Elapsed: 0:54:23 | At: 0:55:49
-Done. 834 segments in 0:54:23.
-Traceback (most recent call last):
-  File "/Users/davepalgi/Documents/dave-workspace/the-system-v8/T-tools/01-skills/hebrew-transcription/transcribe.py", line 137, in &lt;module&gt;
-    main()
+      <pre class="log-pre">    main()
   File "/Users/davepalgi/Documents/dave-workspace/the-system-v8/T-tools/01-skills/hebrew-transcription/transcribe.py", line 133, in main
     transcribe(args.audio, args.output, args.model, args.accurate)
   File "/Users/davepalgi/Documents/dave-workspace/the-system-v8/T-tools/01-skills/hebrew-transcription/transcribe.py", line 121, in transcribe
@@ -342,7 +335,14 @@ Traceback (most recent call last):
     return io.open(self, mode, buffering, encoding, errors, newline)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 OSError: [Errno 92] Illegal byte sequence: '/Users/davepalgi/Documents/dave-workspace/the-system-v8/B-brain/05-transcripts/אתגר קוד הבריאות/שיחות הכנה וסיכום/שיחת הכנה לפני ש\udcd7.md'
-[FAIL] שיחת הכנה לפני ש� (exit code: 1)</pre>
+[FAIL] שיחת הכנה לפני ש� (exit code: 1)
+
+[START] שיחת הכנה לפני ש� — 03:17:20
+Model: ivrit-ai/whisper-large-v3-turbo-ct2
+Input: שיחת הכנה לפני שלב 3 - אתגר מרץ.m4a
+Output: /Users/davepalgi/Documents/dave-workspace/the-system-v8/B-brain/05-transcripts/אתגר קוד הבריאות/שיחות הכנה וסיכום/שיחת הכנה לפני ש�.md
+Loading model (first run will download ~1.5-3 GB)...
+Model loaded in 0:00:08. Starting transcription...</pre>
     </details>
   </div>
 </div>
