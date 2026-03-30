@@ -137,7 +137,7 @@ async function triggerRefresh() {
     <div class="card-label">נותרו</div>
   </div>
   <div class="card red">
-    <div class="card-value">5</div>
+    <div class="card-value">9</div>
     <div class="card-label">שגיאות</div>
   </div>
 </div>
@@ -315,34 +315,34 @@ async function triggerRefresh() {
     </table>
 
     
-    <div class="section-title error-title">שגיאות (5)</div>
+    <div class="section-title error-title">שגיאות (9)</div>
     <table>
       <thead><tr><th></th><th>שם קובץ</th><th>קוד שגיאה</th><th>הודעת שגיאה</th></tr></thead>
-      <tbody><tr><td>❌</td><td>שיחת הכנה לפני ש�</td><td>exit 1</td><td class="err-msg">—</td></tr><tr><td>❌</td><td>Russel Sell Online - Day 2 - 2 (exit code: ffmpeg)</td><td>exit ?</td><td class="err-msg">המרת MP4 נכשלה</td></tr><tr><td>❌</td><td>Russel Sell Online - Day 3 - 3 (exit code: ffmpeg)</td><td>exit ?</td><td class="err-msg">המרת MP4 נכשלה</td></tr><tr><td>❌</td><td>Russel Sell Online - Show Up S (exit code: ffmpeg)</td><td>exit ?</td><td class="err-msg">המרת MP4 נכשלה</td></tr><tr><td>❌</td><td>וובינר 23.07.24 40% המ (exit code: ffmpeg)</td><td>exit ?</td><td class="err-msg">המרת MP4 נכשלה</td></tr></tbody>
+      <tbody><tr><td>❌</td><td>שיחת הכנה לפני ש�</td><td>exit 1</td><td class="err-msg">—</td></tr><tr><td>❌</td><td>Russel Sell Online - Day 2 - 2 (exit code: ffmpeg)</td><td>exit ?</td><td class="err-msg">המרת MP4 נכשלה</td></tr><tr><td>❌</td><td>Russel Sell Online - Day 3 - 3 (exit code: ffmpeg)</td><td>exit ?</td><td class="err-msg">המרת MP4 נכשלה</td></tr><tr><td>❌</td><td>Russel Sell Online - Show Up S (exit code: ffmpeg)</td><td>exit ?</td><td class="err-msg">המרת MP4 נכשלה</td></tr><tr><td>❌</td><td>וובינר 23.07.24 40% המ (exit code: ffmpeg)</td><td>exit ?</td><td class="err-msg">המרת MP4 נכשלה</td></tr><tr><td>❌</td><td>Russel Sell Online - Day 2 - 2 (exit code: ?)</td><td>exit ?</td><td class="err-msg">קובץ אודיו לא נמצא לניסיון חוזר</td></tr><tr><td>❌</td><td>Russel Sell Online - Day 3 - 3 (exit code: ?)</td><td>exit ?</td><td class="err-msg">קובץ אודיו לא נמצא לניסיון חוזר</td></tr><tr><td>❌</td><td>Russel Sell Online - Show Up S (exit code: ?)</td><td>exit ?</td><td class="err-msg">קובץ אודיו לא נמצא לניסיון חוזר</td></tr><tr><td>❌</td><td>וובינר 23.07.24 40% המ (exit code: ?)</td><td>exit ?</td><td class="err-msg">קובץ אודיו לא נמצא לניסיון חוזר</td></tr></tbody>
     </table>
     
     <details>
       <summary class="log-summary">▶ לוג אחרון (20 שורות)</summary>
-      <pre class="log-pre">Progress: 92% | Segments: 677 | Elapsed: 0:38:11 | At: 0:41:24
-Progress: 95% | Segments: 689 | Elapsed: 0:39:06 | At: 0:42:22
-Progress: 97% | Segments: 712 | Elapsed: 0:39:57 | At: 0:43:26
-Progress: 99% | Segments: 728 | Elapsed: 0:40:50 | At: 0:44:21
-Done. 738 segments in 0:40:50.
-Traceback (most recent call last):
-  File "/Users/davepalgi/Documents/dave-workspace/the-system-v8/T-tools/01-skills/hebrew-transcription/transcribe.py", line 137, in &lt;module&gt;
-    main()
-  File "/Users/davepalgi/Documents/dave-workspace/the-system-v8/T-tools/01-skills/hebrew-transcription/transcribe.py", line 133, in main
-    transcribe(args.audio, args.output, args.model, args.accurate)
-  File "/Users/davepalgi/Documents/dave-workspace/the-system-v8/T-tools/01-skills/hebrew-transcription/transcribe.py", line 121, in transcribe
-    output_path.write_text("\n".join(lines), encoding="utf-8")
-  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py", line 1078, in write_text
-    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+      <pre class="log-pre">         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py", line 1044, in open
     return io.open(self, mode, buffering, encoding, errors, newline)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 OSError: [Errno 92] Illegal byte sequence: '/Users/davepalgi/Documents/dave-workspace/the-system-v8/B-brain/05-transcripts/אתגר קוד הבריאות/שיחות הכנה וסיכום/שיחת הכנה לפני ש\udcd7.md'
-[FAIL] שיחת הכנה לפני ש� (exit code: 1)</pre>
+[FAIL] שיחת הכנה לפני ש� (exit code: 1)
+[SKIP] שיחת סיכום - אתגר
+[SKIP] שיחת סיכום - אתגר
+[SKIP] מועדון המטפלים - 
+
+==============================
+מנסה מחדש 11 קבצים שנכשלו...
+==============================
+[FAIL] Russel Sell Online - Day 2 - 2 (exit code: ?) — קובץ אודיו לא נמצא לניסיון חוזר
+[FAIL] Russel Sell Online - Day 3 - 3 (exit code: ?) — קובץ אודיו לא נמצא לניסיון חוזר
+[FAIL] Russel Sell Online - Day 3 - 3 (exit code: ?) — קובץ אודיו לא נמצא לניסיון חוזר
+[FAIL] Russel Sell Online - Show Up S (exit code: ?) — קובץ אודיו לא נמצא לניסיון חוזר
+[FAIL] וובינר 23.07.24 40% המ (exit code: ?) — קובץ אודיו לא נמצא לניסיון חוזר
+
+[RETRY] שיחת הכנה לפני ש� — 05:14:10</pre>
     </details>
   </div>
 </div>
