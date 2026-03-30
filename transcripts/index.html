@@ -94,7 +94,7 @@
 <div class="header">
   <div>
     <div class="title">פרויקט תמלול — מצב כללי</div>
-    <div class="subtitle">עודכן: 30/03/2026 04:33</div>
+    <div class="subtitle">עודכן: 30/03/2026 04:34</div>
   </div>
   <div>
     <div class="status-running">● מתמלל...</div>
@@ -164,7 +164,7 @@ async function triggerRefresh() {
     <div class="eta-label">רץ כרגע</div>
   </div>
   <div>
-    <div class="eta-value" style="font-size:1rem;color:#94a3b8">30/03 04:33</div>
+    <div class="eta-value" style="font-size:1rem;color:#94a3b8">30/03 04:34</div>
     <div class="eta-label">עדכון אחרון בלוג</div>
   </div>
 </div>
@@ -323,16 +323,7 @@ async function triggerRefresh() {
     
     <details>
       <summary class="log-summary">▶ לוג אחרון (20 שורות)</summary>
-      <pre class="log-pre">Progress: 96% | Segments: 989 | Elapsed: 1:12:38 | At: 1:04:53
-Progress: 97% | Segments: 999 | Elapsed: 1:14:03 | At: 1:05:24
-Progress: 99% | Segments: 1019 | Elapsed: 1:15:02 | At: 1:06:32
-Progress: 99% | Segments: 1029 | Elapsed: 1:15:38 | At: 1:06:58
-Done. 1042 segments in 1:15:52.
-Traceback (most recent call last):
-  File "/Users/davepalgi/Documents/dave-workspace/the-system-v8/T-tools/01-skills/hebrew-transcription/transcribe.py", line 137, in &lt;module&gt;
-    main()
-  File "/Users/davepalgi/Documents/dave-workspace/the-system-v8/T-tools/01-skills/hebrew-transcription/transcribe.py", line 133, in main
-    transcribe(args.audio, args.output, args.model, args.accurate)
+      <pre class="log-pre">    transcribe(args.audio, args.output, args.model, args.accurate)
   File "/Users/davepalgi/Documents/dave-workspace/the-system-v8/T-tools/01-skills/hebrew-transcription/transcribe.py", line 121, in transcribe
     output_path.write_text("\n".join(lines), encoding="utf-8")
   File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py", line 1078, in write_text
@@ -342,7 +333,16 @@ Traceback (most recent call last):
     return io.open(self, mode, buffering, encoding, errors, newline)
            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 OSError: [Errno 92] Illegal byte sequence: '/Users/davepalgi/Documents/dave-workspace/the-system-v8/B-brain/05-transcripts/אתגר קוד הבריאות/שיחות הכנה וסיכום/שיחת הכנה לפני ש\udcd7.md'
-[FAIL] שיחת הכנה לפני ש� (exit code: 1)</pre>
+[FAIL] שיחת הכנה לפני ש� (exit code: 1)
+
+[START] שיחת הכנה לפני ש� — 04:33:15
+Model: ivrit-ai/whisper-large-v3-turbo-ct2
+Input: שיחת הכנה לפני שלב 3 - אתגר פברואר.m4a
+Output: /Users/davepalgi/Documents/dave-workspace/the-system-v8/B-brain/05-transcripts/אתגר קוד הבריאות/שיחות הכנה וסיכום/שיחת הכנה לפני ש�.md
+Loading model (first run will download ~1.5-3 GB)...
+Model loaded in 0:00:07. Starting transcription...
+Duration: 0:44:49 | Language confidence: 100%
+Transcribing...</pre>
     </details>
   </div>
 </div>
@@ -355,7 +355,7 @@ OSError: [Errno 92] Illegal byte sequence: '/Users/davepalgi/Documents/dave-work
 </table>
 
 <div class="footer">
-  ABC-TOM System v8 · פרויקט תמלול · 81/97 הושלמו · 30/03/2026 04:33
+  ABC-TOM System v8 · פרויקט תמלול · 81/97 הושלמו · 30/03/2026 04:34
 </div>
 
 </body>
