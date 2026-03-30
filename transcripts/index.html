@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="refresh" content="120">
+<meta http-equiv="refresh" content="30">
 <title>פרויקט תמלול — מצב כללי</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -94,10 +94,10 @@
 <div class="header">
   <div>
     <div class="title">פרויקט תמלול — מצב כללי</div>
-    <div class="subtitle">עודכן: 30/03/2026 08:54</div>
+    <div class="subtitle">עודכן: 30/03/2026 09:48</div>
   </div>
   <div>
-    <div class="status-warn">● לא פעיל — 16 קבצים ממתינים</div>
+    <div class="status-running">● מתמלל...</div>
     <div class="refresh-note">💳 <span style="color:#4ade80">GitHub Pages ✓</span></div>
     <button class="refresh-btn" id="refresh-btn" onclick="triggerRefresh()">🔄 רענן עכשיו</button>
   </div>
@@ -137,7 +137,7 @@ async function triggerRefresh() {
     <div class="card-label">נותרו</div>
   </div>
   <div class="card red">
-    <div class="card-value">9</div>
+    <div class="card-value">10</div>
     <div class="card-label">שגיאות</div>
   </div>
 </div>
@@ -160,16 +160,16 @@ async function triggerRefresh() {
     <div class="eta-label">ETA לסיום הכל</div>
   </div>
   <div>
-    <div class="eta-value" style="color:#f87171">עצור</div>
+    <div class="eta-value" style="color:#4ade80">פעיל</div>
     <div class="eta-label">רץ כרגע</div>
   </div>
   <div>
-    <div class="eta-value" style="font-size:1rem;color:#94a3b8">30/03 08:54</div>
+    <div class="eta-value" style="font-size:1rem;color:#94a3b8">30/03 09:47</div>
     <div class="eta-label">עדכון אחרון בלוג</div>
   </div>
 </div>
 
-<div class="current-box warn"><div class="current-label">⚠️ לא פעיל</div><div class="current-name" style="color:#fca5a5">16 קבצים ממתינים לתמלול</div></div>
+<div class="current-box"><div class="current-label">⚡ מתמלל עכשיו:</div><div class="current-name">וובינר קוד הבריאות - 16.02 - א</div><div style="margin-top:8px;height:6px;background:#1e3a5f;border-radius:99px"><div style="width:99%;height:100%;background:#3b82f6;border-radius:99px"></div></div><div style="font-size:0.72rem;color:#748ffc;margin-top:4px">99% הושלם</div></div>
 
 <div class="two-col">
   <div>
@@ -228,17 +228,17 @@ async function triggerRefresh() {
       <td class="muted">277.5 MB</td>
       <td>—</td><td>—</td><td>—</td>
     </tr>
-    <tr class="row-pending">
-      <td class="icon-cell">⏳</td>
+    <tr class="row-current">
+      <td class="icon-cell">⚡</td>
       <td class="name-cell" title="וובינר קוד הבריאות - 16.02 - אודיו">וובינר קוד הבריאות - 16.02 - א</td>
-      <td><span class="badge badge-pending">ממתין</span></td>
+      <td><span class="badge badge-current">עובד עכשיו</span></td>
       <td class="muted">91.9 MB</td>
       <td>—</td><td>—</td><td>—</td>
     </tr>
-    <tr class="row-pending">
-      <td class="icon-cell">⏳</td>
+    <tr class="row-current">
+      <td class="icon-cell">⚡</td>
       <td class="name-cell" title="וובינר קוד הבריאות - 16.03 - אודיו">וובינר קוד הבריאות - 16.03 - א</td>
-      <td><span class="badge badge-pending">ממתין</span></td>
+      <td><span class="badge badge-current">עובד עכשיו</span></td>
       <td class="muted">79.5 MB</td>
       <td>—</td><td>—</td><td>—</td>
     </tr>
@@ -315,34 +315,34 @@ async function triggerRefresh() {
     </table>
 
     
-    <div class="section-title error-title">שגיאות (9)</div>
+    <div class="section-title error-title">שגיאות (10)</div>
     <table>
       <thead><tr><th></th><th>שם קובץ</th><th>קוד שגיאה</th><th>הודעת שגיאה</th></tr></thead>
-      <tbody><tr><td>❌</td><td>שיחת הכנה לפני ש�</td><td>exit 1</td><td class="err-msg">OSError: [Errno 92] Illegal byte sequence: '/Users/davepalgi/Documents/dave-workspace/the-system-v8/B-brain/05-transcrip</td></tr><tr><td>❌</td><td>Russel Sell Online - Day 2 - 2 (exit code: ffmpeg)</td><td>exit ?</td><td class="err-msg">המרת MP4 נכשלה</td></tr><tr><td>❌</td><td>Russel Sell Online - Day 3 - 3 (exit code: ffmpeg)</td><td>exit ?</td><td class="err-msg">המרת MP4 נכשלה</td></tr><tr><td>❌</td><td>Russel Sell Online - Show Up S (exit code: ffmpeg)</td><td>exit ?</td><td class="err-msg">המרת MP4 נכשלה</td></tr><tr><td>❌</td><td>וובינר 23.07.24 40% המ (exit code: ffmpeg)</td><td>exit ?</td><td class="err-msg">המרת MP4 נכשלה</td></tr><tr><td>❌</td><td>Russel Sell Online - Day 2 - 2 (exit code: ?)</td><td>exit ?</td><td class="err-msg">קובץ אודיו לא נמצא לניסיון חוזר</td></tr><tr><td>❌</td><td>Russel Sell Online - Day 3 - 3 (exit code: ?)</td><td>exit ?</td><td class="err-msg">קובץ אודיו לא נמצא לניסיון חוזר</td></tr><tr><td>❌</td><td>Russel Sell Online - Show Up S (exit code: ?)</td><td>exit ?</td><td class="err-msg">קובץ אודיו לא נמצא לניסיון חוזר</td></tr><tr><td>❌</td><td>וובינר 23.07.24 40% המ (exit code: ?)</td><td>exit ?</td><td class="err-msg">קובץ אודיו לא נמצא לניסיון חוזר</td></tr></tbody>
+      <tbody><tr><td>❌</td><td>שיחת הכנה לפני ש�</td><td>exit 1</td><td class="err-msg">OSError: [Errno 92] Illegal byte sequence: '/Users/davepalgi/Documents/dave-workspace/the-system-v8/B-brain/05-transcrip</td></tr><tr><td>❌</td><td>Russel Sell Online - Day 2 - 2 (exit code: ffmpeg)</td><td>exit ?</td><td class="err-msg">המרה ברקע נכשלה</td></tr><tr><td>❌</td><td>Russel Sell Online - Day 3 - 3 (exit code: ffmpeg)</td><td>exit ?</td><td class="err-msg">המרת MP4 נכשלה</td></tr><tr><td>❌</td><td>Russel Sell Online - Show Up S (exit code: ffmpeg)</td><td>exit ?</td><td class="err-msg">המרת MP4 נכשלה</td></tr><tr><td>❌</td><td>וובינר 23.07.24 40% המ (exit code: ffmpeg)</td><td>exit ?</td><td class="err-msg">המרת MP4 נכשלה</td></tr><tr><td>❌</td><td>Russel Sell Online - Day 2 - 2 (exit code: ?)</td><td>exit ?</td><td class="err-msg">קובץ אודיו לא נמצא לניסיון חוזר</td></tr><tr><td>❌</td><td>Russel Sell Online - Day 3 - 3 (exit code: ?)</td><td>exit ?</td><td class="err-msg">קובץ אודיו לא נמצא לניסיון חוזר</td></tr><tr><td>❌</td><td>Russel Sell Online - Show Up S (exit code: ?)</td><td>exit ?</td><td class="err-msg">קובץ אודיו לא נמצא לניסיון חוזר</td></tr><tr><td>❌</td><td>וובינר 23.07.24 40% המ (exit code: ?)</td><td>exit ?</td><td class="err-msg">קובץ אודיו לא נמצא לניסיון חוזר</td></tr><tr><td>❌</td><td>וובינר 23.07.24 40% המרה (exit code: ffmpeg)</td><td>exit ?</td><td class="err-msg">המרת MP4 נכשלה</td></tr></tbody>
     </table>
     
     <details>
       <summary class="log-summary">▶ לוג אחרון (20 שורות)</summary>
-      <pre class="log-pre">    main()
-  File "/Users/davepalgi/Documents/dave-workspace/the-system-v8/T-tools/01-skills/hebrew-transcription/transcribe.py", line 133, in main
-    transcribe(args.audio, args.output, args.model, args.accurate)
-  File "/Users/davepalgi/Documents/dave-workspace/the-system-v8/T-tools/01-skills/hebrew-transcription/transcribe.py", line 121, in transcribe
-    output_path.write_text("\n".join(lines), encoding="utf-8")
-  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py", line 1078, in write_text
-    with self.open(mode='w', encoding=encoding, errors=errors, newline=newline) as f:
-         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/pathlib.py", line 1044, in open
-    return io.open(self, mode, buffering, encoding, errors, newline)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-OSError: [Errno 92] Illegal byte sequence: '/Users/davepalgi/Documents/dave-workspace/the-system-v8/B-brain/05-transcripts/אתגר קוד הבריאות/שיחות הכנה וסיכום/שיחת הכנה לפני ש\udcd7.md'
-[FAIL] שיחת הכנה לפני ש� (exit code: 1) — OSError: [Errno 92] Illegal byte sequence: '/Users/davepalgi/Documents/dave-workspace/the-system-v8/B-brain/05-transcrip
+      <pre class="log-pre">[FAIL] Russel Sell Online - Day 3 - 3 (exit code: ffmpeg) — המרת MP4 נכשלה
 
-סיום ניסיון חוזר: 0 הצליחו, 11 נכשלו שוב
+[CONVERT] Russel Sell Online - Day 3 - 3 — 09:47:13
+run-overnight.sh: line 195: ffmpeg: command not found
+[FAIL] Russel Sell Online - Day 3 - 3 (exit code: ffmpeg) — המרת MP4 נכשלה
 
-==============================
-סיום: Mon Mar 30 08:54:06 IDT 2026
-סה"כ: 19 | תומללו: 1 | דולגו: 7 | נכשלו: 11
-==============================</pre>
+[CONVERT] Russel Sell Online - Show Up S — 09:47:13
+run-overnight.sh: line 195: ffmpeg: command not found
+[FAIL] Russel Sell Online - Show Up S (exit code: ffmpeg) — המרת MP4 נכשלה
+
+[CONVERT] וובינר 23.07.24 40% המרה — 09:47:13
+run-overnight.sh: line 195: ffmpeg: command not found
+[FAIL] וובינר 23.07.24 40% המרה (exit code: ffmpeg) — המרת MP4 נכשלה
+
+[START] וובינר קוד הבריאות - 16.02 - א — 09:47:14
+Model: ivrit-ai/whisper-large-v3-turbo-ct2
+Input: וובינר קוד הבריאות - 16.02 - אודיו.m4a
+Output: /Users/davepalgi/Documents/dave-workspace/the-system-v8/B-brain/05-transcripts/וובינר קוד הבריאות/וובינר קוד הבריאות - 16.02 - א.md
+Loading model (first run will download ~1.5-3 GB)...
+Model loaded in 0:00:11. Starting transcription...</pre>
     </details>
   </div>
 </div>
@@ -355,7 +355,7 @@ OSError: [Errno 92] Illegal byte sequence: '/Users/davepalgi/Documents/dave-work
 </table>
 
 <div class="footer">
-  ABC-TOM System v8 · פרויקט תמלול · 81/97 הושלמו · 30/03/2026 08:54
+  ABC-TOM System v8 · פרויקט תמלול · 81/97 הושלמו · 30/03/2026 09:48
 </div>
 
 </body>
