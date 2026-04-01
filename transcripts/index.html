@@ -42,7 +42,7 @@
   .progress-bar { height:10px; background:#1e2332; border-radius:99px;
                    overflow:hidden; border:1px solid #2d3748; }
   .progress-fill { height:100%; background:linear-gradient(90deg,#3b82f6,#8b5cf6);
-                    border-radius:99px; width:100%; }
+                    border-radius:99px; width:96%; }
   .eta-section { background:#1e2332; border:1px solid #2d3748; border-radius:10px;
                   padding:16px 20px; margin-bottom:28px;
                   display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:16px; text-align:center; }
@@ -94,7 +94,7 @@
 <div class="header">
   <div>
     <div class="title">פרויקט תמלול — מצב כללי</div>
-    <div class="subtitle">עודכן: 01/04/2026 23:43</div>
+    <div class="subtitle">עודכן: 01/04/2026 23:44</div>
   </div>
   <div>
     <div class="status-running">● מתמלל...</div>
@@ -125,7 +125,7 @@ async function triggerRefresh() {
 
 <div class="cards">
   <div class="card">
-    <div class="card-value">95</div>
+    <div class="card-value">99</div>
     <div class="card-label">סה"כ קבצים</div>
   </div>
   <div class="card green">
@@ -133,11 +133,11 @@ async function triggerRefresh() {
     <div class="card-label">הושלמו</div>
   </div>
   <div class="card amber">
-    <div class="card-value">0</div>
+    <div class="card-value">4</div>
     <div class="card-label">נותרו</div>
   </div>
-  <div class="card ">
-    <div class="card-value">0</div>
+  <div class="card red">
+    <div class="card-value">2</div>
     <div class="card-label">שגיאות</div>
   </div>
 </div>
@@ -145,7 +145,7 @@ async function triggerRefresh() {
 <div class="progress-section">
   <div class="progress-label">
     <span>התקדמות כוללת</span>
-    <span>95/95 (100%)</span>
+    <span>95/99 (96%)</span>
   </div>
   <div class="progress-bar"><div class="progress-fill"></div></div>
 </div>
@@ -156,7 +156,7 @@ async function triggerRefresh() {
     <div class="eta-label">ממוצע לקובץ</div>
   </div>
   <div>
-    <div class="eta-value">~0ש' 0דק'</div>
+    <div class="eta-value">~8ש' 49דק'</div>
     <div class="eta-label">ETA לסיום הכל</div>
   </div>
   <div>
@@ -173,39 +173,39 @@ async function triggerRefresh() {
 
 <div class="two-col">
   <div>
-    <div class="section-title">כל הקבצים (95)</div>
+    <div class="section-title">כל הקבצים (99)</div>
     <table>
       <thead>
         <tr><th></th><th>שם</th><th>סטטוס</th><th>גודל</th><th>נושא</th><th>תאריך</th><th>זמן</th></tr>
       </thead>
       <tbody>
-    <tr class="row-done">
-      <td class="icon-cell">✅</td>
-      <td class="name-cell" title="Russel Sell Online - Day 1 - 1.4 Subconscious STORY Selling">Russel Sell Online - Day 1 - 1</td>
-      <td><span class="badge badge-done">הושלם</span></td>
+    <tr class="row-current">
+      <td class="icon-cell">⚡</td>
+      <td class="name-cell" title="Russel Sell Online - Day 1 - 1.4 Subconscious STORY Selling">Russel Sell Online - Day 1 - 1.4 Subconscious STORY Selling</td>
+      <td><span class="badge badge-current">עובד עכשיו</span></td>
       <td class="muted">1630.9 MB</td>
-      <td>ראסל ברנסון</td><td>29/03 03:52</td><td>2:56ש'</td>
+      <td>—</td><td>—</td><td>—</td>
     </tr>
-    <tr class="row-done">
-      <td class="icon-cell">✅</td>
-      <td class="name-cell" title="Russel Sell Online - Day 1 - 1.5 The Perfect Webinar Presention">Russel Sell Online - Day 1 - 1</td>
-      <td><span class="badge badge-done">הושלם</span></td>
+    <tr class="row-current">
+      <td class="icon-cell">⚡</td>
+      <td class="name-cell" title="Russel Sell Online - Day 1 - 1.5 The Perfect Webinar Presention">Russel Sell Online - Day 1 - 1.5 The Perfect Webinar Presention</td>
+      <td><span class="badge badge-current">עובד עכשיו</span></td>
       <td class="muted">1224.4 MB</td>
-      <td>ראסל ברנסון</td><td>29/03 03:52</td><td>2:56ש'</td>
+      <td>—</td><td>—</td><td>—</td>
     </tr>
-    <tr class="row-done">
-      <td class="icon-cell">✅</td>
-      <td class="name-cell" title="Russel Sell Online - Day 3 - 3.5 B.I.T.S להיות דובר מרתק ומוכר סו…">Russel Sell Online - Day 3 - 3</td>
-      <td><span class="badge badge-done">הושלם</span></td>
+    <tr class="row-current">
+      <td class="icon-cell">⚡</td>
+      <td class="name-cell" title="Russel Sell Online - Day 3 - 3.5 B.I.T.S להיות דובר מרתק ומוכר סו…">Russel Sell Online - Day 3 - 3.5 B.I.T.S להיות דובר מרתק ומוכר סודות אינספשן לשינוי אמונות!-004</td>
+      <td><span class="badge badge-current">עובד עכשיו</span></td>
       <td class="muted">2165.6 MB</td>
-      <td>ראסל ברנסון</td><td>31/03 23:38</td><td>1:52ש'</td>
+      <td>—</td><td>—</td><td>—</td>
     </tr>
-    <tr class="row-done">
-      <td class="icon-cell">✅</td>
-      <td class="name-cell" title="וובינר קוד הבריאות - 16.02 - אודיו">וובינר קוד הבריאות - 16.02 - א</td>
-      <td><span class="badge badge-done">הושלם</span></td>
+    <tr class="row-pending">
+      <td class="icon-cell">⏳</td>
+      <td class="name-cell" title="וובינר קוד הבריאות - 16.02 - אודיו">וובינר קוד הבריאות - 16.02 - אודיו</td>
+      <td><span class="badge badge-pending">ממתין</span></td>
       <td class="muted">91.9 MB</td>
-      <td>וובינר קוד הבריאות</td><td>29/03 06:47</td><td></td>
+      <td>—</td><td>—</td><td>—</td>
     </tr></tbody>
     </table>
   </div>
@@ -217,6 +217,11 @@ async function triggerRefresh() {
     </table>
 
     
+    <div class="section-title error-title">שגיאות (2)</div>
+    <table>
+      <thead><tr><th></th><th>שם קובץ</th><th>קוד שגיאה</th><th>הודעת שגיאה</th></tr></thead>
+      <tbody><tr><td>❌</td><td>Russel Sell Online - Show Up S (exit code: ffmpeg)</td><td>exit ?</td><td class="err-msg">המרת MP4 נכשלה</td></tr><tr><td>❌</td><td>Russel Sell Online - Show Up S (exit code: ?)</td><td>exit ?</td><td class="err-msg">קובץ אודיו לא נמצא לניסיון חוזר</td></tr></tbody>
+    </table>
     
     <details>
       <summary class="log-summary">▶ לוג אחרון (20 שורות)</summary>
@@ -252,7 +257,7 @@ Progress: 2% | Segments: 36 | Elapsed: 0:06:15 | At: 0:01:47</pre>
 </table>
 
 <div class="footer">
-  ABC-TOM System v8 · פרויקט תמלול · 95/95 הושלמו · 01/04/2026 23:43
+  ABC-TOM System v8 · פרויקט תמלול · 95/99 הושלמו · 01/04/2026 23:44
 </div>
 
 </body>
