@@ -248,11 +248,6 @@
       color: #475569;
     }
 
-    .badge-generated {
-      background: #fef3c7;
-      color: #92400e;
-    }
-
     /* Copy button */
     .copy-btn {
       background: #1a1a2e;
@@ -271,24 +266,29 @@
     /* Sent toggle button */
     .sent-btn {
       border: none;
-      padding: 5px 10px;
-      border-radius: 6px;
-      font-size: 0.78rem;
+      padding: 4px 10px;
+      border-radius: 100px;
+      font-size: 0.75rem;
+      font-weight: 500;
       cursor: pointer;
-      white-space: nowrap;
       font-family: inherit;
-      transition: background 0.15s;
+      white-space: nowrap;
+      transition: all 0.15s;
     }
     .sent-btn.is-sent {
       background: #d1fae5;
       color: #065f46;
     }
+    .sent-btn.is-sent:hover {
+      background: #a7f3d0;
+    }
     .sent-btn.not-sent {
       background: #f1f5f9;
-      color: #94a3b8;
+      color: #64748b;
     }
-    .sent-btn.is-sent:hover { background: #a7f3d0; }
-    .sent-btn.not-sent:hover { background: #e2e8f0; color: #475569; }
+    .sent-btn.not-sent:hover {
+      background: #e2e8f0;
+    }
 
     /* Notes */
     .notes {
@@ -361,7 +361,7 @@
 
   <header>
     <h1>אתגר קוד הבריאות — דשבורד משתתפים</h1>
-    <p class="subtitle">עדכון אחרון: 1 באפריל 2026</p>
+    <p class="subtitle">עדכון אחרון: 01 באפריל 2026</p>
   </header>
 
   <!-- Summary Bar -->
@@ -372,13 +372,13 @@
     </div>
     <div class="divider"></div>
     <div class="summary-stat">
-      <span class="value">21</span>
-      <span class="label">נשלחו ללקוח</span>
+      <span class="value">32</span>
+      <span class="label">משתתפים פעילים</span>
     </div>
     <div class="divider"></div>
     <div class="summary-stat">
-      <span class="value">32</span>
-      <span class="label">סה"כ משתתפים</span>
+      <span class="value">21</span>
+      <span class="label">נשלחו ללקוח</span>
     </div>
     <div class="divider"></div>
     <div class="progress-wrap">
@@ -407,6 +407,10 @@
       <div class="legend-dot" style="background:#f8f9fa; border:1px solid #e2e8f0;"></div>
       <span>דוגמא בלבד</span>
     </div>
+    <div class="legend-item">
+      <div style="background:#d1fae5; color:#065f46; font-size:0.72rem; padding:2px 8px; border-radius:100px; font-weight:500;">✅ נשלח</div>
+      <span>נשלח ללקוח — לחץ לשינוי</span>
+    </div>
   </div>
 
   <!-- Table -->
@@ -420,9 +424,9 @@
           <th>מסמך הוכן</th>
           <th>HTML מוכן</th>
           <th>אושר ע"י דייב</th>
+          <th>נשלח ללקוח</th>
           <th>לינק</th>
           <th>שלח</th>
-          <th>נשלח ללקוח</th>
           <th>הערות</th>
         </tr>
       </thead>
@@ -433,10 +437,9 @@
           <td>32</td>
           <td><div class="participant-name">תמר גולדהורן</div></td>
           <td><span class="icon-yes">✅</span></td><td><span class="icon-yes">✅</span></td><td><span class="icon-yes">✅</span></td>
-          <td><span class="badge badge-generated">📄 ממתין לאישור</span></td>
-          <td><a href="https://health-code-april.netlify.app/tamar/" target="_blank" class="doc-link">פתח מסמך</a></td>
-          <td>—</td>
+          <td><span class="badge badge-pending">📄 ממתין לאישור</span></td>
           <td><button class="sent-btn not-sent" data-id="32" onclick="toggleSent(32)">— לא נשלח</button></td>
+          <td><a href="https://health-code-april.netlify.app/tamar/" target="_blank" class="doc-link">פתח מסמך</a></td><td>—</td>
           <td class="notes">73, פנסיונרית. צרבות, אלכוהול 3-4x, קמחים, כאבי מפרקים, חיפה.</td>
         </tr>
 
@@ -445,10 +448,9 @@
           <td>31</td>
           <td><div class="participant-name">שגית</div></td>
           <td><span class="icon-yes">✅</span></td><td><span class="icon-yes">✅</span></td><td><span class="icon-yes">✅</span></td>
-          <td><span class="badge badge-generated">📄 ממתין לאישור</span></td>
-          <td><a href="https://health-code-april.netlify.app/sagit/" target="_blank" class="doc-link">פתח מסמך</a></td>
-          <td>—</td>
+          <td><span class="badge badge-pending">📄 ממתין לאישור</span></td>
           <td><button class="sent-btn not-sent" data-id="31" onclick="toggleSent(31)">— לא נשלח</button></td>
+          <td><a href="https://health-code-april.netlify.app/sagit/" target="_blank" class="doc-link">פתח מסמך</a></td><td>—</td>
           <td class="notes">50, מורה. 4+ קפה, ארוחה ראשונה ב-13:00, עייפות כרונית.</td>
         </tr>
 
@@ -457,10 +459,9 @@
           <td>30</td>
           <td><div class="participant-name">רוני</div></td>
           <td><span class="icon-yes">✅</span></td><td><span class="icon-yes">✅</span></td><td>⏳</td>
-          <td><span class="badge badge-generated">📄 ממתין לאישור</span></td>
-          <td><a href="https://health-code-april.netlify.app/roni/" target="_blank" class="doc-link">פתח מסמך</a></td>
-          <td>—</td>
+          <td><span class="badge badge-pending">📄 ממתין לאישור</span></td>
           <td><button class="sent-btn not-sent" data-id="30" onclick="toggleSent(30)">— לא נשלח</button></td>
+          <td><a href="https://health-code-april.netlify.app/roni/" target="_blank" class="doc-link">פתח מסמך</a></td><td>—</td>
           <td class="notes">50, חולון. לטרוזול (סרטן שד). נפיחות+צרבות קשות, כבד שומני.</td>
         </tr>
 
@@ -469,10 +470,9 @@
           <td>29</td>
           <td><div class="participant-name">ציפורה זולטק</div></td>
           <td><span class="icon-yes">✅</span></td><td><span class="icon-yes">✅</span></td><td>⏳</td>
-          <td><span class="badge badge-generated">📄 ממתין לאישור</span></td>
-          <td><a href="https://health-code-april.netlify.app/tzipora/" target="_blank" class="doc-link">פתח מסמך</a></td>
-          <td>—</td>
+          <td><span class="badge badge-pending">📄 ממתין לאישור</span></td>
           <td><button class="sent-btn not-sent" data-id="29" onclick="toggleSent(29)">— לא נשלח</button></td>
+          <td><a href="https://health-code-april.netlify.app/tzipora/" target="_blank" class="doc-link">פתח מסמך</a></td><td>—</td>
           <td class="notes">79, גבעתיים. ציפרלקס. עצירות כרונית, בדידות. אלכוהול 3-4x.</td>
         </tr>
 
@@ -481,10 +481,9 @@
           <td>28</td>
           <td><div class="participant-name">סגליס בנימין</div></td>
           <td><span class="icon-yes">✅</span></td><td><span class="icon-yes">✅</span></td><td>⏳</td>
-          <td><span class="badge badge-generated">📄 ממתין לאישור</span></td>
-          <td><a href="https://health-code-april.netlify.app/saglis/" target="_blank" class="doc-link">פתח מסמך</a></td>
-          <td>—</td>
+          <td><span class="badge badge-pending">📄 ממתין לאישור</span></td>
           <td><button class="sent-btn not-sent" data-id="28" onclick="toggleSent(28)">— לא נשלח</button></td>
+          <td><a href="https://health-code-april.netlify.app/saglis/" target="_blank" class="doc-link">פתח מסמך</a></td><td>—</td>
           <td class="notes">91, מהנדס, ת"א. נורווקס. נפיחות, גזים, חוסר ברזל.</td>
         </tr>
 
@@ -493,10 +492,9 @@
           <td>27</td>
           <td><div class="participant-name">מיכל שהרבני</div></td>
           <td><span class="icon-yes">✅</span></td><td><span class="icon-yes">✅</span></td><td>⏳</td>
-          <td><span class="badge badge-generated">📄 ממתין לאישור</span></td>
-          <td><a href="https://health-code-april.netlify.app/michal-sh/" target="_blank" class="doc-link">פתח מסמך</a></td>
-          <td>—</td>
+          <td><span class="badge badge-pending">📄 ממתין לאישור</span></td>
           <td><button class="sent-btn not-sent" data-id="27" onclick="toggleSent(27)">— לא נשלח</button></td>
+          <td><a href="https://health-code-april.netlify.app/michal-sh/" target="_blank" class="doc-link">פתח מסמך</a></td><td>—</td>
           <td class="notes">60, מעלה אדומים. הישימוטו + Euthyrox + גלוקומין. מעשנת. סחרחורות בצום.</td>
         </tr>
 
@@ -505,10 +503,9 @@
           <td>26</td>
           <td><div class="participant-name">יורם פריינטה</div></td>
           <td><span class="icon-yes">✅</span></td><td><span class="icon-yes">✅</span></td><td>⏳</td>
-          <td><span class="badge badge-generated">📄 ממתין לאישור</span></td>
-          <td><a href="https://health-code-april.netlify.app/yoram/" target="_blank" class="doc-link">🔗 פתח</a></td>
-          <td>—</td>
+          <td><span class="badge badge-pending">📄 ממתין לאישור</span></td>
           <td><button class="sent-btn not-sent" data-id="26" onclick="toggleSent(26)">— לא נשלח</button></td>
+          <td><a href="https://health-code-april.netlify.app/yoram/" target="_blank" class="doc-link">🔗 פתח</a></td><td>—</td>
           <td class="notes">74, קרית מוצקין. טרום-סכרת, קרדילוק, כריתת כיס מרה. אכילה מאוחרת, קפה 4+.</td>
         </tr>
 
@@ -517,10 +514,9 @@
           <td>25</td>
           <td><div class="participant-name">חיים כהן</div></td>
           <td><span class="icon-yes">✅</span></td><td><span class="icon-yes">✅</span></td><td>⏳</td>
-          <td><span class="badge badge-generated">📄 ממתין לאישור</span></td>
-          <td><a href="https://health-code-april.netlify.app/haim-cohen/" target="_blank" class="doc-link">🔗 פתח</a></td>
-          <td>—</td>
+          <td><span class="badge badge-pending">📄 ממתין לאישור</span></td>
           <td><button class="sent-btn not-sent" data-id="25" onclick="toggleSent(25)">— לא נשלח</button></td>
+          <td><a href="https://health-code-april.netlify.app/haim-cohen/" target="_blank" class="doc-link">🔗 פתח</a></td><td>—</td>
           <td class="notes">77, כפר יונה. פנסיונר. רגישות גלוטן, ל"ד, בלוטת תריס. אין ארוחת בוקר, 3+ פירות.</td>
         </tr>
 
@@ -528,15 +524,14 @@
         <tr class="row-generated">
           <td>24</td>
           <td><div class="participant-name">ארתור חלפין</div></td>
-          <td><span class="icon-yes">✅</span></td><td><span class="icon-yes">✅</span></td><td>⏳</td>
-          <td><span class="badge badge-generated">📄 ממתין לאישור</span></td>
-          <td><a href="https://health-code-april.netlify.app/artur/" target="_blank" class="doc-link">🔗 פתח</a></td>
-          <td>—</td>
+          <td><span class="icon-yes">✅</span></td><td><span class="icon-yes">✅</span></td><td><span class="icon-yes">✅</span></td>
+          <td><span class="badge badge-pending">📄 ממתין לאישור</span></td>
           <td><button class="sent-btn not-sent" data-id="24" onclick="toggleSent(24)">— לא נשלח</button></td>
+          <td><a href="https://health-code-april.netlify.app/artur/" target="_blank" class="doc-link">🔗 פתח</a></td><td>—</td>
           <td class="notes">44, קרית ביאליק. מחשוב. אכילה רגשית, גלוטן יומי, שמן קנולה, מים מועטים.</td>
         </tr>
 
-        <!-- 23. נטלי — Approved -->
+        <!-- 23. נטלי — אושר -->
         <tr class="row-approved">
           <td>23</td>
           <td>
@@ -546,13 +541,13 @@
           <td><span class="icon-yes">✅</span></td>
           <td><span class="icon-yes">✅</span></td>
           <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><button class="sent-btn not-sent" data-id="23" onclick="toggleSent(23)">— לא נשלח</button></td>
           <td><a class="doc-link" href="https://health-code-april.netlify.app/natali" target="_blank">🔗 פתח</a></td>
           <td><button class="copy-btn" data-name="נטלי" onclick="copyMsg('נטלי', 'https://health-code-april.netlify.app/natali/?v=2')">📋 העתק</button></td>
-          <td><button class="sent-btn not-sent" data-id="23" onclick="toggleSent(23)">— לא נשלח</button></td>
           <td class="notes">50, רואת חשבון. גלי חום, כאבי מפרקים, גזים, עייפות בוקר.</td>
         </tr>
 
-        <!-- 22. אדי אליאסף — Pending Approval -->
+        <!-- 22. אדי אליאסף — ממתין לאישור -->
         <tr class="row-generated">
           <td>22</td>
           <td>
@@ -561,14 +556,14 @@
           <td><span class="icon-yes">✅</span></td>
           <td><span class="icon-yes">✅</span></td>
           <td><span class="icon-yes">✅</span></td>
-          <td><span class="badge badge-generated">📄 ממתין לאישור</span></td>
+          <td><span class="badge badge-pending">📄 ממתין לאישור</span></td>
+          <td><button class="sent-btn not-sent" data-id="22" onclick="toggleSent(22)">— לא נשלח</button></td>
           <td><a class="doc-link" href="https://health-code-april.netlify.app/adi" target="_blank">🔗 פתח</a></td>
           <td><button class="copy-btn" data-name="אדי" onclick="copyMsg('אדי', 'https://health-code-april.netlify.app/adi/?v=2')">📋 העתק</button></td>
-          <td><button class="sent-btn not-sent" data-id="22" onclick="toggleSent(22)">— לא נשלח</button></td>
           <td class="notes">51, עורך דין. נפיחות + נפילות אנרגיה. ללא תרופות.</td>
         </tr>
 
-        <!-- 21. דור ציון ברוך — Approved -->
+        <!-- 21. דור ציון ברוך — Approved + נשלח -->
         <tr class="row-approved">
           <td>21</td>
           <td>
@@ -579,13 +574,13 @@
           <td><span class="icon-yes">✅</span></td>
           <td><span class="icon-yes">✅</span></td>
           <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><button class="sent-btn is-sent" data-id="21" onclick="toggleSent(21)">✅ נשלח</button></td>
           <td><a class="doc-link" href="https://health-code-april.netlify.app/dor" target="_blank">🔗 פתח</a></td>
           <td><button class="copy-btn" data-name="דור" onclick="copyMsg('דור', 'https://health-code-april.netlify.app/dor/?v=2')">📋 העתק</button></td>
-          <td><button class="sent-btn is-sent" data-id="21" onclick="toggleSent(21)">✅ נשלח</button></td>
           <td class="notes">⚠️ Singulair — שלב 2 מחייב אישור רופא. אבא חדש. חוסרי D+B12.</td>
         </tr>
 
-        <!-- 20. מיכל מאור — Approved -->
+        <!-- 20. מיכל מאור — Approved + נשלח -->
         <tr class="row-approved">
           <td>20</td>
           <td>
@@ -596,13 +591,13 @@
           <td><span class="icon-yes">✅</span></td>
           <td><span class="icon-yes">✅</span></td>
           <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><button class="sent-btn is-sent" data-id="20" onclick="toggleSent(20)">✅ נשלח</button></td>
           <td><a class="doc-link" href="https://health-code-april.netlify.app/michal" target="_blank">🔗 פתח</a></td>
           <td><button class="copy-btn" data-name="מיכל" onclick="copyMsg('מיכל', 'https://health-code-april.netlify.app/michal/?v=2')">📋 העתק</button></td>
-          <td><button class="sent-btn is-sent" data-id="20" onclick="toggleSent(20)">✅ נשלח</button></td>
           <td class="notes">⚠️ האשימוטו + יוטירוקס — שלב 2 תלוי איזון הבלוטה. גיל המעבר.</td>
         </tr>
 
-        <!-- 19. חגית בן אברהם — Approved -->
+        <!-- 19. חגית בן אברהם — Approved + נשלח -->
         <tr class="row-approved">
           <td>19</td>
           <td>
@@ -613,13 +608,13 @@
           <td><span class="icon-yes">✅</span></td>
           <td><span class="icon-yes">✅</span></td>
           <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><button class="sent-btn is-sent" data-id="19" onclick="toggleSent(19)">✅ נשלח</button></td>
           <td><a class="doc-link" href="https://health-code-april.netlify.app/hagit" target="_blank">🔗 פתח</a></td>
           <td><button class="copy-btn" data-name="חגית" onclick="copyMsg('חגית', 'https://health-code-april.netlify.app/hagit/?v=2')">📋 העתק</button></td>
-          <td><button class="sent-btn is-sent" data-id="19" onclick="toggleSent(19)">✅ נשלח</button></td>
           <td class="notes">⚠️ דופלקס (אמלודיפין+ולסרטן) — שלב 2 מחייב אישור רופא. ל"ד עלול לרדת.</td>
         </tr>
 
-        <!-- 18. מעין דגן — Approved -->
+        <!-- 18. מעין דגן — Approved + נשלח -->
         <tr class="row-approved">
           <td>18</td>
           <td>
@@ -630,13 +625,13 @@
           <td><span class="icon-yes">✅</span></td>
           <td><span class="icon-yes">✅</span></td>
           <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><button class="sent-btn is-sent" data-id="18" onclick="toggleSent(18)">✅ נשלח</button></td>
           <td><a class="doc-link" href="https://health-code-april.netlify.app/maayan" target="_blank">🔗 פתח</a></td>
           <td><button class="copy-btn" data-name="מעין" onclick="copyMsg('מעין', 'https://health-code-april.netlify.app/maayan/?v=2')">📋 העתק</button></td>
-          <td><button class="sent-btn is-sent" data-id="18" onclick="toggleSent(18)">✅ נשלח</button></td>
           <td class="notes">⚠️ חוסר ברזל כרוני מילדות — ברזל ביסגליצינאט חובה. שלב 2 מותר בזהירות.</td>
         </tr>
 
-        <!-- 17. דפנה שחר — Approved -->
+        <!-- 17. דפנה שחר — Approved + נשלח -->
         <tr class="row-approved">
           <td>17</td>
           <td>
@@ -646,13 +641,13 @@
           <td><span class="icon-yes">✅</span></td>
           <td><span class="icon-yes">✅</span></td>
           <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><button class="sent-btn is-sent" data-id="17" onclick="toggleSent(17)">✅ נשלח</button></td>
           <td><a class="doc-link" href="https://health-code-april.netlify.app/dafna" target="_blank">🔗 פתח</a></td>
           <td><button class="copy-btn" data-name="דפנה" onclick="copyMsg('דפנה', 'https://health-code-april.netlify.app/dafna/?v=2')">📋 העתק</button></td>
-          <td><button class="sent-btn is-sent" data-id="17" onclick="toggleSent(17)">✅ נשלח</button></td>
           <td class="notes">✅ נקי — שלב 2 מותר. גיל 48 / טרום גיל מעבר.</td>
         </tr>
 
-        <!-- 16. מלכה פורמן — Approved -->
+        <!-- 16. מלכה פורמן — Approved + נשלח -->
         <tr class="row-approved">
           <td>16</td>
           <td>
@@ -663,13 +658,13 @@
           <td><span class="icon-yes">✅</span></td>
           <td><span class="icon-yes">✅</span></td>
           <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><button class="sent-btn is-sent" data-id="16" onclick="toggleSent(16)">✅ נשלח</button></td>
           <td><a class="doc-link" href="https://health-code-april.netlify.app/malka" target="_blank">🔗 פתח</a></td>
           <td><button class="copy-btn" data-name="מלכה" onclick="copyMsg('מלכה', 'https://health-code-april.netlify.app/malka/?v=2')">📋 העתק</button></td>
-          <td><button class="sent-btn is-sent" data-id="16" onclick="toggleSent(16)">✅ נשלח</button></td>
           <td class="notes">⚠️ MS + ZEPOSIA + CLONEX + SERENADA — שלב 2 אסור</td>
         </tr>
 
-        <!-- 15. נויה — Approved -->
+        <!-- 15. נויה — Approved + נשלח -->
         <tr class="row-approved">
           <td>15</td>
           <td>
@@ -679,13 +674,13 @@
           <td><span class="icon-yes">✅</span></td>
           <td><span class="icon-yes">✅</span></td>
           <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><button class="sent-btn is-sent" data-id="15" onclick="toggleSent(15)">✅ נשלח</button></td>
           <td><a class="doc-link" href="https://health-code-april.netlify.app/noya" target="_blank">🔗 פתח</a></td>
           <td><button class="copy-btn" data-name="נויה" onclick="copyMsg('נויה', 'https://health-code-april.netlify.app/noya/?v=2')">📋 העתק</button></td>
-          <td><button class="sent-btn is-sent" data-id="15" onclick="toggleSent(15)">✅ נשלח</button></td>
           <td class="notes">ל"ד נמוך — שלב 2 מותנה ברופא. עישון.</td>
         </tr>
 
-        <!-- 14. טלי כהן פיאמנטה — Approved -->
+        <!-- 14. טלי כהן פיאמנטה — Approved + נשלח -->
         <tr class="row-approved">
           <td>14</td>
           <td>
@@ -696,13 +691,13 @@
           <td><span class="icon-yes">✅</span></td>
           <td><span class="icon-yes">✅</span></td>
           <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><button class="sent-btn is-sent" data-id="14" onclick="toggleSent(14)">✅ נשלח</button></td>
           <td><a class="doc-link" href="https://health-code-april.netlify.app/tali" target="_blank">🔗 פתח</a></td>
           <td><button class="copy-btn" data-name="טלי" onclick="copyMsg('טלי', 'https://health-code-april.netlify.app/tali/?v=2')">📋 העתק</button></td>
-          <td><button class="sent-btn is-sent" data-id="14" onclick="toggleSent(14)">✅ נשלח</button></td>
           <td class="notes">כבד שומני קל + גיל מעבר</td>
         </tr>
 
-        <!-- 13. הדר כץ — Approved -->
+        <!-- 13. הדר כץ — Approved + נשלח -->
         <tr class="row-approved">
           <td>13</td>
           <td>
@@ -712,13 +707,13 @@
           <td><span class="icon-yes">✅</span></td>
           <td><span class="icon-yes">✅</span></td>
           <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><button class="sent-btn is-sent" data-id="13" onclick="toggleSent(13)">✅ נשלח</button></td>
           <td><a class="doc-link" href="https://health-code-april.netlify.app/hadar" target="_blank">🔗 פתח</a></td>
           <td><button class="copy-btn" data-name="הדר" onclick="copyMsg('הדר', 'https://health-code-april.netlify.app/hadar/?v=2')">📋 העתק</button></td>
-          <td><button class="sent-btn is-sent" data-id="13" onclick="toggleSent(13)">✅ נשלח</button></td>
           <td class="notes">⚠️ הליקובקטר פעיל + ל"ד נמוך — שלב 2 אסור, אפס קפה</td>
         </tr>
 
-        <!-- 12. מייסי בקרמן — Approved -->
+        <!-- 12. מייסי בקרמן — Approved + נשלח -->
         <tr class="row-approved">
           <td>12</td>
           <td>
@@ -728,13 +723,13 @@
           <td><span class="icon-yes">✅</span></td>
           <td><span class="icon-yes">✅</span></td>
           <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><button class="sent-btn is-sent" data-id="12" onclick="toggleSent(12)">✅ נשלח</button></td>
           <td><a class="doc-link" href="https://health-code-april.netlify.app/maisy" target="_blank">🔗 פתח</a></td>
           <td><button class="copy-btn" data-name="מייסי" onclick="copyMsg('מייסי', 'https://health-code-april.netlify.app/maisy/?v=2')">📋 העתק</button></td>
-          <td><button class="sent-btn is-sent" data-id="12" onclick="toggleSent(12)">✅ נשלח</button></td>
           <td class="notes">⚠️ תרופות ל"ד + ניתוח בלוטת תריס — שלב 2 חסום</td>
         </tr>
 
-        <!-- 11. אילה נחום — אושר -->
+        <!-- 11. אילה נחום — Approved + נשלח -->
         <tr class="row-approved">
           <td>11</td>
           <td>
@@ -744,13 +739,13 @@
           <td><span class="icon-yes">✅</span></td>
           <td><span class="icon-yes">✅</span></td>
           <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><button class="sent-btn is-sent" data-id="11" onclick="toggleSent(11)">✅ נשלח</button></td>
           <td><a class="doc-link" href="https://health-code-april.netlify.app/ila" target="_blank">🔗 פתח</a></td>
           <td><button class="copy-btn" data-name="אילה" onclick="copyMsg('אילה', 'https://health-code-april.netlify.app/ila/?v=2')">📋 העתק</button></td>
-          <td><button class="sent-btn is-sent" data-id="11" onclick="toggleSent(11)">✅ נשלח</button></td>
           <td class="notes">אושר על ידי דייב</td>
         </tr>
 
-        <!-- 10. רביבו חיים — Approved -->
+        <!-- 10. רביבו חיים — Approved + נשלח -->
         <tr class="row-approved">
           <td>10</td>
           <td>
@@ -760,13 +755,13 @@
           <td><span class="icon-yes">✅</span></td>
           <td><span class="icon-yes">✅</span></td>
           <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><button class="sent-btn is-sent" data-id="10" onclick="toggleSent(10)">✅ נשלח</button></td>
           <td><a class="doc-link" href="https://health-code-april.netlify.app/haim" target="_blank">🔗 פתח</a></td>
           <td><button class="copy-btn" data-name="חיים" onclick="copyMsg('חיים', 'https://health-code-april.netlify.app/haim/?v=2')">📋 העתק</button></td>
-          <td><button class="sent-btn is-sent" data-id="10" onclick="toggleSent(10)">✅ נשלח</button></td>
           <td class="notes">גזים, לחץ דם, כולסטרול, אבנים בכליות.</td>
         </tr>
 
-        <!-- 9. סבטלנה אוסטרובסקי — Approved -->
+        <!-- 9. סבטלנה אוסטרובסקי — Approved + נשלח -->
         <tr class="row-approved">
           <td>9</td>
           <td>
@@ -776,13 +771,13 @@
           <td><span class="icon-yes">✅</span></td>
           <td><span class="icon-yes">✅</span></td>
           <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><button class="sent-btn is-sent" data-id="9" onclick="toggleSent(9)">✅ נשלח</button></td>
           <td><a class="doc-link" href="https://health-code-april.netlify.app/svetlana" target="_blank">🔗 פתח</a></td>
           <td><button class="copy-btn" data-name="סבטלנה" onclick="copyMsg('סבטלנה', 'https://health-code-april.netlify.app/svetlana/?v=2')">📋 העתק</button></td>
-          <td><button class="sent-btn is-sent" data-id="9" onclick="toggleSent(9)">✅ נשלח</button></td>
           <td class="notes">שמן אורגנו, ברזל, תרופות.</td>
         </tr>
 
-        <!-- 8. אורטל שמעוני ארד — Approved -->
+        <!-- 8. אורטל שמעוני ארד — Approved + נשלח -->
         <tr class="row-approved">
           <td>8</td>
           <td>
@@ -792,13 +787,13 @@
           <td><span class="icon-yes">✅</span></td>
           <td><span class="icon-yes">✅</span></td>
           <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><button class="sent-btn is-sent" data-id="8" onclick="toggleSent(8)">✅ נשלח</button></td>
           <td><a class="doc-link" href="https://health-code-april.netlify.app/ortal" target="_blank">🔗 פתח</a></td>
           <td><button class="copy-btn" data-name="אורטל" onclick="copyMsg('אורטל', 'https://health-code-april.netlify.app/ortal/?v=2')">📋 העתק</button></td>
-          <td><button class="sent-btn is-sent" data-id="8" onclick="toggleSent(8)">✅ נשלח</button></td>
           <td class="notes">צמחונית, סויה, גלולות פמינט, מחסור ברזל.</td>
         </tr>
 
-        <!-- 7. אביבה בן ברון — Approved -->
+        <!-- 7. אביבה בן ברון — Approved + נשלח -->
         <tr class="row-approved">
           <td>7</td>
           <td>
@@ -808,13 +803,13 @@
           <td><span class="icon-yes">✅</span></td>
           <td><span class="icon-yes">✅</span></td>
           <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><button class="sent-btn is-sent" data-id="7" onclick="toggleSent(7)">✅ נשלח</button></td>
           <td><a class="doc-link" href="https://health-code-april.netlify.app/aviva" target="_blank">🔗 פתח</a></td>
           <td><button class="copy-btn" data-name="אביבה" onclick="copyMsg('אביבה', 'https://health-code-april.netlify.app/aviva/?v=2')">📋 העתק</button></td>
-          <td><button class="sent-btn is-sent" data-id="7" onclick="toggleSent(7)">✅ נשלח</button></td>
           <td class="notes">הישימוטו, קימה בלילה, אכילה מחוץ לבית.</td>
         </tr>
 
-        <!-- 6. יובל קידר — Approved -->
+        <!-- 6. יובל קידר — Approved + נשלח -->
         <tr class="row-approved">
           <td>6</td>
           <td>
@@ -824,13 +819,13 @@
           <td><span class="icon-yes">✅</span></td>
           <td><span class="icon-yes">✅</span></td>
           <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><button class="sent-btn is-sent" data-id="6" onclick="toggleSent(6)">✅ נשלח</button></td>
           <td><a class="doc-link" href="https://health-code-april.netlify.app/yuval" target="_blank">🔗 פתח</a></td>
           <td><button class="copy-btn" data-name="יובל" onclick="copyMsg('יובל', 'https://health-code-april.netlify.app/yuval/?v=2')">📋 העתק</button></td>
-          <td><button class="sent-btn is-sent" data-id="6" onclick="toggleSent(6)">✅ נשלח</button></td>
           <td class="notes">בלוטת תריס, נשירת שיער, כולסטרול. וגובי.</td>
         </tr>
 
-        <!-- 5. קרן — Approved -->
+        <!-- 5. קרן — Approved + נשלח -->
         <tr class="row-approved">
           <td>5</td>
           <td>
@@ -840,13 +835,13 @@
           <td><span class="icon-yes">✅</span></td>
           <td><span class="icon-yes">✅</span></td>
           <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><button class="sent-btn is-sent" data-id="5" onclick="toggleSent(5)">✅ נשלח</button></td>
           <td><a class="doc-link" href="https://health-code-april.netlify.app/keren" target="_blank">🔗 פתח</a></td>
           <td><button class="copy-btn" data-name="קרן" onclick="copyMsg('קרן', 'https://health-code-april.netlify.app/keren/?v=2')">📋 העתק</button></td>
-          <td><button class="sent-btn is-sent" data-id="5" onclick="toggleSent(5)">✅ נשלח</button></td>
           <td class="notes">✅ נקי — חוסרים: ברזל, D, B12. אבנים בכיס מרה. צמחונית.</td>
         </tr>
 
-        <!-- 4. מיכלי אור בן שטרית — אושר -->
+        <!-- 4. מיכלי אור בן שטרית — Approved + נשלח -->
         <tr class="row-approved">
           <td>4</td>
           <td>
@@ -856,13 +851,13 @@
           <td><span class="icon-yes">✅</span></td>
           <td><span class="icon-yes">✅</span></td>
           <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><button class="sent-btn is-sent" data-id="4" onclick="toggleSent(4)">✅ נשלח</button></td>
           <td><a class="doc-link" href="https://health-code-april.netlify.app/michali" target="_blank">🔗 פתח</a></td>
           <td><button class="copy-btn" data-name="מיכלי" onclick="copyMsg('מיכלי', 'https://health-code-april.netlify.app/michali/?v=2')">📋 העתק</button></td>
-          <td><button class="sent-btn is-sent" data-id="4" onclick="toggleSent(4)">✅ נשלח</button></td>
           <td class="notes">אושר על ידי דייב</td>
         </tr>
 
-        <!-- 3. משה מלחי — Approved -->
+        <!-- 3. משה מלחי — Approved + נשלח -->
         <tr class="row-approved">
           <td>3</td>
           <td>
@@ -872,13 +867,13 @@
           <td><span class="icon-yes">✅</span></td>
           <td><span class="icon-yes">✅</span></td>
           <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><button class="sent-btn is-sent" data-id="3" onclick="toggleSent(3)">✅ נשלח</button></td>
           <td><a class="doc-link" href="https://health-code-april.netlify.app/moshe" target="_blank">🔗 פתח</a></td>
           <td><button class="copy-btn" data-name="משה" onclick="copyMsg('משה', 'https://health-code-april.netlify.app/moshe/?v=2')">📋 העתק</button></td>
-          <td><button class="sent-btn is-sent" data-id="3" onclick="toggleSent(3)">✅ נשלח</button></td>
           <td class="notes">אושר היום</td>
         </tr>
 
-        <!-- 2. עמיצור מנחם — Approved -->
+        <!-- 2. עמיצור מנחם — Approved + נשלח -->
         <tr class="row-approved">
           <td>2</td>
           <td>
@@ -889,13 +884,13 @@
           <td><span class="icon-yes">✅</span></td>
           <td><span class="icon-yes">✅</span></td>
           <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><button class="sent-btn is-sent" data-id="2" onclick="toggleSent(2)">✅ נשלח</button></td>
           <td><a class="doc-link" href="https://health-code-april.netlify.app/amitzur" target="_blank">🔗 פתח</a></td>
           <td><button class="copy-btn" data-name="עמי" onclick="copyMsg('עמי', 'https://health-code-april.netlify.app/amitzur/?v=2')">📋 העתק</button></td>
-          <td><button class="sent-btn is-sent" data-id="2" onclick="toggleSent(2)">✅ נשלח</button></td>
           <td class="notes">פידבק ניתן ויושם</td>
         </tr>
 
-        <!-- 1. אתי לגני — Approved -->
+        <!-- 1. אתי לגני — Approved + נשלח -->
         <tr class="row-approved">
           <td>1</td>
           <td>
@@ -905,9 +900,9 @@
           <td><span class="icon-yes">✅</span></td>
           <td><span class="icon-yes">✅</span></td>
           <td><span class="badge badge-approved">✅ אושר</span></td>
+          <td><button class="sent-btn is-sent" data-id="1" onclick="toggleSent(1)">✅ נשלח</button></td>
           <td><a class="doc-link" href="https://health-code-april.netlify.app/eti" target="_blank">🔗 פתח</a></td>
           <td><button class="copy-btn" data-name="אתי" onclick="copyMsg('אתי', 'https://health-code-april.netlify.app/eti/?v=2')">📋 העתק</button></td>
-          <td><button class="sent-btn is-sent" data-id="1" onclick="toggleSent(1)">✅ נשלח</button></td>
           <td class="notes">פידבק ניתן ויושם</td>
         </tr>
 
@@ -917,7 +912,7 @@
 
   <!-- Footer Note -->
   <div class="footer-note">
-    <strong>עדכון אוטומטי:</strong> הדשבורד מתעדכן ב-GitHub Pages אוטומטית בכל שלב — תחילת עיבוד, יצירת מסמך, ואישור. עמודת "נשלח ללקוח" נשמרת מקומית בדפדפן.
+    <strong>עדכון אוטומטי:</strong> הדשבורד מתעדכן ב-GitHub Pages אוטומטית בכל שלב — תחילת עיבוד, יצירת מסמך, ואישור. עמודת "נשלח ללקוח" נשמרת במכשיר זה — לחץ על הכפתור כדי לעדכן.
   </div>
 
   <div class="updated-at">עודכן לאחרונה: 01.04.2026 · אתגר קוד הבריאות v1</div>
@@ -937,38 +932,34 @@ function copyMsg(name, link) {
 }
 
 function toggleSent(id) {
-  const key = 'sent-' + id;
-  const btn = document.querySelector('.sent-btn[data-id="' + id + '"]');
-  if (!btn) return;
+  const btn = document.querySelector(`.sent-btn[data-id="${id}"]`);
   const isSent = btn.classList.contains('is-sent');
+  const newState = !isSent;
+  localStorage.setItem(`sent_${id}`, newState ? 'true' : 'false');
+  updateSentBtn(btn, newState);
+}
+
+function updateSentBtn(btn, isSent) {
   if (isSent) {
-    localStorage.removeItem(key);
-    btn.textContent = '— לא נשלח';
-    btn.classList.remove('is-sent');
-    btn.classList.add('not-sent');
-  } else {
-    localStorage.setItem(key, '1');
-    btn.textContent = '✅ נשלח';
     btn.classList.remove('not-sent');
     btn.classList.add('is-sent');
+    btn.textContent = '✅ נשלח';
+  } else {
+    btn.classList.remove('is-sent');
+    btn.classList.add('not-sent');
+    btn.textContent = '— לא נשלח';
   }
 }
 
-// On load: apply localStorage overrides (user can toggle back rows 1-21 if needed)
-document.addEventListener('DOMContentLoaded', function() {
+// On load — restore from localStorage if user has previously toggled
+window.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.sent-btn').forEach(function(btn) {
     const id = btn.getAttribute('data-id');
-    const stored = localStorage.getItem('sent-' + id);
-    if (stored === '1') {
-      btn.textContent = '✅ נשלח';
-      btn.classList.remove('not-sent');
-      btn.classList.add('is-sent');
-    } else if (stored === '0') {
-      btn.textContent = '— לא נשלח';
-      btn.classList.remove('is-sent');
-      btn.classList.add('not-sent');
+    const stored = localStorage.getItem(`sent_${id}`);
+    if (stored !== null) {
+      updateSentBtn(btn, stored === 'true');
     }
-    // If no localStorage entry, keep the HTML default
+    // else: keep the HTML default (is-sent / not-sent as written)
   });
 });
 </script>
