@@ -364,6 +364,57 @@
       border-radius: 3px;
       flex-shrink: 0;
     }
+
+    .badge-generated {
+      background: #fef3c7;
+      color: #92400e;
+    }
+
+    /* Tabs */
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .tab-btn {
+      padding: 9px 22px;
+      border-radius: 8px;
+      border: 2px solid #e2e8f0;
+      background: #fff;
+      cursor: pointer;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #555;
+      font-family: inherit;
+      transition: all 0.15s;
+    }
+    .tab-btn.active {
+      background: #1a1a2e;
+      color: #fff;
+      border-color: #1a1a2e;
+    }
+    .tab-btn:hover:not(.active) {
+      border-color: #94a3b8;
+      background: #f8fafc;
+    }
+    .tab-count {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      color: inherit;
+      font-size: 0.72rem;
+      padding: 1px 7px;
+      border-radius: 100px;
+      margin-right: 6px;
+    }
+    .tab-btn:not(.active) .tab-count {
+      background: #e2e8f0;
+      color: #555;
+    }
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    .row-questionnaire { background-color: #eff6ff; }
+    .badge-questionnaire { background: #dbeafe; color: #1e40af; }
   </style>
 </head>
 <body>
@@ -397,6 +448,15 @@
       <div class="progress-label">22 מתוך 32 מסמכים אושרו (69%)</div>
     </div>
   </div>
+
+  <!-- Tabs -->
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('april', this)">🌿 אתגר אפריל 2026 <span class="tab-count">48</span></button>
+    <button class="tab-btn" onclick="switchTab('may', this)">🌱 אתגר מאי 2026 <span class="tab-count">20</span></button>
+  </div>
+
+  <!-- TAB: APRIL -->
+  <div id="tab-april" class="tab-panel active">
 
   <!-- Legend -->
   <div class="legend">
@@ -1166,12 +1226,58 @@
     </table>
   </div>
 
+  </div><!-- /tab-april -->
+
+  <!-- TAB: MAY -->
+  <div id="tab-may" class="tab-panel">
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>שם משתתף</th>
+          <th>שאלון התקבל</th>
+          <th>מסמך הוכן</th>
+          <th>HTML מוכן</th>
+          <th>אושר ע"י דייב</th>
+          <th>נשלח ללקוח</th>
+          <th>לינק</th>
+          <th>שלח</th>
+          <th>הערות</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="row-questionnaire"><td>49</td><td><div class="participant-name">Mor Zak</div></td><td><span class="icon-yes">✅</span></td><td>—</td><td>—</td><td><span class="badge badge-questionnaire">📋 ממתין לעיבוד</span></td><td>—</td><td>—</td><td>—</td><td class="notes">—</td></tr>
+        <tr class="row-questionnaire"><td>50</td><td><div class="participant-name">אדוה קרן חיים</div></td><td><span class="icon-yes">✅</span></td><td>—</td><td>—</td><td><span class="badge badge-questionnaire">📋 ממתין לעיבוד</span></td><td>—</td><td>—</td><td>—</td><td class="notes">—</td></tr>
+        <tr class="row-questionnaire"><td>51</td><td><div class="participant-name">אורלי יעקובסון</div></td><td><span class="icon-yes">✅</span></td><td>—</td><td>—</td><td><span class="badge badge-questionnaire">📋 ממתין לעיבוד</span></td><td>—</td><td>—</td><td>—</td><td class="notes">—</td></tr>
+        <tr class="row-questionnaire"><td>52</td><td><div class="participant-name">איציק תומר</div></td><td><span class="icon-yes">✅</span></td><td>—</td><td>—</td><td><span class="badge badge-questionnaire">📋 ממתין לעיבוד</span></td><td>—</td><td>—</td><td>—</td><td class="notes">—</td></tr>
+        <tr class="row-questionnaire"><td>53</td><td><div class="participant-name">אנט חלפון</div></td><td><span class="icon-yes">✅</span></td><td>—</td><td>—</td><td><span class="badge badge-questionnaire">📋 ממתין לעיבוד</span></td><td>—</td><td>—</td><td>—</td><td class="notes">—</td></tr>
+        <tr class="row-questionnaire"><td>54</td><td><div class="participant-name">אסתר ג'ובר</div></td><td><span class="icon-yes">✅</span></td><td>—</td><td>—</td><td><span class="badge badge-questionnaire">📋 ממתין לעיבוד</span></td><td>—</td><td>—</td><td>—</td><td class="notes">—</td></tr>
+        <tr class="row-questionnaire"><td>55</td><td><div class="participant-name">אריה חבויניק</div></td><td><span class="icon-yes">✅</span></td><td>—</td><td>—</td><td><span class="badge badge-questionnaire">📋 ממתין לעיבוד</span></td><td>—</td><td>—</td><td>—</td><td class="notes">—</td></tr>
+        <tr class="row-questionnaire"><td>56</td><td><div class="participant-name">דורית אלגרבלי</div></td><td><span class="icon-yes">✅</span></td><td>—</td><td>—</td><td><span class="badge badge-questionnaire">📋 ממתין לעיבוד</span></td><td>—</td><td>—</td><td>—</td><td class="notes">—</td></tr>
+        <tr class="row-questionnaire"><td>57</td><td><div class="participant-name">דפנה עזוז</div></td><td><span class="icon-yes">✅</span></td><td>—</td><td>—</td><td><span class="badge badge-questionnaire">📋 ממתין לעיבוד</span></td><td>—</td><td>—</td><td>—</td><td class="notes">—</td></tr>
+        <tr class="row-questionnaire"><td>58</td><td><div class="participant-name">מאור קזין</div></td><td><span class="icon-yes">✅</span></td><td>—</td><td>—</td><td><span class="badge badge-questionnaire">📋 ממתין לעיבוד</span></td><td>—</td><td>—</td><td>—</td><td class="notes">—</td></tr>
+        <tr class="row-questionnaire"><td>59</td><td><div class="participant-name">עינת נוי</div></td><td><span class="icon-yes">✅</span></td><td>—</td><td>—</td><td><span class="badge badge-questionnaire">📋 ממתין לעיבוד</span></td><td>—</td><td>—</td><td>—</td><td class="notes">—</td></tr>
+        <tr class="row-questionnaire"><td>60</td><td><div class="participant-name">רביב בן משה</div></td><td><span class="icon-yes">✅</span></td><td>—</td><td>—</td><td><span class="badge badge-questionnaire">📋 ממתין לעיבוד</span></td><td>—</td><td>—</td><td>—</td><td class="notes">—</td></tr>
+        <tr class="row-questionnaire"><td>61</td><td><div class="participant-name">רומי לוסטיג</div></td><td><span class="icon-yes">✅</span></td><td>—</td><td>—</td><td><span class="badge badge-questionnaire">📋 ממתין לעיבוד</span></td><td>—</td><td>—</td><td>—</td><td class="notes">—</td></tr>
+        <tr class="row-questionnaire"><td>62</td><td><div class="participant-name">רונית לוי</div></td><td><span class="icon-yes">✅</span></td><td>—</td><td>—</td><td><span class="badge badge-questionnaire">📋 ממתין לעיבוד</span></td><td>—</td><td>—</td><td>—</td><td class="notes">—</td></tr>
+        <tr class="row-questionnaire"><td>63</td><td><div class="participant-name">רינת בן משה</div></td><td><span class="icon-yes">✅</span></td><td>—</td><td>—</td><td><span class="badge badge-questionnaire">📋 ממתין לעיבוד</span></td><td>—</td><td>—</td><td>—</td><td class="notes">—</td></tr>
+        <tr class="row-questionnaire"><td>64</td><td><div class="participant-name">רעות לוי</div></td><td><span class="icon-yes">✅</span></td><td>—</td><td>—</td><td><span class="badge badge-questionnaire">📋 ממתין לעיבוד</span></td><td>—</td><td>—</td><td>—</td><td class="notes">—</td></tr>
+        <tr class="row-questionnaire"><td>65</td><td><div class="participant-name">שולמית עזרא</div></td><td><span class="icon-yes">✅</span></td><td>—</td><td>—</td><td><span class="badge badge-questionnaire">📋 ממתין לעיבוד</span></td><td>—</td><td>—</td><td>—</td><td class="notes">—</td></tr>
+        <tr class="row-questionnaire"><td>66</td><td><div class="participant-name">שלמה מזרחי</div></td><td><span class="icon-yes">✅</span></td><td>—</td><td>—</td><td><span class="badge badge-questionnaire">📋 ממתין לעיבוד</span></td><td>—</td><td>—</td><td>—</td><td class="notes">—</td></tr>
+        <tr class="row-questionnaire"><td>67</td><td><div class="participant-name">שרון דור</div></td><td><span class="icon-yes">✅</span></td><td>—</td><td>—</td><td><span class="badge badge-questionnaire">📋 ממתין לעיבוד</span></td><td>—</td><td>—</td><td>—</td><td class="notes">—</td></tr>
+        <tr class="row-questionnaire"><td>68</td><td><div class="participant-name">תמרה וולמן ארבילי</div></td><td><span class="icon-yes">✅</span></td><td>—</td><td>—</td><td><span class="badge badge-questionnaire">📋 ממתין לעיבוד</span></td><td>—</td><td>—</td><td>—</td><td class="notes">—</td></tr>
+      </tbody>
+    </table>
+  </div>
+  </div><!-- /tab-may -->
+
   <!-- Footer Note -->
   <div class="footer-note">
     <strong>עדכון אוטומטי:</strong> הדשבורד מתעדכן ב-GitHub Pages אוטומטית בכל שלב — תחילת עיבוד, יצירת מסמך, ואישור. עמודת "נשלח ללקוח" נשמרת במכשיר זה — לחץ על הכפתור כדי לעדכן.
   </div>
 
-  <div class="updated-at">עודכן לאחרונה: 07.04.2026 · אתגר קוד הבריאות v1 (רוס אלן — מאושר)</div>
+  <div class="updated-at">עודכן לאחרונה: 13.04.2026 · אתגר מאי נפתח — 20 שאלונים</div>
 
 
 <script>
@@ -1207,13 +1313,19 @@ function updateSentBtn(btn, isSent) {
   }
 }
 
-// Reverse row order — newest participant appears first
+function switchTab(tab, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + tab).classList.add('active');
+  btn.classList.add('active');
+}
+
+// Reverse row order — newest participant appears first (per tab)
 window.addEventListener('DOMContentLoaded', function() {
-  const tbody = document.querySelector('table tbody');
-  if (tbody) {
+  document.querySelectorAll('table tbody').forEach(function(tbody) {
     const rows = Array.from(tbody.querySelectorAll('tr'));
     rows.reverse().forEach(row => tbody.appendChild(row));
-  }
+  });
 });
 
 // On load — restore from localStorage if user has previously toggled
