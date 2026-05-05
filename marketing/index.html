@@ -5,17 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>דשבורד שיווק — קוד הבריאות</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
 <style>
   :root {
-    --bg:       #0f172a;
-    --surface:  #1e293b;
-    --border:   #334155;
-    --text:     #f1f5f9;
-    --muted:    #94a3b8;
-    --accent:   #3b82f6;
-    --green:    #10b981;
-    --facebook: #1877F2;
-    --tiktok:   #69C9D0;
+    --bg:      #0f172a;
+    --surface: #1e293b;
+    --border:  #334155;
+    --text:    #f1f5f9;
+    --muted:   #94a3b8;
+    --accent:  #3b82f6;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -28,47 +26,29 @@
 
   /* ===== LOGIN ===== */
   #login-screen {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 24px;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 100vh; padding: 24px;
   }
   .login-box {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 40px 32px;
-    width: 100%;
-    max-width: 360px;
-    text-align: center;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 16px; padding: 40px 32px;
+    width: 100%; max-width: 360px; text-align: center;
   }
   .login-box h2 { font-size: 1.3rem; margin-bottom: 8px; }
   .login-box p  { color: var(--muted); margin-bottom: 28px; font-size: 0.85rem; }
   .login-box input {
-    width: 100%;
-    padding: 12px 16px;
-    background: var(--bg);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    color: var(--text);
-    font-size: 1.1rem;
-    text-align: center;
-    letter-spacing: 4px;
-    margin-bottom: 12px;
-    outline: none;
+    width: 100%; padding: 12px 16px;
+    background: var(--bg); border: 1px solid var(--border);
+    border-radius: 10px; color: var(--text);
+    font-size: 1.1rem; text-align: center; letter-spacing: 4px;
+    margin-bottom: 12px; outline: none;
   }
   .login-box input:focus { border-color: var(--accent); }
   .login-box button {
-    width: 100%;
-    padding: 12px;
-    background: var(--accent);
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    font-size: 1rem;
-    cursor: pointer;
-    font-weight: 600;
+    width: 100%; padding: 12px;
+    background: var(--accent); color: #fff;
+    border: none; border-radius: 10px;
+    font-size: 1rem; cursor: pointer; font-weight: 600;
   }
   .login-box button:hover { opacity: 0.9; }
   #error-msg { color: #f87171; margin-top: 10px; font-size: 0.85rem; min-height: 20px; }
@@ -77,81 +57,56 @@
   #dashboard { display: none; padding: 16px; max-width: 960px; margin: 0 auto; }
 
   header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 0 20px;
-    flex-wrap: wrap;
-    gap: 8px;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 0 20px; flex-wrap: wrap; gap: 8px;
   }
   header h1 { font-size: 1.2rem; font-weight: 700; }
   .meta-bar  { color: var(--muted); font-size: 0.8rem; }
 
-  /* ===== FILTER ===== */
   .filter-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 16px;
-    flex-wrap: wrap;
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 16px; flex-wrap: wrap;
   }
   .filter-row label { color: var(--muted); font-size: 0.82rem; }
   .filter-row select {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    color: var(--text);
-    padding: 6px 10px;
-    font-size: 0.85rem;
-    cursor: pointer;
-    outline: none;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 8px; color: var(--text);
+    padding: 6px 10px; font-size: 0.85rem; cursor: pointer; outline: none;
   }
   .filter-row select:focus { border-color: var(--accent); }
 
-  /* ===== STATS ROW ===== */
   .stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 12px;
-    margin-bottom: 20px;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 12px; margin-bottom: 20px;
   }
   .stat-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 16px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 16px;
   }
   .stat-card .label { color: var(--muted); font-size: 0.75rem; margin-bottom: 6px; }
   .stat-card .value { font-size: 1.6rem; font-weight: 700; }
   .stat-card .sub   { color: var(--muted); font-size: 0.75rem; margin-top: 4px; }
 
-  /* ===== CHARTS ===== */
   .charts { display: flex; flex-direction: column; gap: 16px; }
   .chart-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px 16px 16px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px 16px 16px;
   }
   .chart-card h3 {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--muted);
-    margin-bottom: 14px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    font-size: 0.9rem; font-weight: 600; color: var(--muted);
+    margin-bottom: 14px; text-transform: uppercase; letter-spacing: 0.05em;
   }
-  .chart-wrap { position: relative; height: 240px; }
+  .chart-wrap { position: relative; height: 260px; }
 
   @media (min-width: 640px) {
-    .chart-wrap { height: 280px; }
+    .chart-wrap { height: 300px; }
     #dashboard  { padding: 24px; }
   }
 </style>
 </head>
 <body>
 
-<!-- ===== LOGIN ===== -->
+<!-- LOGIN -->
 <div id="login-screen">
   <div class="login-box">
     <h2>קוד הבריאות</h2>
@@ -162,7 +117,7 @@
   </div>
 </div>
 
-<!-- ===== DASHBOARD ===== -->
+<!-- DASHBOARD -->
 <div id="dashboard">
   <header>
     <h1>דשבורד שיווק</h1>
@@ -185,56 +140,73 @@
     <div class="stat-card">
       <div class="label">ספנד אתמול</div>
       <div class="value" id="stat-spend">—</div>
-      <div class="sub" id="stat-spend-sub"></div>
+      <div class="sub">Meta + TikTok</div>
     </div>
     <div class="stat-card">
-      <div class="label">עלות לנרשם</div>
+      <div class="label">עלות לנרשם (CPL)</div>
       <div class="value" id="stat-cpl">—</div>
-      <div class="sub">CPL</div>
+      <div class="sub" id="stat-cpl-sub"></div>
     </div>
   </div>
 
   <div class="charts">
     <div class="chart-card">
-      <h3>נרשמים יומיים לפי מקור</h3>
+      <h3>נרשמים יומיים לפי מקור — 14 ימים</h3>
       <div class="chart-wrap"><canvas id="regChart"></canvas></div>
     </div>
     <div class="chart-card">
-      <h3>ספנד יומי (₪)</h3>
+      <h3>ספנד יומי (₪) — 14 ימים</h3>
       <div class="chart-wrap"><canvas id="spendChart"></canvas></div>
     </div>
   </div>
 </div>
 
 <script>
+// ===== DATA =====
 const PIN_HASH = "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4";
-const RAW_DATA = {"labels": ["21/04", "22/04", "23/04", "24/04", "25/04", "26/04", "27/04", "28/04", "29/04", "30/04", "01/05", "02/05", "03/05", "04/05"], "reg_datasets": [{"label": "Other", "data": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 30], "backgroundColor": "#9CA3AF"}, {"label": "Tiktok", "data": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 90], "backgroundColor": "#69C9D0"}, {"label": "Whatsapp", "data": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15], "backgroundColor": "#9CA3AF"}], "spend_meta": [535.0, 495.0, 462.0, 494.0, 509.0, 545.0, 455.0, 418.0, 420.0, 323.0, 29.0, 57.0, 69.0, 51.0], "spend_tiktok": [247.0, 500.0, 549.0, 533.0, 451.0, 326.0, 398.0, 252.0, 431.0, 222.0, 135.0, 146.0, 168.0, 131.0], "spend_total": [782.0, 995.0, 1010.0, 1027.0, 960.0, 871.0, 853.0, 670.0, 851.0, 545.0, 164.0, 203.0, 237.0, 182.0], "yesterday_reg": 135, "yesterday_spend": 182.0, "webinar_dates": ["2026-05-04", "2026-05-18"], "raw_rows": [{"d": "2026-05-04", "w": "2026-05-04", "p": "other", "n": 1, "c": "", "pr": "וובינר", "cnt": 30}, {"d": "2026-05-04", "w": "2026-05-04", "p": "tiktok", "n": 1, "c": "קמפיין וובינר - 15.3.26", "pr": "וובינר", "cnt": 75}, {"d": "2026-05-04", "w": "2026-05-04", "p": "whatsapp", "n": 0, "c": "Groups-day-before", "pr": "וובינר", "cnt": 15}, {"d": "2026-05-04", "w": "2026-05-18", "p": "tiktok", "n": 0, "c": "קמפיין וובינר - 15.3.26", "pr": "וובינר", "cnt": 15}]};
+const RAW_DATA = {"labels": ["21/04", "22/04", "23/04", "24/04", "25/04", "26/04", "27/04", "28/04", "29/04", "30/04", "01/05", "02/05", "03/05", "04/05"], "chart_dates": ["2026-04-21", "2026-04-22", "2026-04-23", "2026-04-24", "2026-04-25", "2026-04-26", "2026-04-27", "2026-04-28", "2026-04-29", "2026-04-30", "2026-05-01", "2026-05-02", "2026-05-03", "2026-05-04"], "reg_datasets": [{"label": "Other", "data": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 30], "backgroundColor": "#9CA3AF"}, {"label": "Tiktok", "data": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 90], "backgroundColor": "#69C9D0"}, {"label": "Whatsapp", "data": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15], "backgroundColor": "#f59e0b"}], "spend_meta": [535.0, 495.0, 462.0, 494.0, 509.0, 545.0, 455.0, 418.0, 420.0, 323.0, 29.0, 57.0, 69.0, 51.0], "spend_tiktok": [247.0, 500.0, 549.0, 533.0, 451.0, 326.0, 398.0, 252.0, 431.0, 222.0, 135.0, 146.0, 168.0, 131.0], "spend_total": [782.0, 995.0, 1010.0, 1027.0, 960.0, 871.0, 853.0, 670.0, 851.0, 545.0, 164.0, 203.0, 237.0, 182.0], "yesterday_reg": 135, "yesterday_spend": 182.0, "webinar_dates": ["2026-05-04", "2026-05-18"], "raw_rows": [{"d": "2026-05-04", "w": "2026-05-04", "p": "other", "n": 1, "c": "", "pr": "וובינר", "cnt": 30}, {"d": "2026-05-04", "w": "2026-05-04", "p": "tiktok", "n": 1, "c": "קמפיין וובינר - 15.3.26", "pr": "וובינר", "cnt": 75}, {"d": "2026-05-04", "w": "2026-05-04", "p": "whatsapp", "n": 0, "c": "Groups-day-before", "pr": "וובינר", "cnt": 15}, {"d": "2026-05-04", "w": "2026-05-18", "p": "tiktok", "n": 0, "c": "קמפיין וובינר - 15.3.26", "pr": "וובינר", "cnt": 15}]};
 
-let regChartInst   = null;
-let spendChartInst = null;
+// ===== COLORS =====
+const PLATFORM_COLORS = {
+  "facebook": "#1877F2",
+  "tiktok":   "#69C9D0",
+  "google":   "#4285F4",
+  "organic":  "#10B981",
+  "other":    "#9CA3AF",
+};
+const EXTRA_COLORS = ["#f59e0b","#ec4899","#8b5cf6","#ef4444","#06b6d4","#84cc16","#f97316"];
+let extraIdx = 0;
+const colorMap = {};
+function getColor(p) {
+  if (PLATFORM_COLORS[p]) return PLATFORM_COLORS[p];
+  if (!colorMap[p]) { colorMap[p] = EXTRA_COLORS[extraIdx++ % EXTRA_COLORS.length]; }
+  return colorMap[p];
+}
 
 // ===== AUTH =====
 async function sha256(str) {
   const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(str));
   return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,"0")).join("");
 }
-
 async function checkPin() {
-  const pin  = document.getElementById("pin-input").value;
-  const hash = await sha256(pin);
-  if (hash === PIN_HASH) {
-    sessionStorage.setItem("mkt_auth", "1");
+  const pin = document.getElementById("pin-input").value;
+  if (await sha256(pin) === PIN_HASH) {
+    sessionStorage.setItem("mkt_auth","1");
     showDashboard();
   } else {
     document.getElementById("error-msg").textContent = "סיסמה שגויה";
   }
 }
-
 document.getElementById("pin-input").addEventListener("keypress", e => {
   if (e.key === "Enter") checkPin();
 });
 
-// ===== DASHBOARD =====
+// ===== CHARTS =====
+let regChart = null, spendChart = null;
+
+// מבטל את ה-datalabels הגלובלי (נרשם אוטומטית)
+Chart.unregister(ChartDataLabels);
+
 function showDashboard() {
   document.getElementById("login-screen").style.display = "none";
   document.getElementById("dashboard").style.display    = "block";
@@ -244,144 +216,153 @@ function showDashboard() {
 
 function initFilter() {
   const sel = document.getElementById("webinar-filter");
-  const dates = RAW_DATA.webinar_dates || [];
-  dates.forEach(d => {
-    const opt   = document.createElement("option");
-    opt.value   = d;
-    opt.textContent = formatDate(d);
+  (RAW_DATA.webinar_dates || []).forEach(d => {
+    const opt = document.createElement("option");
+    opt.value = d;
+    opt.textContent = d.slice(8,10)+"/"+d.slice(5,7)+"/"+d.slice(0,4);
     sel.appendChild(opt);
   });
-}
-
-function formatDate(iso) {
-  if (!iso) return "";
-  return iso.slice(8,10) + "/" + iso.slice(5,7) + "/" + iso.slice(0,4);
 }
 
 function applyFilter() {
   const wFilter = document.getElementById("webinar-filter").value;
   const rows    = RAW_DATA.raw_rows || [];
+  const filtered = wFilter ? rows.filter(r => r.w === wFilter) : rows;
 
-  // סינון לפי תאריך וובינר
-  const filtered = wFilter
-    ? rows.filter(r => r.w === wFilter)
-    : rows;
+  // ציר X קבוע: 14 ימים מ-payload
+  const chartDates  = RAW_DATA.chart_dates || RAW_DATA.labels;
+  const chartLabels = chartDates.map ? chartDates : RAW_DATA.labels;
 
-  // אגרגציה לגרפים
-  const allDates  = [...new Set([
-    ...filtered.map(r => r.d),
-    ...RAW_DATA.labels.map((l, i) => {
-      // labels are DD/MM — reconstruct YYYY-MM-DD isn't trivial, skip spend merge per-filter
-      return null;
-    }).filter(Boolean)
-  ])].sort();
+  // labels עבור נרשמים (DD/MM)
+  const regLabels = Array.isArray(chartDates)
+    ? chartDates.map(d => d.slice(8,10)+"/"+d.slice(5,7))
+    : RAW_DATA.labels;
 
-  // נרשמים לפי date + platform
+  // אגרגציה נרשמים לפי date + platform
   const regByDate = {};
   filtered.forEach(r => {
     if (!regByDate[r.d]) regByDate[r.d] = {};
-    regByDate[r.d][r.p] = (regByDate[r.d][r.p] || 0) + r.cnt;
+    regByDate[r.d][r.p] = (regByDate[r.d][r.p]||0) + r.cnt;
   });
 
   const platforms = [...new Set(filtered.map(r => r.p))].sort();
-  const COLORS = {
-    facebook: "#1877F2", tiktok: "#69C9D0",
-    google: "#4285F4", organic: "#10B981", other: "#9CA3AF"
-  };
-
-  // תאריכים מ-raw_rows
-  const regDates = [...new Set(filtered.map(r => r.d))].sort();
-  const regLabels = regDates.map(d => d.slice(8,10)+"/"+d.slice(5,7));
 
   const regDatasets = platforms.map(p => ({
-    label:           p.charAt(0).toUpperCase() + p.slice(1),
-    data:            regDates.map(d => (regByDate[d]||{})[p] || 0),
-    backgroundColor: COLORS[p] || "#9CA3AF",
-    stack:           "reg"
+    label:           p.charAt(0).toUpperCase()+p.slice(1),
+    data:            (Array.isArray(chartDates) ? chartDates : RAW_DATA.chart_dates || []).map(
+                       d => (regByDate[d]||{})[p]||0),
+    backgroundColor: getColor(p),
+    stack:           "reg",
   }));
 
-  // ספנד — לא מסנן לפי וובינר (ספנד אין לו שיוך וובינר)
-  const spendDates   = RAW_DATA.labels;
-  const spendDatasets = [
-    { type:"bar",  label:"Meta",   data: RAW_DATA.spend_meta,   backgroundColor:"#1877F2", stack:"spend" },
-    { type:"bar",  label:"TikTok", data: RAW_DATA.spend_tiktok, backgroundColor:"#69C9D0", stack:"spend" },
-    { type:"line", label:'סה"כ',   data: RAW_DATA.spend_total,  borderColor:"#10b981",
-      backgroundColor:"transparent", borderWidth:2, pointRadius:3, tension:0.3 }
-  ];
-
   renderRegChart(regLabels, regDatasets);
-  renderSpendChart(spendDates, spendDatasets);
+  renderSpendChart(RAW_DATA.labels, RAW_DATA.spend_meta, RAW_DATA.spend_tiktok, RAW_DATA.spend_total);
   updateStats(filtered, wFilter);
 }
 
+// ===== גרף נרשמים — stacked, ללא datalabels =====
 function renderRegChart(labels, datasets) {
-  if (regChartInst) regChartInst.destroy();
-  const ctx = document.getElementById("regChart").getContext("2d");
-  regChartInst = new Chart(ctx, {
+  if (regChart) regChart.destroy();
+  regChart = new Chart(document.getElementById("regChart").getContext("2d"), {
     type: "bar",
     data: { labels, datasets },
     options: {
       responsive: true,
       maintainAspectRatio: false,
       plugins: {
-        legend: { position:"bottom", labels:{ color:"#94a3b8", boxWidth:12, padding:12 } }
+        legend: { position:"bottom", labels:{ color:"#94a3b8", boxWidth:12, padding:12 } },
+        datalabels: { display: false }
       },
       scales: {
-        x: { stacked:true, ticks:{ color:"#94a3b8" }, grid:{ color:"#1e293b" } },
-        y: { stacked:true, beginAtZero:true, ticks:{ color:"#94a3b8" }, grid:{ color:"#334155" },
+        x: { stacked:true, ticks:{ color:"#94a3b8", maxRotation:45 }, grid:{ color:"#1e293b" } },
+        y: { stacked:true, beginAtZero:true,
+             ticks:{ color:"#94a3b8" }, grid:{ color:"#334155" },
              title:{ display:true, text:"נרשמים", color:"#64748b" } }
       }
-    }
+    },
+    plugins: [ChartDataLabels]
   });
 }
 
-function renderSpendChart(labels, datasets) {
-  if (spendChartInst) spendChartInst.destroy();
-  const ctx = document.getElementById("spendChart").getContext("2d");
-  spendChartInst = new Chart(ctx, {
+// ===== גרף ספנד — סך הכל מעל כל עמוד =====
+function renderSpendChart(labels, meta, tiktok, total) {
+  if (spendChart) spendChart.destroy();
+
+  spendChart = new Chart(document.getElementById("spendChart").getContext("2d"), {
     type: "bar",
-    data: { labels, datasets },
+    data: {
+      labels,
+      datasets: [
+        {
+          type: "bar", label: "Meta",
+          data: meta, backgroundColor: "#1877F2", stack: "spend",
+          datalabels: { display: false }
+        },
+        {
+          type: "bar", label: "TikTok",
+          data: tiktok, backgroundColor: "#69C9D0", stack: "spend",
+          // מציג את הסכום הכולל (meta+tiktok) מעל עמוד ה-tiktok
+          datalabels: {
+            display: (ctx) => (total[ctx.dataIndex] || 0) > 0,
+            formatter: (_, ctx) => {
+              const t = total[ctx.dataIndex] || 0;
+              return t > 0 ? "₪" + t.toLocaleString("he-IL") : "";
+            },
+            color: "#f1f5f9",
+            anchor: "end",
+            align: "end",
+            font: { size: 10, weight: "600" },
+            offset: 2,
+          }
+        },
+        {
+          type: "line", label: 'סה"כ',
+          data: total,
+          borderColor: "#10b981", backgroundColor: "transparent",
+          borderWidth: 2, pointRadius: 3, tension: 0.3,
+          datalabels: { display: false }
+        }
+      ]
+    },
     options: {
       responsive: true,
       maintainAspectRatio: false,
+      layout: { padding: { top: 24 } },
       plugins: {
-        legend: { position:"bottom", labels:{ color:"#94a3b8", boxWidth:12, padding:12 } }
+        legend: { position:"bottom", labels:{ color:"#94a3b8", boxWidth:12, padding:12 } },
       },
       scales: {
-        x: { stacked:true, ticks:{ color:"#94a3b8" }, grid:{ color:"#1e293b" } },
-        y: { beginAtZero:true, ticks:{ color:"#94a3b8", callback: v => "₪"+v.toLocaleString() },
+        x: { stacked:true, ticks:{ color:"#94a3b8", maxRotation:45 }, grid:{ color:"#1e293b" } },
+        y: { beginAtZero:true,
+             ticks:{ color:"#94a3b8", callback: v => "₪"+v.toLocaleString() },
              grid:{ color:"#334155" } }
       }
-    }
+    },
+    plugins: [ChartDataLabels]
   });
 }
 
+// ===== סטטיסטיקות =====
 function updateStats(filtered, wFilter) {
-  // נרשמים אתמול (או בוובינר הנבחר)
-  const yesterday  = RAW_DATA.labels[RAW_DATA.labels.length - 1] || "";
-  const total      = filtered.reduce((s, r) => s + r.cnt, 0);
-  const newCount   = filtered.filter(r => r.n === 1).reduce((s, r) => s + r.cnt, 0);
-  const oldCount   = total - newCount;
+  const total    = filtered.reduce((s,r) => s+r.cnt, 0);
+  const newCount = filtered.filter(r => r.n===1).reduce((s,r) => s+r.cnt, 0);
+  const oldCount = total - newCount;
 
   document.getElementById("stat-reg").textContent     = total.toLocaleString();
   document.getElementById("stat-reg-sub").textContent = wFilter
-    ? `חדש: ${newCount} | ותיק: ${oldCount}`
-    : `אתמול (${yesterday})`;
+    ? "חדש: "+newCount+" | ותיק: "+oldCount
+    : "חדש: "+newCount+" | ותיק: "+oldCount;
 
-  // ספנד אתמול (לא מסונן)
   const spendYest = RAW_DATA.yesterday_spend || 0;
-  document.getElementById("stat-spend").textContent     = "₪" + spendYest.toLocaleString();
-  document.getElementById("stat-spend-sub").textContent = "Meta + TikTok";
+  document.getElementById("stat-spend").textContent = "₪"+spendYest.toLocaleString();
 
-  // CPL
-  const cpl = total > 0 ? Math.round(spendYest / total) : 0;
-  document.getElementById("stat-cpl").textContent = total > 0 ? "₪" + cpl.toLocaleString() : "—";
+  const cpl = total > 0 ? Math.round(spendYest/total) : 0;
+  document.getElementById("stat-cpl").textContent     = total>0 ? "₪"+cpl.toLocaleString() : "—";
+  document.getElementById("stat-cpl-sub").textContent = total>0 ? spendYest+"÷"+total : "";
 }
 
 // ===== INIT =====
-if (sessionStorage.getItem("mkt_auth") === "1") {
-  showDashboard();
-}
+if (sessionStorage.getItem("mkt_auth") === "1") showDashboard();
 </script>
 </body>
 </html>
