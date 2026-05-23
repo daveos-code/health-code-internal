@@ -83,6 +83,27 @@
     .compare-card.mid    .c-rate { color: #f59e0b; }
 
     .section-note { font-size: 0.78rem; color: #94a3b8; margin-top: 8px; }
+
+    /* ── Filter bar ── */
+    .filter-bar {
+      display: flex; gap: 8px; flex-wrap: wrap;
+      margin-bottom: 24px; padding: 16px 20px;
+      background: white; border-radius: 14px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      align-items: center;
+    }
+    .filter-bar-label {
+      font-size: 0.8rem; font-weight: 700; color: #64748b;
+      margin-left: 8px; white-space: nowrap;
+    }
+    .filter-btn {
+      padding: 6px 16px; border-radius: 20px; border: 1.5px solid #e2e8f0;
+      background: white; color: #475569; font-size: 0.82rem; font-weight: 600;
+      cursor: pointer; transition: all 0.15s; white-space: nowrap;
+      font-family: inherit;
+    }
+    .filter-btn:hover { border-color: #0ea5e9; color: #0ea5e9; }
+    .filter-btn.active { background: #0f172a; color: white; border-color: #0f172a; }
   </style>
 </head>
 <body>
@@ -90,12 +111,18 @@
 <header>
   <div>
     <h1>דשבורד ביטולים — קוד הבריאות</h1>
-    <p>עודכן: 23/05/2026 21:15 · מקורות: Origami לקוחות + Cardcom מסמכים</p>
+    <p>עודכן: 23/05/2026 21:18 · מקורות: Origami לקוחות + Cardcom מסמכים</p>
   </div>
   <span class="badge">52 ביטולים</span>
 </header>
 
 <div class="container">
+
+  <!-- Challenge filter bar -->
+  <div class="filter-bar">
+    <span class="filter-bar-label">סנן לפי אתגר:</span>
+    <button class="filter-btn active" data-ch="" onclick="applyFilter('')">הכל</button><button class="filter-btn" data-ch="26/07/2026" onclick="applyFilter('26/07/2026')">אתגר 26/07/2026</button><button class="filter-btn" data-ch="21/06/2026" onclick="applyFilter('21/06/2026')">אתגר 21/06/2026</button><button class="filter-btn" data-ch="15/06/2026" onclick="applyFilter('15/06/2026')">אתגר 15/06/2026</button><button class="filter-btn" data-ch="17/05/2026" onclick="applyFilter('17/05/2026')">אתגר 17/05/2026</button><button class="filter-btn" data-ch="12/04/2026" onclick="applyFilter('12/04/2026')">אתגר 12/04/2026</button><button class="filter-btn" data-ch="08/03/2026" onclick="applyFilter('08/03/2026')">אתגר 08/03/2026</button><button class="filter-btn" data-ch="לא שויך" onclick="applyFilter('לא שויך')">לא שויך</button>
+  </div>
 
   <!-- KPIs -->
   <div class="summary-grid">
@@ -130,200 +157,200 @@
         <div style="overflow-x:auto">
           <table>
             <thead><tr><th>אתגר / וובינר</th><th>סה"כ</th><th>ביטלו</th><th>%</th></tr></thead>
-            <tbody>
-        <tr>
-          <td style="font-weight:600">08/03/2026</td>
-          <td>44</td>
-          <td>8</td>
-          <td><span style="color:#f59e0b;font-weight:700">18.2%</span></td>
-        </tr>
-        <tr style="background:#f8fafc">
-          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 01/03/2026</td>
-          <td style="color:#64748b">2</td>
-          <td style="color:#64748b">1</td>
-          <td><span style="color:#dc2626;font-weight:600;font-size:0.85rem">50.0%</span></td>
-        </tr>
-        <tr style="background:#f8fafc">
-          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 11/11/2025</td>
-          <td style="color:#64748b">1</td>
-          <td style="color:#64748b">0</td>
-          <td><span style="color:#10b981;font-weight:600;font-size:0.85rem">0.0%</span></td>
-        </tr>
-        <tr style="background:#f8fafc">
-          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 16/02/2026</td>
-          <td style="color:#64748b">4</td>
-          <td style="color:#64748b">3</td>
-          <td><span style="color:#dc2626;font-weight:600;font-size:0.85rem">75.0%</span></td>
-        </tr>
-        <tr style="background:#f8fafc">
-          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר לא ידוע</td>
-          <td style="color:#64748b">37</td>
-          <td style="color:#64748b">4</td>
-          <td><span style="color:#f59e0b;font-weight:600;font-size:0.85rem">10.8%</span></td>
-        </tr>
-        <tr>
-          <td style="font-weight:600">12/04/2026</td>
-          <td>50</td>
-          <td>6</td>
-          <td><span style="color:#f59e0b;font-weight:700">12.0%</span></td>
-        </tr>
-        <tr style="background:#f8fafc">
-          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 12/04/2026</td>
-          <td style="color:#64748b">1</td>
-          <td style="color:#64748b">0</td>
-          <td><span style="color:#10b981;font-weight:600;font-size:0.85rem">0.0%</span></td>
-        </tr>
-        <tr style="background:#f8fafc">
-          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 16/03/2026</td>
-          <td style="color:#64748b">22</td>
-          <td style="color:#64748b">3</td>
-          <td><span style="color:#f59e0b;font-weight:600;font-size:0.85rem">13.6%</span></td>
-        </tr>
-        <tr style="background:#f8fafc">
-          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 30/03/2026</td>
-          <td style="color:#64748b">24</td>
-          <td style="color:#64748b">3</td>
-          <td><span style="color:#f59e0b;font-weight:600;font-size:0.85rem">12.5%</span></td>
-        </tr>
-        <tr style="background:#f8fafc">
-          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר לא ידוע</td>
-          <td style="color:#64748b">3</td>
-          <td style="color:#64748b">0</td>
-          <td><span style="color:#10b981;font-weight:600;font-size:0.85rem">0.0%</span></td>
-        </tr>
-        <tr>
-          <td style="font-weight:600">15/06/2026</td>
-          <td>1</td>
-          <td>0</td>
-          <td><span style="color:#10b981;font-weight:700">0.0%</span></td>
-        </tr>
-        <tr style="background:#f8fafc">
-          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר לא ידוע</td>
-          <td style="color:#64748b">1</td>
-          <td style="color:#64748b">0</td>
-          <td><span style="color:#10b981;font-weight:600;font-size:0.85rem">0.0%</span></td>
-        </tr>
-        <tr>
-          <td style="font-weight:600">17/05/2026</td>
-          <td>100</td>
-          <td>22</td>
-          <td><span style="color:#dc2626;font-weight:700">22.0%</span></td>
-        </tr>
-        <tr style="background:#f8fafc">
-          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 04/05/2026</td>
-          <td style="color:#64748b">29</td>
-          <td style="color:#64748b">4</td>
-          <td><span style="color:#f59e0b;font-weight:600;font-size:0.85rem">13.8%</span></td>
-        </tr>
-        <tr style="background:#f8fafc">
-          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 12/04/2026</td>
-          <td style="color:#64748b">31</td>
-          <td style="color:#64748b">4</td>
-          <td><span style="color:#f59e0b;font-weight:600;font-size:0.85rem">12.9%</span></td>
-        </tr>
-        <tr style="background:#f8fafc">
-          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 16/03/2026</td>
-          <td style="color:#64748b">1</td>
-          <td style="color:#64748b">1</td>
-          <td><span style="color:#dc2626;font-weight:600;font-size:0.85rem">100.0%</span></td>
-        </tr>
-        <tr style="background:#f8fafc">
-          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 18/05/2026</td>
-          <td style="color:#64748b">3</td>
-          <td style="color:#64748b">2</td>
-          <td><span style="color:#dc2626;font-weight:600;font-size:0.85rem">66.7%</span></td>
-        </tr>
-        <tr style="background:#f8fafc">
-          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 19/04/2026</td>
-          <td style="color:#64748b">29</td>
-          <td style="color:#64748b">10</td>
-          <td><span style="color:#dc2626;font-weight:600;font-size:0.85rem">34.5%</span></td>
-        </tr>
-        <tr style="background:#f8fafc">
-          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 30/03/2026</td>
-          <td style="color:#64748b">1</td>
-          <td style="color:#64748b">1</td>
-          <td><span style="color:#dc2626;font-weight:600;font-size:0.85rem">100.0%</span></td>
-        </tr>
-        <tr style="background:#f8fafc">
-          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר לא ידוע</td>
-          <td style="color:#64748b">6</td>
-          <td style="color:#64748b">0</td>
-          <td><span style="color:#10b981;font-weight:600;font-size:0.85rem">0.0%</span></td>
-        </tr>
-        <tr>
-          <td style="font-weight:600">21/06/2026</td>
-          <td>26</td>
-          <td>0</td>
-          <td><span style="color:#10b981;font-weight:700">0.0%</span></td>
-        </tr>
-        <tr style="background:#f8fafc">
-          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 04/05/2026</td>
-          <td style="color:#64748b">4</td>
-          <td style="color:#64748b">0</td>
-          <td><span style="color:#10b981;font-weight:600;font-size:0.85rem">0.0%</span></td>
-        </tr>
-        <tr style="background:#f8fafc">
-          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 12/04/2026</td>
-          <td style="color:#64748b">1</td>
-          <td style="color:#64748b">0</td>
-          <td><span style="color:#10b981;font-weight:600;font-size:0.85rem">0.0%</span></td>
-        </tr>
-        <tr style="background:#f8fafc">
-          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 18/05/2026</td>
-          <td style="color:#64748b">19</td>
-          <td style="color:#64748b">0</td>
-          <td><span style="color:#10b981;font-weight:600;font-size:0.85rem">0.0%</span></td>
-        </tr>
-        <tr style="background:#f8fafc">
-          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 19/04/2026</td>
-          <td style="color:#64748b">2</td>
-          <td style="color:#64748b">0</td>
-          <td><span style="color:#10b981;font-weight:600;font-size:0.85rem">0.0%</span></td>
-        </tr>
-        <tr>
+            <tbody id="chTableBody">
+        <tr data-ch="26/07/2026">
           <td style="font-weight:600">26/07/2026</td>
           <td>2</td>
           <td>0</td>
           <td><span style="color:#10b981;font-weight:700">0.0%</span></td>
         </tr>
-        <tr style="background:#f8fafc">
+        <tr style="background:#f8fafc" data-wb-ch="26/07/2026">
           <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 04/05/2026</td>
           <td style="color:#64748b">1</td>
           <td style="color:#64748b">0</td>
           <td><span style="color:#10b981;font-weight:600;font-size:0.85rem">0.0%</span></td>
         </tr>
-        <tr style="background:#f8fafc">
+        <tr style="background:#f8fafc" data-wb-ch="26/07/2026">
           <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 19/04/2026</td>
           <td style="color:#64748b">1</td>
           <td style="color:#64748b">0</td>
           <td><span style="color:#10b981;font-weight:600;font-size:0.85rem">0.0%</span></td>
         </tr>
-        <tr>
+        <tr data-ch="21/06/2026">
+          <td style="font-weight:600">21/06/2026</td>
+          <td>26</td>
+          <td>0</td>
+          <td><span style="color:#10b981;font-weight:700">0.0%</span></td>
+        </tr>
+        <tr style="background:#f8fafc" data-wb-ch="21/06/2026">
+          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 18/05/2026</td>
+          <td style="color:#64748b">19</td>
+          <td style="color:#64748b">0</td>
+          <td><span style="color:#10b981;font-weight:600;font-size:0.85rem">0.0%</span></td>
+        </tr>
+        <tr style="background:#f8fafc" data-wb-ch="21/06/2026">
+          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 04/05/2026</td>
+          <td style="color:#64748b">4</td>
+          <td style="color:#64748b">0</td>
+          <td><span style="color:#10b981;font-weight:600;font-size:0.85rem">0.0%</span></td>
+        </tr>
+        <tr style="background:#f8fafc" data-wb-ch="21/06/2026">
+          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 19/04/2026</td>
+          <td style="color:#64748b">2</td>
+          <td style="color:#64748b">0</td>
+          <td><span style="color:#10b981;font-weight:600;font-size:0.85rem">0.0%</span></td>
+        </tr>
+        <tr style="background:#f8fafc" data-wb-ch="21/06/2026">
+          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 12/04/2026</td>
+          <td style="color:#64748b">1</td>
+          <td style="color:#64748b">0</td>
+          <td><span style="color:#10b981;font-weight:600;font-size:0.85rem">0.0%</span></td>
+        </tr>
+        <tr data-ch="15/06/2026">
+          <td style="font-weight:600">15/06/2026</td>
+          <td>1</td>
+          <td>0</td>
+          <td><span style="color:#10b981;font-weight:700">0.0%</span></td>
+        </tr>
+        <tr style="background:#f8fafc" data-wb-ch="15/06/2026">
+          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר לא ידוע</td>
+          <td style="color:#64748b">1</td>
+          <td style="color:#64748b">0</td>
+          <td><span style="color:#10b981;font-weight:600;font-size:0.85rem">0.0%</span></td>
+        </tr>
+        <tr data-ch="17/05/2026">
+          <td style="font-weight:600">17/05/2026</td>
+          <td>100</td>
+          <td>22</td>
+          <td><span style="color:#dc2626;font-weight:700">22.0%</span></td>
+        </tr>
+        <tr style="background:#f8fafc" data-wb-ch="17/05/2026">
+          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 18/05/2026</td>
+          <td style="color:#64748b">3</td>
+          <td style="color:#64748b">2</td>
+          <td><span style="color:#dc2626;font-weight:600;font-size:0.85rem">66.7%</span></td>
+        </tr>
+        <tr style="background:#f8fafc" data-wb-ch="17/05/2026">
+          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 04/05/2026</td>
+          <td style="color:#64748b">29</td>
+          <td style="color:#64748b">4</td>
+          <td><span style="color:#f59e0b;font-weight:600;font-size:0.85rem">13.8%</span></td>
+        </tr>
+        <tr style="background:#f8fafc" data-wb-ch="17/05/2026">
+          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 19/04/2026</td>
+          <td style="color:#64748b">29</td>
+          <td style="color:#64748b">10</td>
+          <td><span style="color:#dc2626;font-weight:600;font-size:0.85rem">34.5%</span></td>
+        </tr>
+        <tr style="background:#f8fafc" data-wb-ch="17/05/2026">
+          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 12/04/2026</td>
+          <td style="color:#64748b">31</td>
+          <td style="color:#64748b">4</td>
+          <td><span style="color:#f59e0b;font-weight:600;font-size:0.85rem">12.9%</span></td>
+        </tr>
+        <tr style="background:#f8fafc" data-wb-ch="17/05/2026">
+          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 30/03/2026</td>
+          <td style="color:#64748b">1</td>
+          <td style="color:#64748b">1</td>
+          <td><span style="color:#dc2626;font-weight:600;font-size:0.85rem">100.0%</span></td>
+        </tr>
+        <tr style="background:#f8fafc" data-wb-ch="17/05/2026">
+          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 16/03/2026</td>
+          <td style="color:#64748b">1</td>
+          <td style="color:#64748b">1</td>
+          <td><span style="color:#dc2626;font-weight:600;font-size:0.85rem">100.0%</span></td>
+        </tr>
+        <tr style="background:#f8fafc" data-wb-ch="17/05/2026">
+          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר לא ידוע</td>
+          <td style="color:#64748b">6</td>
+          <td style="color:#64748b">0</td>
+          <td><span style="color:#10b981;font-weight:600;font-size:0.85rem">0.0%</span></td>
+        </tr>
+        <tr data-ch="12/04/2026">
+          <td style="font-weight:600">12/04/2026</td>
+          <td>50</td>
+          <td>6</td>
+          <td><span style="color:#f59e0b;font-weight:700">12.0%</span></td>
+        </tr>
+        <tr style="background:#f8fafc" data-wb-ch="12/04/2026">
+          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 12/04/2026</td>
+          <td style="color:#64748b">1</td>
+          <td style="color:#64748b">0</td>
+          <td><span style="color:#10b981;font-weight:600;font-size:0.85rem">0.0%</span></td>
+        </tr>
+        <tr style="background:#f8fafc" data-wb-ch="12/04/2026">
+          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 30/03/2026</td>
+          <td style="color:#64748b">24</td>
+          <td style="color:#64748b">3</td>
+          <td><span style="color:#f59e0b;font-weight:600;font-size:0.85rem">12.5%</span></td>
+        </tr>
+        <tr style="background:#f8fafc" data-wb-ch="12/04/2026">
+          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 16/03/2026</td>
+          <td style="color:#64748b">22</td>
+          <td style="color:#64748b">3</td>
+          <td><span style="color:#f59e0b;font-weight:600;font-size:0.85rem">13.6%</span></td>
+        </tr>
+        <tr style="background:#f8fafc" data-wb-ch="12/04/2026">
+          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר לא ידוע</td>
+          <td style="color:#64748b">3</td>
+          <td style="color:#64748b">0</td>
+          <td><span style="color:#10b981;font-weight:600;font-size:0.85rem">0.0%</span></td>
+        </tr>
+        <tr data-ch="08/03/2026">
+          <td style="font-weight:600">08/03/2026</td>
+          <td>44</td>
+          <td>8</td>
+          <td><span style="color:#f59e0b;font-weight:700">18.2%</span></td>
+        </tr>
+        <tr style="background:#f8fafc" data-wb-ch="08/03/2026">
+          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 01/03/2026</td>
+          <td style="color:#64748b">2</td>
+          <td style="color:#64748b">1</td>
+          <td><span style="color:#dc2626;font-weight:600;font-size:0.85rem">50.0%</span></td>
+        </tr>
+        <tr style="background:#f8fafc" data-wb-ch="08/03/2026">
+          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 16/02/2026</td>
+          <td style="color:#64748b">4</td>
+          <td style="color:#64748b">3</td>
+          <td><span style="color:#dc2626;font-weight:600;font-size:0.85rem">75.0%</span></td>
+        </tr>
+        <tr style="background:#f8fafc" data-wb-ch="08/03/2026">
+          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 11/11/2025</td>
+          <td style="color:#64748b">1</td>
+          <td style="color:#64748b">0</td>
+          <td><span style="color:#10b981;font-weight:600;font-size:0.85rem">0.0%</span></td>
+        </tr>
+        <tr style="background:#f8fafc" data-wb-ch="08/03/2026">
+          <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר לא ידוע</td>
+          <td style="color:#64748b">37</td>
+          <td style="color:#64748b">4</td>
+          <td><span style="color:#f59e0b;font-weight:600;font-size:0.85rem">10.8%</span></td>
+        </tr>
+        <tr data-ch="לא שויך">
           <td style="font-weight:600">לא שויך</td>
           <td>101</td>
           <td>16</td>
           <td><span style="color:#f59e0b;font-weight:700">15.8%</span></td>
         </tr>
-        <tr style="background:#f8fafc">
+        <tr style="background:#f8fafc" data-wb-ch="לא שויך">
           <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 12/04/2026</td>
           <td style="color:#64748b">2</td>
           <td style="color:#64748b">0</td>
           <td><span style="color:#10b981;font-weight:600;font-size:0.85rem">0.0%</span></td>
         </tr>
-        <tr style="background:#f8fafc">
+        <tr style="background:#f8fafc" data-wb-ch="לא שויך">
           <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 16/03/2026</td>
           <td style="color:#64748b">1</td>
           <td style="color:#64748b">0</td>
           <td><span style="color:#10b981;font-weight:600;font-size:0.85rem">0.0%</span></td>
         </tr>
-        <tr style="background:#f8fafc">
+        <tr style="background:#f8fafc" data-wb-ch="לא שויך">
           <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר 19/01/2026</td>
           <td style="color:#64748b">1</td>
           <td style="color:#64748b">1</td>
           <td><span style="color:#dc2626;font-weight:600;font-size:0.85rem">100.0%</span></td>
         </tr>
-        <tr style="background:#f8fafc">
+        <tr style="background:#f8fafc" data-wb-ch="לא שויך">
           <td style="padding-right:32px;color:#64748b;font-size:0.85rem">↳ וובינר לא ידוע</td>
           <td style="color:#64748b">97</td>
           <td style="color:#64748b">15</td>
@@ -344,68 +371,68 @@
         <div style="overflow-x:auto">
           <table>
             <thead><tr><th>תאריך וובינר</th><th>סה"כ</th><th>ביטלו</th><th>%</th></tr></thead>
-            <tbody>
-        <tr>
-          <td style="font-weight:600">01/03/2026</td>
-          <td>2</td>
-          <td>1</td>
-          <td><span style="color:#dc2626;font-weight:700">50.0%</span></td>
-        </tr>
-        <tr>
-          <td style="font-weight:600">04/05/2026</td>
-          <td>34</td>
-          <td>4</td>
-          <td><span style="color:#f59e0b;font-weight:700">11.8%</span></td>
-        </tr>
-        <tr>
-          <td style="font-weight:600">11/11/2025</td>
-          <td>1</td>
-          <td>0</td>
-          <td><span style="color:#10b981;font-weight:700">0.0%</span></td>
-        </tr>
-        <tr>
-          <td style="font-weight:600">12/04/2026</td>
-          <td>35</td>
-          <td>4</td>
-          <td><span style="color:#f59e0b;font-weight:700">11.4%</span></td>
-        </tr>
-        <tr>
-          <td style="font-weight:600">16/02/2026</td>
-          <td>4</td>
-          <td>3</td>
-          <td><span style="color:#dc2626;font-weight:700">75.0%</span></td>
-        </tr>
-        <tr>
-          <td style="font-weight:600">16/03/2026</td>
-          <td>24</td>
-          <td>4</td>
-          <td><span style="color:#f59e0b;font-weight:700">16.7%</span></td>
-        </tr>
-        <tr>
+            <tbody id="wbTableBody">
+        <tr data-challenges="17/05/2026,21/06/2026">
           <td style="font-weight:600">18/05/2026</td>
           <td>22</td>
           <td>2</td>
           <td><span style="color:#10b981;font-weight:700">9.1%</span></td>
         </tr>
-        <tr>
-          <td style="font-weight:600">19/01/2026</td>
-          <td>1</td>
-          <td>1</td>
-          <td><span style="color:#dc2626;font-weight:700">100.0%</span></td>
+        <tr data-challenges="17/05/2026,26/07/2026,21/06/2026">
+          <td style="font-weight:600">04/05/2026</td>
+          <td>34</td>
+          <td>4</td>
+          <td><span style="color:#f59e0b;font-weight:700">11.8%</span></td>
         </tr>
-        <tr>
+        <tr data-challenges="17/05/2026,26/07/2026,21/06/2026">
           <td style="font-weight:600">19/04/2026</td>
           <td>32</td>
           <td>10</td>
           <td><span style="color:#dc2626;font-weight:700">31.2%</span></td>
         </tr>
-        <tr>
+        <tr data-challenges="17/05/2026,21/06/2026,לא שויך,12/04/2026">
+          <td style="font-weight:600">12/04/2026</td>
+          <td>35</td>
+          <td>4</td>
+          <td><span style="color:#f59e0b;font-weight:700">11.4%</span></td>
+        </tr>
+        <tr data-challenges="17/05/2026,12/04/2026">
           <td style="font-weight:600">30/03/2026</td>
           <td>25</td>
           <td>4</td>
           <td><span style="color:#f59e0b;font-weight:700">16.0%</span></td>
         </tr>
-        <tr>
+        <tr data-challenges="17/05/2026,לא שויך,12/04/2026">
+          <td style="font-weight:600">16/03/2026</td>
+          <td>24</td>
+          <td>4</td>
+          <td><span style="color:#f59e0b;font-weight:700">16.7%</span></td>
+        </tr>
+        <tr data-challenges="08/03/2026">
+          <td style="font-weight:600">01/03/2026</td>
+          <td>2</td>
+          <td>1</td>
+          <td><span style="color:#dc2626;font-weight:700">50.0%</span></td>
+        </tr>
+        <tr data-challenges="08/03/2026">
+          <td style="font-weight:600">16/02/2026</td>
+          <td>4</td>
+          <td>3</td>
+          <td><span style="color:#dc2626;font-weight:700">75.0%</span></td>
+        </tr>
+        <tr data-challenges="לא שויך">
+          <td style="font-weight:600">19/01/2026</td>
+          <td>1</td>
+          <td>1</td>
+          <td><span style="color:#dc2626;font-weight:700">100.0%</span></td>
+        </tr>
+        <tr data-challenges="08/03/2026">
+          <td style="font-weight:600">11/11/2025</td>
+          <td>1</td>
+          <td>0</td>
+          <td><span style="color:#10b981;font-weight:700">0.0%</span></td>
+        </tr>
+        <tr data-challenges="08/03/2026,12/04/2026,לא שויך,17/05/2026,15/06/2026">
           <td style="font-weight:600">לא ידוע</td>
           <td>144</td>
           <td>19</td>
@@ -670,8 +697,8 @@
             <th>אפליקציה</th><th>שאלון</th><th>חוזר</th>
           </tr>
         </thead>
-        <tbody>
-        <tr>
+        <tbody id="detailTableBody">
+        <tr data-challenge="08/03/2026">
           <td>קרני</td>
           <td style="direction:ltr;text-align:right">0546873707</td>
           <td>08/03/2026</td>
@@ -683,7 +710,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6">✓</td>
         </tr>
-        <tr>
+        <tr data-challenge="08/03/2026">
           <td>מיטל לוי גרוסמן</td>
           <td style="direction:ltr;text-align:right">0545218000</td>
           <td>08/03/2026</td>
@@ -695,7 +722,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="08/03/2026">
           <td>שושנה זקן</td>
           <td style="direction:ltr;text-align:right">0506885654</td>
           <td>08/03/2026</td>
@@ -707,7 +734,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="08/03/2026">
           <td>נבו יעקב</td>
           <td style="direction:ltr;text-align:right">0502062672</td>
           <td>08/03/2026</td>
@@ -719,7 +746,7 @@
           <td style="text-align:center">✗</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="08/03/2026">
           <td>זהבה זנדברג</td>
           <td style="direction:ltr;text-align:right">0545842808</td>
           <td>08/03/2026</td>
@@ -731,7 +758,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="08/03/2026">
           <td>שמואל ארביב</td>
           <td style="direction:ltr;text-align:right">0523459701</td>
           <td>08/03/2026</td>
@@ -743,7 +770,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="08/03/2026">
           <td>ליבת לוי</td>
           <td style="direction:ltr;text-align:right">0526962266</td>
           <td>08/03/2026</td>
@@ -755,7 +782,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="08/03/2026">
           <td>נבו יעקב</td>
           <td style="direction:ltr;text-align:right">0502062672</td>
           <td>08/03/2026</td>
@@ -767,7 +794,7 @@
           <td style="text-align:center">✗</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="12/04/2026">
           <td>אביגיל שטרן שטרן</td>
           <td style="direction:ltr;text-align:right">0528442353</td>
           <td>12/04/2026</td>
@@ -779,7 +806,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="12/04/2026">
           <td>רוס אלן אלן</td>
           <td style="direction:ltr;text-align:right">0542592260</td>
           <td>12/04/2026</td>
@@ -791,7 +818,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="12/04/2026">
           <td>יורם פריינטה פריינטה</td>
           <td style="direction:ltr;text-align:right">0545221332</td>
           <td>12/04/2026</td>
@@ -803,7 +830,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="12/04/2026">
           <td>מיכלי אור</td>
           <td style="direction:ltr;text-align:right">0537291914</td>
           <td>12/04/2026</td>
@@ -815,7 +842,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="12/04/2026">
           <td>אורטל</td>
           <td style="direction:ltr;text-align:right">0508821366</td>
           <td>12/04/2026</td>
@@ -827,7 +854,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6">✓</td>
         </tr>
-        <tr>
+        <tr data-challenge="12/04/2026">
           <td>משה</td>
           <td style="direction:ltr;text-align:right">0509241115</td>
           <td>12/04/2026</td>
@@ -839,7 +866,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="17/05/2026">
           <td>דלית  שמחה</td>
           <td style="direction:ltr;text-align:right">0509233240</td>
           <td>17/05/2026</td>
@@ -851,7 +878,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="17/05/2026">
           <td>שרון  כנפי</td>
           <td style="direction:ltr;text-align:right">0542572118</td>
           <td>17/05/2026</td>
@@ -863,7 +890,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="17/05/2026">
           <td>עלמה  ביטלה</td>
           <td style="direction:ltr;text-align:right">0506263664</td>
           <td>17/05/2026</td>
@@ -875,7 +902,7 @@
           <td style="text-align:center">✗</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="17/05/2026">
           <td>אביגיל אסולין</td>
           <td style="direction:ltr;text-align:right">0524309994</td>
           <td>17/05/2026</td>
@@ -887,7 +914,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6">✓</td>
         </tr>
-        <tr>
+        <tr data-challenge="17/05/2026">
           <td>רותם  דהרי</td>
           <td style="direction:ltr;text-align:right">0544503576</td>
           <td>17/05/2026</td>
@@ -899,7 +926,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="17/05/2026">
           <td>גילי  מאור</td>
           <td style="direction:ltr;text-align:right">0555579462</td>
           <td>17/05/2026</td>
@@ -911,7 +938,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="17/05/2026">
           <td>ליאור גל</td>
           <td style="direction:ltr;text-align:right">0522747757</td>
           <td>17/05/2026</td>
@@ -923,7 +950,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="17/05/2026">
           <td>אביגיל גולן</td>
           <td style="direction:ltr;text-align:right">0544615502</td>
           <td>17/05/2026</td>
@@ -935,7 +962,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="17/05/2026">
           <td>שפרה גליק גליק</td>
           <td style="direction:ltr;text-align:right">0524273713</td>
           <td>17/05/2026</td>
@@ -947,7 +974,7 @@
           <td style="text-align:center">✗</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="17/05/2026">
           <td>אילה  תמרי</td>
           <td style="direction:ltr;text-align:right">0544802260</td>
           <td>17/05/2026</td>
@@ -959,7 +986,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="17/05/2026">
           <td>חן</td>
           <td style="direction:ltr;text-align:right">0522636183</td>
           <td>17/05/2026</td>
@@ -971,7 +998,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="17/05/2026">
           <td>מירון לבו</td>
           <td style="direction:ltr;text-align:right">0505532423</td>
           <td>17/05/2026</td>
@@ -983,7 +1010,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="17/05/2026">
           <td>שרה</td>
           <td style="direction:ltr;text-align:right">0548084469</td>
           <td>17/05/2026</td>
@@ -995,7 +1022,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="17/05/2026">
           <td>טלי</td>
           <td style="direction:ltr;text-align:right">0507478014</td>
           <td>17/05/2026</td>
@@ -1007,7 +1034,7 @@
           <td style="text-align:center">✗</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="17/05/2026">
           <td>מזל נסים</td>
           <td style="direction:ltr;text-align:right">0548128009</td>
           <td>17/05/2026</td>
@@ -1019,7 +1046,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="17/05/2026">
           <td>איציק תומר</td>
           <td style="direction:ltr;text-align:right">0506282626</td>
           <td>17/05/2026</td>
@@ -1031,7 +1058,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="17/05/2026">
           <td>רונית  לוי</td>
           <td style="direction:ltr;text-align:right">0508356367</td>
           <td>17/05/2026</td>
@@ -1043,7 +1070,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="17/05/2026">
           <td>מרגית בוגן</td>
           <td style="direction:ltr;text-align:right">0505300785</td>
           <td>17/05/2026</td>
@@ -1055,7 +1082,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="17/05/2026">
           <td>שריה</td>
           <td style="direction:ltr;text-align:right">0523847502</td>
           <td>17/05/2026</td>
@@ -1067,7 +1094,7 @@
           <td style="text-align:center">✗</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="17/05/2026">
           <td>שרון דור</td>
           <td style="direction:ltr;text-align:right">0542112939</td>
           <td>17/05/2026</td>
@@ -1079,7 +1106,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="17/05/2026">
           <td>עינת  שביט</td>
           <td style="direction:ltr;text-align:right">0545341969</td>
           <td>17/05/2026</td>
@@ -1091,7 +1118,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="17/05/2026">
           <td>נויה</td>
           <td style="direction:ltr;text-align:right">0522770025</td>
           <td>17/05/2026</td>
@@ -1103,7 +1130,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="—">
           <td>רינה יבלונסקי</td>
           <td style="direction:ltr;text-align:right">0556602344</td>
           <td>—</td>
@@ -1115,7 +1142,7 @@
           <td style="text-align:center">✗</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="—">
           <td>אילנה לרנר</td>
           <td style="direction:ltr;text-align:right">0544853820</td>
           <td>—</td>
@@ -1127,7 +1154,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="—">
           <td>שילת אסרף</td>
           <td style="direction:ltr;text-align:right">0533459311</td>
           <td>—</td>
@@ -1139,7 +1166,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="—">
           <td>אריאל בר</td>
           <td style="direction:ltr;text-align:right">0504505311</td>
           <td>—</td>
@@ -1151,7 +1178,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="—">
           <td>שוש כץ</td>
           <td style="direction:ltr;text-align:right"></td>
           <td>—</td>
@@ -1163,7 +1190,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="—">
           <td>חי</td>
           <td style="direction:ltr;text-align:right"></td>
           <td>—</td>
@@ -1175,7 +1202,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="—">
           <td>ערן בלאט -</td>
           <td style="direction:ltr;text-align:right">0522214758</td>
           <td>—</td>
@@ -1187,7 +1214,7 @@
           <td style="text-align:center">✗</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="—">
           <td>אירית הראל -</td>
           <td style="direction:ltr;text-align:right">0524715052</td>
           <td>—</td>
@@ -1199,7 +1226,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="—">
           <td>צביה קומוב -</td>
           <td style="direction:ltr;text-align:right">0502146041</td>
           <td>—</td>
@@ -1211,7 +1238,7 @@
           <td style="text-align:center">✗</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="—">
           <td>שוש כץ אוחיון -</td>
           <td style="direction:ltr;text-align:right">0522410046</td>
           <td>—</td>
@@ -1223,7 +1250,7 @@
           <td style="text-align:center">✗</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="—">
           <td>אמנון ברומברג -</td>
           <td style="direction:ltr;text-align:right">0543074777</td>
           <td>—</td>
@@ -1235,7 +1262,7 @@
           <td style="text-align:center">✗</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="—">
           <td>עידית שמואלביץ -</td>
           <td style="direction:ltr;text-align:right">0526139188</td>
           <td>—</td>
@@ -1247,7 +1274,7 @@
           <td style="text-align:center">✗</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="—">
           <td>רינה יבלונסקי -</td>
           <td style="direction:ltr;text-align:right">0556602344</td>
           <td>—</td>
@@ -1259,7 +1286,7 @@
           <td style="text-align:center">✗</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="—">
           <td>Uri Pisson -</td>
           <td style="direction:ltr;text-align:right">0509041991</td>
           <td>—</td>
@@ -1271,7 +1298,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="—">
           <td>עינב כהן -</td>
           <td style="direction:ltr;text-align:right">0528372291</td>
           <td>—</td>
@@ -1283,7 +1310,7 @@
           <td style="text-align:center">✓</td>
           <td style="text-align:center;color:#8b5cf6"></td>
         </tr>
-        <tr>
+        <tr data-challenge="—">
           <td>022892194 -</td>
           <td style="direction:ltr;text-align:right">0542207937</td>
           <td>—</td>
@@ -1370,7 +1397,7 @@
 </div>
 
 <script>
-const DATA = {"total": 324, "n_cancel": 52, "total_refunded": -49940.0, "cancel_rate": 16.0, "by_challenge": {"08/03/2026": {"total": 44, "cancelled": 8, "rate": 18.2, "webinars": {"לא ידוע": {"total": 37, "cancelled": 4, "rate": 10.8}, "16/02/2026": {"total": 4, "cancelled": 3, "rate": 75.0}, "01/03/2026": {"total": 2, "cancelled": 1, "rate": 50.0}, "11/11/2025": {"total": 1, "cancelled": 0, "rate": 0.0}}}, "12/04/2026": {"total": 50, "cancelled": 6, "rate": 12.0, "webinars": {"12/04/2026": {"total": 1, "cancelled": 0, "rate": 0.0}, "30/03/2026": {"total": 24, "cancelled": 3, "rate": 12.5}, "16/03/2026": {"total": 22, "cancelled": 3, "rate": 13.6}, "לא ידוע": {"total": 3, "cancelled": 0, "rate": 0.0}}}, "15/06/2026": {"total": 1, "cancelled": 0, "rate": 0.0, "webinars": {"לא ידוע": {"total": 1, "cancelled": 0, "rate": 0.0}}}, "17/05/2026": {"total": 100, "cancelled": 22, "rate": 22.0, "webinars": {"לא ידוע": {"total": 6, "cancelled": 0, "rate": 0.0}, "18/05/2026": {"total": 3, "cancelled": 2, "rate": 66.7}, "04/05/2026": {"total": 29, "cancelled": 4, "rate": 13.8}, "12/04/2026": {"total": 31, "cancelled": 4, "rate": 12.9}, "19/04/2026": {"total": 29, "cancelled": 10, "rate": 34.5}, "30/03/2026": {"total": 1, "cancelled": 1, "rate": 100.0}, "16/03/2026": {"total": 1, "cancelled": 1, "rate": 100.0}}}, "21/06/2026": {"total": 26, "cancelled": 0, "rate": 0.0, "webinars": {"18/05/2026": {"total": 19, "cancelled": 0, "rate": 0.0}, "04/05/2026": {"total": 4, "cancelled": 0, "rate": 0.0}, "19/04/2026": {"total": 2, "cancelled": 0, "rate": 0.0}, "12/04/2026": {"total": 1, "cancelled": 0, "rate": 0.0}}}, "26/07/2026": {"total": 2, "cancelled": 0, "rate": 0.0, "webinars": {"04/05/2026": {"total": 1, "cancelled": 0, "rate": 0.0}, "19/04/2026": {"total": 1, "cancelled": 0, "rate": 0.0}}}, "לא שויך": {"total": 101, "cancelled": 16, "rate": 15.8, "webinars": {"לא ידוע": {"total": 97, "cancelled": 15, "rate": 15.5}, "12/04/2026": {"total": 2, "cancelled": 0, "rate": 0.0}, "16/03/2026": {"total": 1, "cancelled": 0, "rate": 0.0}, "19/01/2026": {"total": 1, "cancelled": 1, "rate": 100.0}}}}, "by_webinar": {"01/03/2026": {"total": 2, "cancelled": 1, "rate": 50.0}, "04/05/2026": {"total": 34, "cancelled": 4, "rate": 11.8}, "11/11/2025": {"total": 1, "cancelled": 0, "rate": 0.0}, "12/04/2026": {"total": 35, "cancelled": 4, "rate": 11.4}, "16/02/2026": {"total": 4, "cancelled": 3, "rate": 75.0}, "16/03/2026": {"total": 24, "cancelled": 4, "rate": 16.7}, "18/05/2026": {"total": 22, "cancelled": 2, "rate": 9.1}, "19/01/2026": {"total": 1, "cancelled": 1, "rate": 100.0}, "19/04/2026": {"total": 32, "cancelled": 10, "rate": 31.2}, "30/03/2026": {"total": 25, "cancelled": 4, "rate": 16.0}, "לא ידוע": {"total": 144, "cancelled": 19, "rate": 13.2}}, "before_after": {"before": 20, "after": 14, "unknown": 18}, "app": {"yes": {"total": 164, "cancelled": 22, "rate": 13.4}, "no": {"total": 160, "cancelled": 30, "rate": 18.8}}, "questionnaire": {"yes": {"total": 265, "cancelled": 39, "rate": 14.7}, "no": {"total": 59, "cancelled": 13, "rate": 22.0}}, "returning": {"yes": {"total": 16, "cancelled": 3, "rate": 18.8}, "no": {"total": 308, "cancelled": 49, "rate": 15.9}}, "timelines": [{"name": "משה", "days": -47, "challenge": "12/04/2026"}, {"name": "שרון  כנפי", "days": -7, "challenge": "17/05/2026"}, {"name": "אורטל", "days": -2, "challenge": "12/04/2026"}, {"name": "טלי", "days": 0, "challenge": "17/05/2026"}, {"name": "יורם פריינטה פריינטה", "days": 6, "challenge": "12/04/2026"}, {"name": "שרה", "days": 7, "challenge": "17/05/2026"}, {"name": "אביגיל אסולין", "days": 10, "challenge": "17/05/2026"}, {"name": "שפרה גליק גליק", "days": 11, "challenge": "17/05/2026"}, {"name": "דלית  שמחה", "days": 14, "challenge": "17/05/2026"}, {"name": "שריה", "days": 15, "challenge": "17/05/2026"}, {"name": "שרון דור", "days": 15, "challenge": "17/05/2026"}, {"name": "עינת  שביט", "days": 16, "challenge": "17/05/2026"}, {"name": "חן", "days": 18, "challenge": "17/05/2026"}, {"name": "אביגיל שטרן שטרן", "days": 18, "challenge": "12/04/2026"}, {"name": "רותם  דהרי", "days": 24, "challenge": "17/05/2026"}, {"name": "אילה  תמרי", "days": 25, "challenge": "17/05/2026"}, {"name": "מירון לבו", "days": 26, "challenge": "17/05/2026"}, {"name": "ליאור גל", "days": 28, "challenge": "17/05/2026"}, {"name": "מזל נסים", "days": 29, "challenge": "17/05/2026"}, {"name": "רוס אלן אלן", "days": 30, "challenge": "12/04/2026"}, {"name": "נויה", "days": 30, "challenge": "17/05/2026"}, {"name": "מיכלי אור", "days": 30, "challenge": "12/04/2026"}, {"name": "גילי  מאור", "days": 33, "challenge": "17/05/2026"}, {"name": "אביגיל גולן", "days": 33, "challenge": "17/05/2026"}, {"name": "איציק תומר", "days": 35, "challenge": "17/05/2026"}, {"name": "רונית  לוי", "days": 36, "challenge": "17/05/2026"}, {"name": "מרגית בוגן", "days": 36, "challenge": "17/05/2026"}], "detail": [{"name": "קרני", "phone": "0546873707", "challenge": "08/03/2026", "webinar": "16/02/2026", "payment": "—", "cancel": "2026-01-29", "amount": -1190.0, "has_app": "✓", "did_q": "✓", "returning": "✓"}, {"name": "מיטל לוי גרוסמן", "phone": "0545218000", "challenge": "08/03/2026", "webinar": "01/03/2026", "payment": "—", "cancel": "2026-03-09", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "שושנה זקן", "phone": "0506885654", "challenge": "08/03/2026", "webinar": "—", "payment": "—", "cancel": "2026-02-22", "amount": -1390.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "נבו יעקב", "phone": "0502062672", "challenge": "08/03/2026", "webinar": "—", "payment": "—", "cancel": "2026-02-17", "amount": -1390.0, "has_app": "✓", "did_q": "✗", "returning": ""}, {"name": "זהבה זנדברג", "phone": "0545842808", "challenge": "08/03/2026", "webinar": "16/02/2026", "payment": "—", "cancel": "2026-03-10", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "שמואל ארביב", "phone": "0523459701", "challenge": "08/03/2026", "webinar": "—", "payment": "—", "cancel": "2026-03-01", "amount": -1090.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "ליבת לוי", "phone": "0526962266", "challenge": "08/03/2026", "webinar": "16/02/2026", "payment": "—", "cancel": "2026-03-12", "amount": -1090.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "נבו יעקב", "phone": "0502062672", "challenge": "08/03/2026", "webinar": "—", "payment": "—", "cancel": "—", "amount": 0, "has_app": "✗", "did_q": "✗", "returning": ""}, {"name": "אביגיל שטרן שטרן", "phone": "0528442353", "challenge": "12/04/2026", "webinar": "30/03/2026", "payment": "30/03/2026", "cancel": "2026-04-17", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "רוס אלן אלן", "phone": "0542592260", "challenge": "12/04/2026", "webinar": "30/03/2026", "payment": "30/03/2026", "cancel": "2026-04-29", "amount": -200.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "יורם פריינטה פריינטה", "phone": "0545221332", "challenge": "12/04/2026", "webinar": "30/03/2026", "payment": "30/03/2026", "cancel": "05/04/2026", "amount": 0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "מיכלי אור", "phone": "0537291914", "challenge": "12/04/2026", "webinar": "16/03/2026", "payment": "17/03/2026", "cancel": "2026-04-16", "amount": -1090.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "אורטל", "phone": "0508821366", "challenge": "12/04/2026", "webinar": "16/03/2026", "payment": "16/03/2026", "cancel": "2026-03-14", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": "✓"}, {"name": "משה", "phone": "0509241115", "challenge": "12/04/2026", "webinar": "16/03/2026", "payment": "16/03/2026", "cancel": "2026-01-28", "amount": -1190.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "דלית  שמחה", "phone": "0509233240", "challenge": "17/05/2026", "webinar": "18/05/2026", "payment": "04/05/2026", "cancel": "2026-05-18", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "שרון  כנפי", "phone": "0542572118", "challenge": "17/05/2026", "webinar": "04/05/2026", "payment": "04/05/2026", "cancel": "2026-04-27", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "עלמה  ביטלה", "phone": "0506263664", "challenge": "17/05/2026", "webinar": "04/05/2026", "payment": "04/05/2026", "cancel": "—", "amount": 0, "has_app": "✗", "did_q": "✗", "returning": ""}, {"name": "אביגיל אסולין", "phone": "0524309994", "challenge": "17/05/2026", "webinar": "04/05/2026", "payment": "04/05/2026", "cancel": "2026-05-14", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": "✓"}, {"name": "רותם  דהרי", "phone": "0544503576", "challenge": "17/05/2026", "webinar": "04/05/2026", "payment": "20/04/2026", "cancel": "2026-05-14", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "גילי  מאור", "phone": "0555579462", "challenge": "17/05/2026", "webinar": "19/04/2026", "payment": "20/04/2026", "cancel": "2026-05-23", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "ליאור גל", "phone": "0522747757", "challenge": "17/05/2026", "webinar": "19/04/2026", "payment": "20/04/2026", "cancel": "2026-05-18", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "אביגיל גולן", "phone": "0544615502", "challenge": "17/05/2026", "webinar": "19/04/2026", "payment": "20/04/2026", "cancel": "2026-05-23", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "שפרה גליק גליק", "phone": "0524273713", "challenge": "17/05/2026", "webinar": "19/04/2026", "payment": "19/04/2026", "cancel": "2026-04-30", "amount": -1390.0, "has_app": "✗", "did_q": "✗", "returning": ""}, {"name": "אילה  תמרי", "phone": "0544802260", "challenge": "17/05/2026", "webinar": "19/04/2026", "payment": "19/04/2026", "cancel": "2026-05-14", "amount": -1190.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "חן", "phone": "0522636183", "challenge": "17/05/2026", "webinar": "19/04/2026", "payment": "19/04/2026", "cancel": "2026-05-07", "amount": -1090.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "מירון לבו", "phone": "0505532423", "challenge": "17/05/2026", "webinar": "19/04/2026", "payment": "19/04/2026", "cancel": "2026-05-15", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "שרה", "phone": "0548084469", "challenge": "17/05/2026", "webinar": "19/04/2026", "payment": "19/04/2026", "cancel": "2026-04-26", "amount": -1090.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "טלי", "phone": "0507478014", "challenge": "17/05/2026", "webinar": "19/04/2026", "payment": "19/04/2026", "cancel": "2026-04-19", "amount": -1390.0, "has_app": "✗", "did_q": "✗", "returning": ""}, {"name": "מזל נסים", "phone": "0548128009", "challenge": "17/05/2026", "webinar": "19/04/2026", "payment": "19/04/2026", "cancel": "2026-05-18", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "איציק תומר", "phone": "0506282626", "challenge": "17/05/2026", "webinar": "12/04/2026", "payment": "13/04/2026", "cancel": "2026-05-18", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "רונית  לוי", "phone": "0508356367", "challenge": "17/05/2026", "webinar": "12/04/2026", "payment": "12/04/2026", "cancel": "2026-05-18", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "מרגית בוגן", "phone": "0505300785", "challenge": "17/05/2026", "webinar": "18/05/2026", "payment": "12/04/2026", "cancel": "2026-05-18", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "שריה", "phone": "0523847502", "challenge": "17/05/2026", "webinar": "12/04/2026", "payment": "12/04/2026", "cancel": "2026-04-27", "amount": -1390.0, "has_app": "✗", "did_q": "✗", "returning": ""}, {"name": "שרון דור", "phone": "0542112939", "challenge": "17/05/2026", "webinar": "12/04/2026", "payment": "12/04/2026", "cancel": "27/04/2026", "amount": 0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "עינת  שביט", "phone": "0545341969", "challenge": "17/05/2026", "webinar": "30/03/2026", "payment": "30/03/2026", "cancel": "2026-04-15", "amount": -990.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "נויה", "phone": "0522770025", "challenge": "17/05/2026", "webinar": "16/03/2026", "payment": "17/03/2026", "cancel": "2026-04-16", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "רינה יבלונסקי", "phone": "0556602344", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "2026-02-09", "amount": -880.0, "has_app": "✗", "did_q": "✗", "returning": ""}, {"name": "אילנה לרנר", "phone": "0544853820", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "2026-02-11", "amount": -1390.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "שילת אסרף", "phone": "0533459311", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "2026-02-12", "amount": -880.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "אריאל בר", "phone": "0504505311", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "2026-02-15", "amount": -890.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "שוש כץ", "phone": "", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "2026-02-14", "amount": -890.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "חי", "phone": "", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "2026-01-15", "amount": -500.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "ערן בלאט -", "phone": "0522214758", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "2026-01-20", "amount": -1190.0, "has_app": "✗", "did_q": "✗", "returning": ""}, {"name": "אירית הראל -", "phone": "0524715052", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "2026-02-10", "amount": -890.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "צביה קומוב -", "phone": "0502146041", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "2026-01-20", "amount": -1190.0, "has_app": "✗", "did_q": "✗", "returning": ""}, {"name": "שוש כץ אוחיון -", "phone": "0522410046", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "—", "amount": 0, "has_app": "✗", "did_q": "✗", "returning": ""}, {"name": "אמנון ברומברג -", "phone": "0543074777", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "2026-02-01", "amount": -1190.0, "has_app": "✗", "did_q": "✗", "returning": ""}, {"name": "עידית שמואלביץ -", "phone": "0526139188", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "2026-01-26", "amount": -1190.0, "has_app": "✗", "did_q": "✗", "returning": ""}, {"name": "רינה יבלונסקי -", "phone": "0556602344", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "—", "amount": 0, "has_app": "✗", "did_q": "✗", "returning": ""}, {"name": "Uri Pisson -", "phone": "0509041991", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "2026-02-09", "amount": -890.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "עינב כהן -", "phone": "0528372291", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "2026-03-05", "amount": -1190.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "022892194 -", "phone": "0542207937", "challenge": "—", "webinar": "19/01/2026", "payment": "—", "cancel": "2026-04-29", "amount": -1090.0, "has_app": "✗", "did_q": "✓", "returning": ""}], "unmatched": [{"name": "שלו היחה", "date": "2026-05-15", "amount": -1090.0}, {"name": "אברהם פופובית", "date": "2026-05-12", "amount": -1390.0}, {"name": "עלמה זיו-גולדמן", "date": "2026-05-06", "amount": -1390.0}, {"name": "‪Yoram Pariente‬‏", "date": "2026-04-05", "amount": -1390.0}, {"name": "Raanan Aharonson", "date": "2026-02-09", "amount": -1390.0}, {"name": "Irit Cohen", "date": "2026-01-07", "amount": -890.0}, {"name": "בק חנניה Hananya Beck", "date": "2026-01-07", "amount": -890.0}, {"name": "אושרת אברבנאל", "date": "2026-01-06", "amount": -1190.0}, {"name": "פזית בן חור", "date": "2026-01-05", "amount": -990.0}, {"name": "מירב טל", "date": "2026-01-01", "amount": -1010.0}, {"name": "אלינור ברדה", "date": "2026-01-01", "amount": -1190.0}, {"name": "מתתיהו יעקה", "date": "2025-12-29", "amount": -1190.0}, {"name": "דרור שושנה", "date": "2025-12-28", "amount": -1190.0}]};
+const DATA = {"total": 324, "n_cancel": 52, "total_refunded": -49940.0, "cancel_rate": 16.0, "challenge_list": ["26/07/2026", "21/06/2026", "15/06/2026", "17/05/2026", "12/04/2026", "08/03/2026", "לא שויך"], "by_challenge": {"26/07/2026": {"total": 2, "cancelled": 0, "rate": 0.0, "webinars": {"04/05/2026": {"total": 1, "cancelled": 0, "rate": 0.0}, "19/04/2026": {"total": 1, "cancelled": 0, "rate": 0.0}}}, "21/06/2026": {"total": 26, "cancelled": 0, "rate": 0.0, "webinars": {"18/05/2026": {"total": 19, "cancelled": 0, "rate": 0.0}, "04/05/2026": {"total": 4, "cancelled": 0, "rate": 0.0}, "19/04/2026": {"total": 2, "cancelled": 0, "rate": 0.0}, "12/04/2026": {"total": 1, "cancelled": 0, "rate": 0.0}}}, "15/06/2026": {"total": 1, "cancelled": 0, "rate": 0.0, "webinars": {"לא ידוע": {"total": 1, "cancelled": 0, "rate": 0.0}}}, "17/05/2026": {"total": 100, "cancelled": 22, "rate": 22.0, "webinars": {"18/05/2026": {"total": 3, "cancelled": 2, "rate": 66.7}, "04/05/2026": {"total": 29, "cancelled": 4, "rate": 13.8}, "19/04/2026": {"total": 29, "cancelled": 10, "rate": 34.5}, "12/04/2026": {"total": 31, "cancelled": 4, "rate": 12.9}, "30/03/2026": {"total": 1, "cancelled": 1, "rate": 100.0}, "16/03/2026": {"total": 1, "cancelled": 1, "rate": 100.0}, "לא ידוע": {"total": 6, "cancelled": 0, "rate": 0.0}}}, "12/04/2026": {"total": 50, "cancelled": 6, "rate": 12.0, "webinars": {"12/04/2026": {"total": 1, "cancelled": 0, "rate": 0.0}, "30/03/2026": {"total": 24, "cancelled": 3, "rate": 12.5}, "16/03/2026": {"total": 22, "cancelled": 3, "rate": 13.6}, "לא ידוע": {"total": 3, "cancelled": 0, "rate": 0.0}}}, "08/03/2026": {"total": 44, "cancelled": 8, "rate": 18.2, "webinars": {"01/03/2026": {"total": 2, "cancelled": 1, "rate": 50.0}, "16/02/2026": {"total": 4, "cancelled": 3, "rate": 75.0}, "11/11/2025": {"total": 1, "cancelled": 0, "rate": 0.0}, "לא ידוע": {"total": 37, "cancelled": 4, "rate": 10.8}}}, "לא שויך": {"total": 101, "cancelled": 16, "rate": 15.8, "webinars": {"12/04/2026": {"total": 2, "cancelled": 0, "rate": 0.0}, "16/03/2026": {"total": 1, "cancelled": 0, "rate": 0.0}, "19/01/2026": {"total": 1, "cancelled": 1, "rate": 100.0}, "לא ידוע": {"total": 97, "cancelled": 15, "rate": 15.5}}}}, "by_webinar": {"18/05/2026": {"total": 22, "cancelled": 2, "rate": 9.1, "challenges": ["17/05/2026", "21/06/2026"]}, "04/05/2026": {"total": 34, "cancelled": 4, "rate": 11.8, "challenges": ["17/05/2026", "26/07/2026", "21/06/2026"]}, "19/04/2026": {"total": 32, "cancelled": 10, "rate": 31.2, "challenges": ["17/05/2026", "26/07/2026", "21/06/2026"]}, "12/04/2026": {"total": 35, "cancelled": 4, "rate": 11.4, "challenges": ["17/05/2026", "21/06/2026", "לא שויך", "12/04/2026"]}, "30/03/2026": {"total": 25, "cancelled": 4, "rate": 16.0, "challenges": ["17/05/2026", "12/04/2026"]}, "16/03/2026": {"total": 24, "cancelled": 4, "rate": 16.7, "challenges": ["17/05/2026", "לא שויך", "12/04/2026"]}, "01/03/2026": {"total": 2, "cancelled": 1, "rate": 50.0, "challenges": ["08/03/2026"]}, "16/02/2026": {"total": 4, "cancelled": 3, "rate": 75.0, "challenges": ["08/03/2026"]}, "19/01/2026": {"total": 1, "cancelled": 1, "rate": 100.0, "challenges": ["לא שויך"]}, "11/11/2025": {"total": 1, "cancelled": 0, "rate": 0.0, "challenges": ["08/03/2026"]}, "לא ידוע": {"total": 144, "cancelled": 19, "rate": 13.2, "challenges": ["08/03/2026", "12/04/2026", "לא שויך", "17/05/2026", "15/06/2026"]}}, "before_after": {"before": 20, "after": 14, "unknown": 18}, "app": {"yes": {"total": 164, "cancelled": 22, "rate": 13.4}, "no": {"total": 160, "cancelled": 30, "rate": 18.8}}, "questionnaire": {"yes": {"total": 265, "cancelled": 39, "rate": 14.7}, "no": {"total": 59, "cancelled": 13, "rate": 22.0}}, "returning": {"yes": {"total": 16, "cancelled": 3, "rate": 18.8}, "no": {"total": 308, "cancelled": 49, "rate": 15.9}}, "timelines": [{"name": "משה", "days": -47, "challenge": "12/04/2026"}, {"name": "שרון  כנפי", "days": -7, "challenge": "17/05/2026"}, {"name": "אורטל", "days": -2, "challenge": "12/04/2026"}, {"name": "טלי", "days": 0, "challenge": "17/05/2026"}, {"name": "יורם פריינטה פריינטה", "days": 6, "challenge": "12/04/2026"}, {"name": "שרה", "days": 7, "challenge": "17/05/2026"}, {"name": "אביגיל אסולין", "days": 10, "challenge": "17/05/2026"}, {"name": "שפרה גליק גליק", "days": 11, "challenge": "17/05/2026"}, {"name": "דלית  שמחה", "days": 14, "challenge": "17/05/2026"}, {"name": "שריה", "days": 15, "challenge": "17/05/2026"}, {"name": "שרון דור", "days": 15, "challenge": "17/05/2026"}, {"name": "עינת  שביט", "days": 16, "challenge": "17/05/2026"}, {"name": "חן", "days": 18, "challenge": "17/05/2026"}, {"name": "אביגיל שטרן שטרן", "days": 18, "challenge": "12/04/2026"}, {"name": "רותם  דהרי", "days": 24, "challenge": "17/05/2026"}, {"name": "אילה  תמרי", "days": 25, "challenge": "17/05/2026"}, {"name": "מירון לבו", "days": 26, "challenge": "17/05/2026"}, {"name": "ליאור גל", "days": 28, "challenge": "17/05/2026"}, {"name": "מזל נסים", "days": 29, "challenge": "17/05/2026"}, {"name": "רוס אלן אלן", "days": 30, "challenge": "12/04/2026"}, {"name": "נויה", "days": 30, "challenge": "17/05/2026"}, {"name": "מיכלי אור", "days": 30, "challenge": "12/04/2026"}, {"name": "גילי  מאור", "days": 33, "challenge": "17/05/2026"}, {"name": "אביגיל גולן", "days": 33, "challenge": "17/05/2026"}, {"name": "איציק תומר", "days": 35, "challenge": "17/05/2026"}, {"name": "רונית  לוי", "days": 36, "challenge": "17/05/2026"}, {"name": "מרגית בוגן", "days": 36, "challenge": "17/05/2026"}], "detail": [{"name": "קרני", "phone": "0546873707", "challenge": "08/03/2026", "webinar": "16/02/2026", "payment": "—", "cancel": "2026-01-29", "amount": -1190.0, "has_app": "✓", "did_q": "✓", "returning": "✓"}, {"name": "מיטל לוי גרוסמן", "phone": "0545218000", "challenge": "08/03/2026", "webinar": "01/03/2026", "payment": "—", "cancel": "2026-03-09", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "שושנה זקן", "phone": "0506885654", "challenge": "08/03/2026", "webinar": "—", "payment": "—", "cancel": "2026-02-22", "amount": -1390.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "נבו יעקב", "phone": "0502062672", "challenge": "08/03/2026", "webinar": "—", "payment": "—", "cancel": "2026-02-17", "amount": -1390.0, "has_app": "✓", "did_q": "✗", "returning": ""}, {"name": "זהבה זנדברג", "phone": "0545842808", "challenge": "08/03/2026", "webinar": "16/02/2026", "payment": "—", "cancel": "2026-03-10", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "שמואל ארביב", "phone": "0523459701", "challenge": "08/03/2026", "webinar": "—", "payment": "—", "cancel": "2026-03-01", "amount": -1090.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "ליבת לוי", "phone": "0526962266", "challenge": "08/03/2026", "webinar": "16/02/2026", "payment": "—", "cancel": "2026-03-12", "amount": -1090.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "נבו יעקב", "phone": "0502062672", "challenge": "08/03/2026", "webinar": "—", "payment": "—", "cancel": "—", "amount": 0, "has_app": "✗", "did_q": "✗", "returning": ""}, {"name": "אביגיל שטרן שטרן", "phone": "0528442353", "challenge": "12/04/2026", "webinar": "30/03/2026", "payment": "30/03/2026", "cancel": "2026-04-17", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "רוס אלן אלן", "phone": "0542592260", "challenge": "12/04/2026", "webinar": "30/03/2026", "payment": "30/03/2026", "cancel": "2026-04-29", "amount": -200.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "יורם פריינטה פריינטה", "phone": "0545221332", "challenge": "12/04/2026", "webinar": "30/03/2026", "payment": "30/03/2026", "cancel": "05/04/2026", "amount": 0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "מיכלי אור", "phone": "0537291914", "challenge": "12/04/2026", "webinar": "16/03/2026", "payment": "17/03/2026", "cancel": "2026-04-16", "amount": -1090.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "אורטל", "phone": "0508821366", "challenge": "12/04/2026", "webinar": "16/03/2026", "payment": "16/03/2026", "cancel": "2026-03-14", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": "✓"}, {"name": "משה", "phone": "0509241115", "challenge": "12/04/2026", "webinar": "16/03/2026", "payment": "16/03/2026", "cancel": "2026-01-28", "amount": -1190.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "דלית  שמחה", "phone": "0509233240", "challenge": "17/05/2026", "webinar": "18/05/2026", "payment": "04/05/2026", "cancel": "2026-05-18", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "שרון  כנפי", "phone": "0542572118", "challenge": "17/05/2026", "webinar": "04/05/2026", "payment": "04/05/2026", "cancel": "2026-04-27", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "עלמה  ביטלה", "phone": "0506263664", "challenge": "17/05/2026", "webinar": "04/05/2026", "payment": "04/05/2026", "cancel": "—", "amount": 0, "has_app": "✗", "did_q": "✗", "returning": ""}, {"name": "אביגיל אסולין", "phone": "0524309994", "challenge": "17/05/2026", "webinar": "04/05/2026", "payment": "04/05/2026", "cancel": "2026-05-14", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": "✓"}, {"name": "רותם  דהרי", "phone": "0544503576", "challenge": "17/05/2026", "webinar": "04/05/2026", "payment": "20/04/2026", "cancel": "2026-05-14", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "גילי  מאור", "phone": "0555579462", "challenge": "17/05/2026", "webinar": "19/04/2026", "payment": "20/04/2026", "cancel": "2026-05-23", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "ליאור גל", "phone": "0522747757", "challenge": "17/05/2026", "webinar": "19/04/2026", "payment": "20/04/2026", "cancel": "2026-05-18", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "אביגיל גולן", "phone": "0544615502", "challenge": "17/05/2026", "webinar": "19/04/2026", "payment": "20/04/2026", "cancel": "2026-05-23", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "שפרה גליק גליק", "phone": "0524273713", "challenge": "17/05/2026", "webinar": "19/04/2026", "payment": "19/04/2026", "cancel": "2026-04-30", "amount": -1390.0, "has_app": "✗", "did_q": "✗", "returning": ""}, {"name": "אילה  תמרי", "phone": "0544802260", "challenge": "17/05/2026", "webinar": "19/04/2026", "payment": "19/04/2026", "cancel": "2026-05-14", "amount": -1190.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "חן", "phone": "0522636183", "challenge": "17/05/2026", "webinar": "19/04/2026", "payment": "19/04/2026", "cancel": "2026-05-07", "amount": -1090.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "מירון לבו", "phone": "0505532423", "challenge": "17/05/2026", "webinar": "19/04/2026", "payment": "19/04/2026", "cancel": "2026-05-15", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "שרה", "phone": "0548084469", "challenge": "17/05/2026", "webinar": "19/04/2026", "payment": "19/04/2026", "cancel": "2026-04-26", "amount": -1090.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "טלי", "phone": "0507478014", "challenge": "17/05/2026", "webinar": "19/04/2026", "payment": "19/04/2026", "cancel": "2026-04-19", "amount": -1390.0, "has_app": "✗", "did_q": "✗", "returning": ""}, {"name": "מזל נסים", "phone": "0548128009", "challenge": "17/05/2026", "webinar": "19/04/2026", "payment": "19/04/2026", "cancel": "2026-05-18", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "איציק תומר", "phone": "0506282626", "challenge": "17/05/2026", "webinar": "12/04/2026", "payment": "13/04/2026", "cancel": "2026-05-18", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "רונית  לוי", "phone": "0508356367", "challenge": "17/05/2026", "webinar": "12/04/2026", "payment": "12/04/2026", "cancel": "2026-05-18", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "מרגית בוגן", "phone": "0505300785", "challenge": "17/05/2026", "webinar": "18/05/2026", "payment": "12/04/2026", "cancel": "2026-05-18", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "שריה", "phone": "0523847502", "challenge": "17/05/2026", "webinar": "12/04/2026", "payment": "12/04/2026", "cancel": "2026-04-27", "amount": -1390.0, "has_app": "✗", "did_q": "✗", "returning": ""}, {"name": "שרון דור", "phone": "0542112939", "challenge": "17/05/2026", "webinar": "12/04/2026", "payment": "12/04/2026", "cancel": "27/04/2026", "amount": 0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "עינת  שביט", "phone": "0545341969", "challenge": "17/05/2026", "webinar": "30/03/2026", "payment": "30/03/2026", "cancel": "2026-04-15", "amount": -990.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "נויה", "phone": "0522770025", "challenge": "17/05/2026", "webinar": "16/03/2026", "payment": "17/03/2026", "cancel": "2026-04-16", "amount": -1090.0, "has_app": "✓", "did_q": "✓", "returning": ""}, {"name": "רינה יבלונסקי", "phone": "0556602344", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "2026-02-09", "amount": -880.0, "has_app": "✗", "did_q": "✗", "returning": ""}, {"name": "אילנה לרנר", "phone": "0544853820", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "2026-02-11", "amount": -1390.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "שילת אסרף", "phone": "0533459311", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "2026-02-12", "amount": -880.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "אריאל בר", "phone": "0504505311", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "2026-02-15", "amount": -890.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "שוש כץ", "phone": "", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "2026-02-14", "amount": -890.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "חי", "phone": "", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "2026-01-15", "amount": -500.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "ערן בלאט -", "phone": "0522214758", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "2026-01-20", "amount": -1190.0, "has_app": "✗", "did_q": "✗", "returning": ""}, {"name": "אירית הראל -", "phone": "0524715052", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "2026-02-10", "amount": -890.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "צביה קומוב -", "phone": "0502146041", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "2026-01-20", "amount": -1190.0, "has_app": "✗", "did_q": "✗", "returning": ""}, {"name": "שוש כץ אוחיון -", "phone": "0522410046", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "—", "amount": 0, "has_app": "✗", "did_q": "✗", "returning": ""}, {"name": "אמנון ברומברג -", "phone": "0543074777", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "2026-02-01", "amount": -1190.0, "has_app": "✗", "did_q": "✗", "returning": ""}, {"name": "עידית שמואלביץ -", "phone": "0526139188", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "2026-01-26", "amount": -1190.0, "has_app": "✗", "did_q": "✗", "returning": ""}, {"name": "רינה יבלונסקי -", "phone": "0556602344", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "—", "amount": 0, "has_app": "✗", "did_q": "✗", "returning": ""}, {"name": "Uri Pisson -", "phone": "0509041991", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "2026-02-09", "amount": -890.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "עינב כהן -", "phone": "0528372291", "challenge": "—", "webinar": "—", "payment": "—", "cancel": "2026-03-05", "amount": -1190.0, "has_app": "✗", "did_q": "✓", "returning": ""}, {"name": "022892194 -", "phone": "0542207937", "challenge": "—", "webinar": "19/01/2026", "payment": "—", "cancel": "2026-04-29", "amount": -1090.0, "has_app": "✗", "did_q": "✓", "returning": ""}], "unmatched": [{"name": "שלו היחה", "date": "2026-05-15", "amount": -1090.0}, {"name": "אברהם פופובית", "date": "2026-05-12", "amount": -1390.0}, {"name": "עלמה זיו-גולדמן", "date": "2026-05-06", "amount": -1390.0}, {"name": "‪Yoram Pariente‬‏", "date": "2026-04-05", "amount": -1390.0}, {"name": "Raanan Aharonson", "date": "2026-02-09", "amount": -1390.0}, {"name": "Irit Cohen", "date": "2026-01-07", "amount": -890.0}, {"name": "בק חנניה Hananya Beck", "date": "2026-01-07", "amount": -890.0}, {"name": "אושרת אברבנאל", "date": "2026-01-06", "amount": -1190.0}, {"name": "פזית בן חור", "date": "2026-01-05", "amount": -990.0}, {"name": "מירב טל", "date": "2026-01-01", "amount": -1010.0}, {"name": "אלינור ברדה", "date": "2026-01-01", "amount": -1190.0}, {"name": "מתתיהו יעקה", "date": "2025-12-29", "amount": -1190.0}, {"name": "דרור שושנה", "date": "2025-12-28", "amount": -1190.0}]};
 
 // Colors
 const RED    = 'rgba(220,38,38,0.8)';
@@ -1488,6 +1515,33 @@ if (days.length) {
 } else {
   document.getElementById('chartTimeline').parentElement.innerHTML =
     '<p style="color:#94a3b8;text-align:center;padding:60px 0">אין נתוני ציר זמן — חסרים תאריכי ביטול</p>';
+}
+
+// ── Challenge Filter ──
+function applyFilter(ch) {
+  // Update buttons
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.ch === ch);
+  });
+
+  // Filter ch→wb table
+  document.querySelectorAll('#chTableBody tr[data-ch]').forEach(row => {
+    row.style.display = (!ch || row.dataset.ch === ch) ? '' : 'none';
+  });
+  document.querySelectorAll('#chTableBody tr[data-wb-ch]').forEach(row => {
+    row.style.display = (!ch || row.dataset.wbCh === ch) ? '' : 'none';
+  });
+
+  // Filter webinar flat table
+  document.querySelectorAll('#wbTableBody tr[data-challenges]').forEach(row => {
+    const chs = row.dataset.challenges.split(',');
+    row.style.display = (!ch || chs.includes(ch)) ? '' : 'none';
+  });
+
+  // Filter detail table
+  document.querySelectorAll('#detailTableBody tr[data-challenge]').forEach(row => {
+    row.style.display = (!ch || row.dataset.challenge === ch) ? '' : 'none';
+  });
 }
 </script>
 </body>
